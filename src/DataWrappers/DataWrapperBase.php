@@ -1,15 +1,26 @@
 <?php
-class DataWrapperBase {
-	protected $data;	// mixed
-	public static function constructor__ () 
+abstract class DataWrapperBase implements JsonSerializable {
+    /** @var mixed */
+	protected $data;
+    
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+//		parent::__construct();
 	}
-	public function get () 
+    
+    /**
+     *  @return mixed
+     */
+	public function get() 
 	{
-		return NULL;
+		return $this->data;
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = $this->data;
+        
+        return $format;
+    }
 }
-?>
+
