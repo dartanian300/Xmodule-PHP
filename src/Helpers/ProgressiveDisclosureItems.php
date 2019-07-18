@@ -12,7 +12,7 @@ class ProgressiveDisclosureItems implements JsonSerializable {
     
 	public function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
         $this->items = array();
 	}
     

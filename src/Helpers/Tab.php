@@ -24,7 +24,7 @@ class Tab implements JsonSerializable {
     
 	public  function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
         $this->setModifiableProperties(array('content'));
         $this->content = array();
 	}

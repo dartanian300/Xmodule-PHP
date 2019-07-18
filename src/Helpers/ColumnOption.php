@@ -16,7 +16,7 @@ class ColumnOption implements JsonSerializable {
     
 	public function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
 	}
     
     public function jsonSerialize()

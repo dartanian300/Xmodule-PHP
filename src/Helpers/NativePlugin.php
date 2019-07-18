@@ -16,9 +16,9 @@ class NativePlugin implements JsonSerializable {
      */
 	public $fallbackLink;
     
-	public  function __construct() 
+	public function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
 	}
     
     public function jsonSerialize()
