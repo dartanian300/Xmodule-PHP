@@ -1,13 +1,30 @@
 <?php
-require_once("model/DataWrappers/String.php");
-require_once("model/Element.php");
-class ToolbarLabel extends Element {
-	public $label;	// String
-	public static function constructor__ () 
+/**
+ *  @package Toolbar
+ *  
+ */
+require_once(__DIR__."/../Element.php");
+require_once(__DIR__."/../DataWrappers/XString.php");
+
+class ToolbarLabel extends Element implements JsonSerializable {
+    /** @var XString */
+	public $label;
+    
+	public function __construct($id = '') 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('toolbarLabel', $id);
+        
+        $this->label = new XString();
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'label' => $this->label,
+        );
+        
+        return $format;
+    }
 }
-?>
+

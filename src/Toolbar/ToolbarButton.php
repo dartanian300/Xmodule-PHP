@@ -1,19 +1,45 @@
 <?php
-require_once("model/Link.php");
-require_once("model/DataWrappers/AccessoryIconPosition.php");
-require_once("model/DataWrappers/ActionType.php");
-require_once("model/DataWrappers/Title.php");
-require_once("model/Element.php");
-class ToolbarButton extends Element {
-	public $title;	// Title
-	public $link;	// Link
-	public $accessoryIconPosition;	// AccessoryIconPosition
-	public $actionType;	// ActionType
-	public static function constructor__ () 
+/**
+ *  @package Toolbar
+ *  
+ */
+require_once(__DIR__."/../Element.php");
+require_once(__DIR__."/../Link.php");
+require_once(__DIR__."/../DataWrappers/AccessoryIconPosition.php");
+require_once(__DIR__."/../DataWrappers/ActionType.php");
+require_once(__DIR__."/../DataWrappers/Title.php");
+
+class ToolbarButton extends Element implements JsonSerializable {
+    /** @var Title */
+	public $title;
+    /** @var Link */
+	public $link;
+    /** @var AccessoryIconPosition */
+	public $accessoryIconPosition;
+    /** @var ActionType */
+	public $actionType;
+    
+	public function __construct($id = '') 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('toolbarButton', $id);
+        
+        $this->title = new Title();
+        $this->link = new Link();
+        $this->accessoryIconPosition = new AccessoryIconPosition();
+        $this->actionType = new ActionType();
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'title' => $this->title,
+            'link' => $this->link,
+            'accessoryIconPosition' => $this->accessoryIconPosition,
+            'actionType' => $this->actionType,
+        );
+        
+        return $format;
+    }
 }
-?>
+

@@ -1,17 +1,42 @@
 <?php
-require_once("model/Element.php");
-class ToolbarMenu extends Element {
-	protected $items;	// array
-	public static function constructor__ () 
+/**
+ *  @package Toolbar
+ *  
+ */
+require_once(__DIR__."/../Element.php");
+require_once(__DIR__."/../Traits/ModifiableArray.php");
+
+/**
+ *  Summary.
+ *  Description.
+ *  @method void add(mixed $row)
+ *  @method MenuItem get(integer $position = null)
+ *  @method void delete(integer $position)
+ *
+ *  @todo: figure out why these methods aren't parsing
+ */
+class ToolbarMenu extends Element implements JsonSerializable {
+    use ModifiableArray; 
+    
+    /** @var MenuItem[] */
+	private $items;
+    
+	public function __construct($id = '') 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('toolbarMenu', $id);
+        $this->setModifiableProperties(array('items'));
+        
+        $this->items = array();
 	}
-	abstract function add ($item); // [MenuItem item]
-	public function get ($position) // [int position]
-	{
-		return NULL;
-	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'items' => $this->items,
+        );
+        
+        return $format;
+    }
 }
-?>
+
