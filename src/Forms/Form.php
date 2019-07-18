@@ -21,7 +21,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
  *  @todo: figure out why these methods aren't parsing
  */
 class Form extends Element implements JsonSerializable {
-    use Events, ModifiableArray;
+    use ModifiableArray;
     
     /** @var XString */
 	public $relativePath;
@@ -37,6 +37,8 @@ class Form extends Element implements JsonSerializable {
 	public $loadingTitle;
     /** @var mixed[] */
     private $items;
+    /** @var Events */
+    private $events;
     
 	public function __construct($id = '')
 	{
@@ -50,6 +52,7 @@ class Form extends Element implements JsonSerializable {
         $this->disableScrim = new Boolean();
         $this->loadingTitle = new XString();
         $this->items = array();
+        $this->events = new Events();
 	}
     
     public function jsonSerialize()
@@ -64,6 +67,7 @@ class Form extends Element implements JsonSerializable {
             'items' => $this->items,
             'disableScrim' => $this->disableScrim,
             'loadingTitle' => $this->loadingTitle,
+            'events' => $this->events
         );
         
         return $format;

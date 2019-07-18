@@ -6,7 +6,7 @@
 require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 
-trait Events {
+class Events {
     /** @var XString */
 	public $eventName;
     /** @var XString */
@@ -18,7 +18,7 @@ trait Events {
     
 	public function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
         
         $this->eventName = new XString();
         $this->targetId = new XString();

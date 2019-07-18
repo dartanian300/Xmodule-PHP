@@ -11,9 +11,7 @@ require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/DataWrappers/Title.php");
 require_once(__DIR__."/Events.php");
 
-class LinkButton extends Element implements JsonSerializable {
-    use Events; 
-    
+class LinkButton extends Element implements JsonSerializable {    
     /** @var Title */
 	public $title;
     /** @var Link */
@@ -24,6 +22,8 @@ class LinkButton extends Element implements JsonSerializable {
 	public $accessoryIconPosition;
     /** @var ActionType */
 	public $actionType;
+    /** @var Events */
+    private $events;
     
 	public function __construct($id = '')
 	{
@@ -34,6 +34,7 @@ class LinkButton extends Element implements JsonSerializable {
         $this->disabled = new Boolean();
         $this->accessoryIconPosition = new AccessoryIconPosition();
         $this->actionType = new actionType();
+        $this->events = new Events();
 	}
     
     public function jsonSerialize()
@@ -46,7 +47,7 @@ class LinkButton extends Element implements JsonSerializable {
             'disabled' => $this->disabled,
             'accessoryIconPosition' => $this->accessoryIconPosition,
             'actionType' => $this->actionType,
-            'events' => $this->eventsJson()
+            'events' => $this->events
         );
         
         return $format;
