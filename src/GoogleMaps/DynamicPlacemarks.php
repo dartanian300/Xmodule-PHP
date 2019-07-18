@@ -1,10 +1,12 @@
 <?php
+/**
+ *  @package GoogleMaps
+ *  
+ */
 class DynamicPlacemarks {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
 }
-?>
+
