@@ -1,20 +1,55 @@
 <?php
-require_once("model/DataWrappers/AccessoryIconPosition.php");
-require_once("model/DataWrappers/String.php");
-require_once("model/DataWrappers/ActionType.php");
-require_once("model/DataWrappers/Boolean.php");
-require_once("model/DataWrappers/Title.php");
-class LinkButton extends Element {
-	public $title;	// Title
-	public $link;	// Link
-	public $disabled;	// boolean
-	public $accessoryIconPosition;	// AccessoryIconPosition
-	public $actionType;	// ActionType
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Elements
+ *  
+ */
+require_once(__DIR__."/Element.php");
+require_once(__DIR__."/Link.php");
+require_once(__DIR__."/DataWrappers/AccessoryIconPosition.php");
+require_once(__DIR__."/DataWrappers/ActionType.php");
+require_once(__DIR__."/DataWrappers/Boolean.php");
+require_once(__DIR__."/DataWrappers/Title.php");
+require_once(__DIR__."/Events.php");
+
+class LinkButton extends Element implements JsonSerializable {
+    use Events; 
+    
+    /** @var Title */
+	public $title;
+    /** @var Link */
+	public $link;
+    /** @var \Boolean */
+	public $disabled;
+    /** @var AccessoryIconPosition */
+	public $accessoryIconPosition;
+    /** @var ActionType */
+	public $actionType;
+    
+	public function __construct($id = '')
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('linkButton', $id);
+        
+        $this->title = new Title();
+        $this->link = new Link();
+        $this->disabled = new Boolean();
+        $this->accessoryIconPosition = new AccessoryIconPosition();
+        $this->actionType = new actionType();
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'id' => $this->id,
+            'title' => $this->title,
+            'link' => $this->link,
+            'disabled' => $this->disabled,
+            'accessoryIconPosition' => $this->accessoryIconPosition,
+            'actionType' => $this->actionType,
+            'events' => $this->eventsJson()
+        );
+        
+        return $format;
+    }
 }
-?>
+
