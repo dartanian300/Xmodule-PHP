@@ -1,12 +1,36 @@
 <?php
-require_once("model/DataWrappers/String.php");
-class Phone extends FormElement {
-	public $placeholder;	// String
-	public static function constructor__ () 
+/**
+ *  @package Forms
+ *  
+ */
+require_once(__DIR__."/FormElement.php");
+require_once(__DIR__."/../DataWrappers/XString.php");
+
+class Phone extends FormElement implements JsonSerializable {
+    /** @var XString */
+	public $placeholder;
+    
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('phone');
+        
+        $this->placeholder = new XString();
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'inputType' => $this->inputType,
+            'name' => $this->name,
+            'label' => $this->label,
+            'description' => $this->description,
+            'value' => $this->value,
+            'placeholder' => $this->placeholder,
+            'required' => $this->required,
+        );
+        
+        return $format;
+    }
 }
-?>
+

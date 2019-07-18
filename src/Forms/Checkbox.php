@@ -1,14 +1,39 @@
 <?php
-require_once("model/Package/ProgressiveDisclosureItems.php");
-require_once("model/DataWrappers/Boolean.php");
-class Checkbox extends FormElement {
-	public $checked;	// boolean
-	public $progressiveDisclosureItems;	// ProgressiveDisclosureItems
-	public static function constructor__ () 
+/**
+ *  @package Forms
+ *  
+ */
+require_once(__DIR__."/FormElement.php");
+require_once(__DIR__."/../Helpers/ProgressiveDisclosureItems.php");
+require_once(__DIR__."/../DataWrappers/Boolean.php");
+
+class Checkbox extends FormElement implements JsonSerializable {
+    /** @var \Boolean */
+	public $checked;
+    /** @var ProgressiveDisclosureItems */
+	public $progressiveDisclosureItems;
+    
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('checkbox');
+        
+        $this->checked = new Boolean();
+        $this->progressiveDisclosureItems = new ProgressiveDisclosureItems();
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'inputType' => $this->inputType,
+            'name' => $this->name,
+            'label' => $this->label,
+            'description' => $this->description,
+            'checked' => $this->checked,
+            'progressiveDisclosureItems' => $this->progressiveDisclosureItems
+        );
+        
+        return $format;
+    }
 }
-?>
+

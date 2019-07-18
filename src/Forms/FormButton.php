@@ -1,20 +1,51 @@
 <?php
-require_once("model/DataWrappers/AccessoryIconPosition.php");
-require_once("model/DataWrappers/ActionType.php");
-require_once("model/DataWrappers/AccessoryIcon.php");
-require_once("model/DataWrappers/Title.php");
-require_once("model/DataWrappers/ButtonType.php");
-class FormButton extends FormElement {
-	public $title;	// Title
-	public $buttonType;	// ButtonType
-	public $accessoryIcon;	// AccessoryIcon
-	public $accessoryIconPosition;	// AccessoryIconPosition
-	public $actionType;	// ActionType
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Forms
+ *  
+ */
+require_once(__DIR__."/FormElement.php");
+require_once(__DIR__."/../DataWrappers/AccessoryIconPosition.php");
+require_once(__DIR__."/../DataWrappers/ActionType.php");
+require_once(__DIR__."/../DataWrappers/AccessoryIcon.php");
+require_once(__DIR__."/../DataWrappers/Title.php");
+require_once(__DIR__."/../DataWrappers/ButtonType.php");
+
+class FormButton extends FormElement implements JsonSerializable {
+    /** @var Title */
+	public $title;
+    /** @var ButtonType */
+	public $buttonType;
+    /** @var AccessoryIcon */
+	public $accessoryIcon;
+    /** @var AccessoryIconPosition */
+	public $accessoryIconPosition;
+    /** @var ActionType */
+	public $actionType;
+    
+	public function __construct()
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('formButton');
+        
+        $this->title = new Title();
+        $this->buttonType = new ButtonType();
+        $this->accessoryIcon = new AccessoryIcon();
+        $this->accessoryIconPosition = new AccessoryIconPosition();
+        $this->actionType = new ActionType();
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'title' => $this->title,
+            'name' => $this->name,
+            'buttonType' => $this->buttonType,
+            'accessoryIcon' => $this->accessoryIcon,
+            'accessoryIconPosition' => $this->accessoryIconPosition,
+            'actionType' => $this->actionType,
+        );
+        
+        return $format;
+    }
 }
-?>
+

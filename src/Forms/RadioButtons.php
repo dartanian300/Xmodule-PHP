@@ -1,27 +1,62 @@
 <?php
-require_once("model/Package/ProgressiveDisclosureItems.php");
-require_once("model/DataWrappers/String.php");
-class RadioButtons extends FormElement {
-	public $optionLabels;	// array
-	public $optionValues;	// array
-	public $progressiveDisclosureItems;	// ProgressiveDisclosureItems
-	public static function constructor__ () 
+/**
+ *  @package Forms
+ *  
+ */
+require_once(__DIR__."/FormElement.php");
+require_once(__DIR__."/../Helpers/ProgressiveDisclosureItems.php");
+require_once(__DIR__."/../Traits/ModifiableArray.php");
+
+/**
+ *  Summary.
+ *  Description.
+ *  @method void addOptionLabel(string $item)
+ *  @method mixed getOptionLabel(integer $position = null)
+ *  @method void deleteOptionLabel(integer $position)
+ *
+ *  @method void addOptionValue(string $item)
+ *  @method mixed getOptionValue(integer $position = null)
+ *  @method void deleteOptionValue(integer $position)
+ *
+ *  @todo: figure out why these methods aren't parsing
+ */
+class RadioButtons extends FormElement implements JsonSerializable {
+    use ModifiableArray; 
+    
+    /** @var string[] */
+	private $optionLabels;
+    /** @var string[] */
+	private $optionValues;
+    /** @var ProgressiveDisclosureItems */
+	public $progressiveDisclosureItems;
+    
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('radio');
+        $this->setModifiableProperties(array('optionLabels' => 'optionLabel', 'optionValues' => 'optionValue'));
+        
+        $this->optionLabels = array();
+        $this->optionValues = array();
+        $this->progressiveDisclosureItems = new ProgressiveDisclosureItems();
 	}
-	abstract function addOptionLabel ($label); // [String label]
-	public function getOptionLabel ($position) // [int position]
-	{
-		return "";
-	}
-	abstract function deleteOptionLabel ($position); // [int position]
-	abstract function addOptionValue ($label); // [String label]
-	public function getOptionValue ($position) // [int position]
-	{
-		return "";
-	}
-	abstract function deleteOptionValue ($position); // [int position]
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'inputType' => $this->inputType,
+            'name' => $this->name,
+            'label' => $this->label,
+            'description' => $this->description,
+            'value' => $this->value,
+            'required' => $this->required,
+            
+            'optionLabels' => $this->optionLabels,
+            'optionValues' => $this->optionValues,
+            'progressiveDisclosureItems' => $this->progressiveDisclosureItems,
+        );
+        
+        return $format;
+    }
 }
-?>
+

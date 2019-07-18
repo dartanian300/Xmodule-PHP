@@ -1,10 +1,27 @@
 <?php
-class Label extends FormElement {
-	public static function constructor__ () 
+/**
+ *  @package Forms
+ *  
+ */
+require_once(__DIR__."/FormElement.php");
+
+class Label extends FormElement implements JsonSerializable {
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('label');
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'inputType' => $this->inputType,
+            'label' => $this->label,
+            'description' => $this->description,
+            'value' => $this->value,
+        );
+        
+        return $format;
+    }
 }
-?>
+
