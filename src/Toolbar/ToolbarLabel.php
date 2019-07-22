@@ -1,4 +1,6 @@
 <?php
+use XModule\Toolbar;
+
 /**
  *  @package Toolbar
  *  
