@@ -8,6 +8,8 @@ use XModule\Toolbar;
 require_once(__DIR__."/../Element.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
+use XModule\DataWrapper as DataWrapper;
+
 /**
  *  Summary.
  *  Description.
@@ -17,7 +19,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
  *
  *  @todo: figure out why these methods aren't parsing
  */
-class ToolbarMenu extends Element implements JsonSerializable {
+class ToolbarMenu extends Element implements \JsonSerializable {
     use ModifiableArray; 
     
     /** @var MenuItem[] */
