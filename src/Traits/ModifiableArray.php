@@ -76,70 +76,7 @@ trait ModifiableArray {
      */
     private $availableMethods;
     /** @var boolean Internal flag for if this obj has been initialized */
-    private $constructed = false;
-    
-    /**
-     *  @throws BadMethodCallException if the method action isn't add, get or delete OR if the property isn't modifiable
-     */
-//    public function __call($methodName, $arguments)
-//    {
-//        // set this here since traits can't use constructors
-//        if ($this->validPrefixes == null)
-//            $this->validPrefixes = array('add', 'get', 'delete');
-//        
-//        echo '<br>MethodName: '.$methodName;
-//        $property = $methodName;
-//        $action = '';
-//        
-//        // Determine the property to act on
-//        // remove method prefixes like 'add', 'get' and 'delete'
-//        foreach ($this->validPrefixes as $prefix){
-//            if (substr($property, 0, strlen($prefix)) == $prefix){
-//                $property = substr($property, strlen($prefix));
-//                $action = $prefix;
-//                break;
-//            }
-////            $property = preg_replace('/'.$prefix.'/', '', $property, 1);
-//        }
-//        
-//        // if property and method name are the same, the method didn't contain a valid prefix
-//        // and thus cannot be a valid method action.
-//        if ($property == $methodName)
-//            throw new BadMethodCallException('The method '.$methodName.' does not exist....');
-//        
-//        // remove 's'/'ies' in case where property is plural but method is singular
-//        if (substr($property, -1) == 's'){
-//            $property = substr($property, 0, -1);
-//        } else if (substr($property, -3) == 'ies'){
-//            $property = substr($property, 0, -3) . 'y';
-//        }
-//        
-//        // lowercase first letter
-//        $property = lcfirst($property);
-//        
-//        // if the property isn't specified as modifiable, then we don't want that property modified
-//        if (!isset(array_flip($this->modifiablePropertyNames)[$property]))
-//            throw new BadMethodCallException('The method '.$methodName.' does not exist');
-//        
-//        echo '<br>property: '.$property;
-//        
-//        // determine method action to call
-////        if ($action == 'add'){
-//////            $this->add($arguments)
-////            call_user_func_array(array($this, 'add'), $arguments);
-////        }
-////        else if ($action == 'get'){
-//////            $this->get($arguments);
-////            call_user_func_array(array($this, 'get'), $arguments);
-////        }
-////        else if ($action == 'delete'){
-//////            $this->delete($arguments);
-////            call_user_func_array(array($this, 'delete'), $arguments);
-////        }
-//        
-//        
-//    }
-    
+    private $constructed = false;    
     
     public function __call($methodName, $arguments){
         if (!isset($this->availableMethods[$methodName]))
@@ -191,33 +128,6 @@ trait ModifiableArray {
         array_splice($this->{$property}, $position, 1);
     }
     
-//    /**
-//     *  @throws InvalidArgumentException if no arguments are provided
-//     */
-//    private function setModifiablePropertyName()
-//    {
-////        if (func_num_args() == 1){
-////            // store argument in array
-////            $this->modifiablePropertyNames = array(func_get_arg(0));
-////        } else if (func_num_args() > 1){
-////            // store all arguments in array
-////            $this->modifiablePropertyNames = func_get_args();
-////        } else {
-////            throw new InvalidArgumentException('You must provide at least 1 argument in setModifiablePropertyName()');
-////        }
-//        $el = array('content', 'metadata', 'regionContent', 'rows' => 'row', 'columnOptions' => 'columnOption');
-//            
-//        foreach($els as $key => $value){
-//            if (is_int($key)){
-//                // only property name provided
-//                $this->generateAvailableMethods($value);
-//            } else {
-//                // both property and method suffix provided (format 'property' => 'methodSuffix'
-//                $this->generateAvailableMethods($value, $key);
-//            }
-//        }
-//    }
-    
     /**
      *  Fake constructor to initialize arrays
      */
@@ -241,16 +151,6 @@ trait ModifiableArray {
     private function setModifiableProperties($properties)
     {
         $this->construct();
-//        if (func_num_args() == 1){
-//            // store argument in array
-//            $this->modifiablePropertyNames = array(func_get_arg(0));
-//        } else if (func_num_args() > 1){
-//            // store all arguments in array
-//            $this->modifiablePropertyNames = func_get_args();
-//        } else {
-//            throw new InvalidArgumentException('You must provide at least 1 argument in setModifiablePropertyName()');
-//        }
-//        $el = array('content', 'metadata', 'regionContent', 'rows' => 'row', 'columnOptions' => 'columnOption');
         
         if (count($properties) == 1 && is_int(key($properties))){
             // only 1 property provided (and it doesn't specify a different property and method suffix)
