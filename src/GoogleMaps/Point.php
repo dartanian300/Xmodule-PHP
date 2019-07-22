@@ -1,10 +1,14 @@
 <?php
+namespace XModule\GoogleMaps;
+
 /**
  *  @package GoogleMaps
  *  
  */
 require_once(__DIR__."/../DataWrappers/Longitude.php");
 require_once(__DIR__."/../DataWrappers/Latitude.php");
+
+use XModule\DataWrapper as DataWrapper;
 
 class Point implements JsonSerializable {
     /** @var Latitude */
@@ -16,8 +20,8 @@ class Point implements JsonSerializable {
 	{
 		parent::__construct();
         
-        $this->latitude = new Latitude();
-        $this->longitude = new Longitude();
+        $this->latitude = new DataWrapper\Latitude();
+        $this->longitude = new DataWrapper\Longitude();
 	}
     
     public function jsonSerialize()

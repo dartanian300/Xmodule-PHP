@@ -1,4 +1,6 @@
 <?php
+namespace XModule\GoogleMaps;
+
 /**
  *  @package GoogleMaps
  *  
@@ -11,6 +13,8 @@ require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/Description.php");
 require_once(__DIR__."/../DataWrappers/Alpha.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
+
+use XModule\DataWrapper as DataWrapper;
 
 /**
  *  Summary.
@@ -44,12 +48,12 @@ class MapPolyline extends Element implements JsonSerializable {
 		parent::__construct('mapPolyline', $id);
         $this->setModifiableProperties(array('polyline'));
         
-        $this->title = new Title();
-        $this->description = new Description();
+        $this->title = new DataWrapper\Title();
+        $this->description = new DataWrapper\Description();
         $this->link = new Link();
-        $this->lineColor = new Color();
-        $this->lineAlpha = new Alpha();
-        $this->lineWidth = new LineWidth();
+        $this->lineColor = new DataWrapper\Color();
+        $this->lineAlpha = new DataWrapper\Alpha();
+        $this->lineWidth = new DataWrapper\LineWidth();
         $this->polyline = array();
 	}
     

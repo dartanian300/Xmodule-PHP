@@ -1,10 +1,16 @@
 <?php
+namespace XModule\GoogleMaps\MapPoint;
+
 /**
  *  @package GoogleMaps
  *  
  */
 require_once(__DIR__."/../../DataWrappers/URL.php");
 require_once(__DIR__."/../../DataWrappers/Scale.php");
+require_once(__DIR__."/Size.php");
+require_once(__DIR__."/Anchor.php");
+
+use XModule\DataWrapper as DataWrapper;
 
 class Icon implements JsonSerializable {
     /** @var URL */
@@ -20,8 +26,8 @@ class Icon implements JsonSerializable {
 	{
 		parent::__construct();
         
-        $this->url = new URL();
-        $this->scale = new Scale();
+        $this->url = new DataWrapper\URL();
+        $this->scale = new DataWrapper\Scale();
         $this->size = new Size();
         $this->anchor = new Anchor();
 	}

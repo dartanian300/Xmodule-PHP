@@ -1,9 +1,13 @@
 <?php
+namespace XModule\GoogleMaps\MapPoint;
+
 /**
  *  @package GoogleMaps
  *  
  */
 require_once(__DIR__."/../../DataWrappers/Number.php");
+
+use XModule\DataWrapper as DataWrapper;
 
 class Anchor implements JsonSerializable {
     /** @var Number */
@@ -15,8 +19,8 @@ class Anchor implements JsonSerializable {
 	{
 		parent::__construct();
         
-        $this->x = new Number();	// Number
-        $this->y = new Number();	// Number
+        $this->x = new DataWrapper\Number();
+        $this->y = new NDataWrapper\umber();
 	}
     
     public function jsonSerialize()
