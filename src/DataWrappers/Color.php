@@ -1,10 +1,15 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/XString.php");
+
+/**
+ *  @todo Enforce color format (hex)
+ */
 class Color extends String {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
 }
-?>
+

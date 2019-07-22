@@ -1,10 +1,12 @@
 <?php
-class Title extends String {
-	public static function constructor__ () 
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/XString.php");
+
+class Title extends XString {
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
 }
-?>
+

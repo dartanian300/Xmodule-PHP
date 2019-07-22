@@ -1,15 +1,37 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class BrowserType extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function appModal (); 
-	abstract function appScreen (); 
-	abstract function systemBrowserEmbedded (); 
-	abstract function systemBrowserExternal (); 
-	abstract function operation (); 
+    
+	public function appModal()
+    {
+        $this->data = 'appModal';
+    } 
+    
+	public function appScreen()
+    {
+        $this->data = 'appScreen';
+    } 
+    
+	public function systemBrowserEmbedded()
+    {
+        $this->data = 'systemBrowserEmbedded';
+    } 
+    
+	public function systemBrowserExternal()
+    {
+        $this->data = 'systemBrowserExternal';
+    } 
+    
+	public function operation()
+    {
+        $this->data = 'operation';
+    } 
 }
-?>
+

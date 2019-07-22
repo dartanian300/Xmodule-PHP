@@ -1,10 +1,12 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/Number.php");
+
 class Longitude extends Number {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
 }
-?>
+

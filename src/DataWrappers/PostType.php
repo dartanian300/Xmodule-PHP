@@ -1,12 +1,22 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class PostType extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function foreground (); 
-	abstract function background (); 
+    
+	public function foreground()
+    {
+        $this->data = 'foreground';
+    }
+        
+	public function background()
+    {
+        $this->data = 'background';
+    }
 }
-?>
+

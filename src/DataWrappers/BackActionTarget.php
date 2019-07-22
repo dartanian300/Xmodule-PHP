@@ -1,15 +1,38 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class BackActionTarget extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function parent (); 
-	abstract function grandparent (); 
-	abstract function module (); 
-	abstract function home (); 
-	abstract function none (); 
+    
+	public function parent()
+    {
+        $this->data = 'parent';
+    }
+        
+	public function grandparent()
+    {
+        $this->data = 'grandparent';
+    }
+        
+	public function module()
+    {
+        $this->data = 'module';
+    }
+        
+	public function home()
+    {
+        $this->data = 'home';
+    }
+        
+	public function none()
+    {
+        $this->data = 'none';
+    }
+        
 }
-?>
+

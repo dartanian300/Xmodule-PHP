@@ -1,12 +1,20 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class ButtonType extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function submit (); 
-	abstract function reset (); 
+    
+	public function submit(){
+        $this->data = 'submit';
+    }
+    
+	public function reset(){
+        $this->data = 'reset';
+    }
 }
-?>
+

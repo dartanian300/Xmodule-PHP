@@ -1,13 +1,27 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class Margins extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function none (); 
-	abstract function responsive (); 
-	abstract function minimal (); 
+    
+	public function none()
+    {
+        $this->data = 'none';
+    }
+    
+	public function responsive()
+    {
+        $this->data = 'responsive';
+    }
+    
+	public function minimal()
+    {
+        $this->data = 'minimal';
+    }
 }
-?>
+

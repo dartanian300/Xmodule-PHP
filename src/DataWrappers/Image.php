@@ -1,12 +1,20 @@
 <?php
-require_once("model/Package/Badge.php");
-class Image extends String {
-	public $badge;	// Badge
-	public static function constructor__ () 
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/XString.php");
+require_once(__DIR__."../Helpers/Badge.php");
+
+class Image extends XString {
+    /**
+     *  @var Badge Used in GridItem
+     *  @see Badge
+     */
+	public $badge;
+    
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
+        $this->badge = new Badge();
 	}
 }
-?>
+

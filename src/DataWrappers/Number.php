@@ -1,4 +1,6 @@
 <?php
+namespace XModule\DataWrapper;
+
 require_once(__DIR__."/DataWrapperBase.php");
 
 class Number extends DataWrapperBase {

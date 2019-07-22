@@ -1,13 +1,26 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class VerticalAlignment extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function top (); 
-	abstract function middle (); 
-	abstract function bottom (); 
+    
+	public function top(){
+        $this->data = 'top';
+    }
+    
+	public function middle()
+    {
+        $this->data = 'middle';
+    }
+    
+	public function bottom()
+    {
+        $this->data = 'bottom';
+    }
 }
-?>
+

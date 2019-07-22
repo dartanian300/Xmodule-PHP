@@ -1,15 +1,38 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class AspectRatio extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function sixteenNine (); 
-	abstract function fourThree (); 
-	abstract function oneOne (); 
-	abstract function thirteenFour (); 
-	abstract function nineSixteen (); 
+    
+	public function sixteenNine()
+    {
+        $this->data = 'sixteenNine';
+    }
+        
+	public function fourThree()
+    {
+        $this->data = 'fourThree';
+    }
+        
+	public function oneOne()
+    {
+        $this->data = 'oneOne';
+    }
+        
+	public function thirteenFour()
+    {
+        $this->data = 'thirteenFour';
+    }
+        
+	public function nineSixteen()
+    {
+        $this->data = 'nineSixteen';
+    }
+        
 }
-?>
+

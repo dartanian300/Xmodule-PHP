@@ -1,12 +1,23 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class TabType extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function folder (); 
-	abstract function strip (); 
+    
+	public function folder()
+    {
+        $this->data = 'folder';
+    }
+        
+	public function strip()
+    {
+        $this->data = 'strip';
+    }
+        
 }
-?>
+

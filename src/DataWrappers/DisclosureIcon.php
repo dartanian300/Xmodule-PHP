@@ -1,12 +1,23 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class DisclosureIcon extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function plusminus (); 
-	abstract function chevron (); 
+    
+	public function plusminus()
+    {
+        $this->data = 'plusminus';
+    }
+        
+	public function chevron()
+    {
+        $this->data = 'chevron';
+    }
+        
 }
-?>
+

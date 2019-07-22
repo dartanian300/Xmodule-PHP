@@ -1,13 +1,28 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class HorizontalAlignment extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function left (); 
-	abstract function center (); 
-	abstract function right (); 
+    
+	public function left()
+    {
+        $this->data = 'left';
+    }
+        
+	public function center()
+    {
+        $this->data = 'center';
+    }
+        
+	public function right()
+    {
+        $this->data = 'right';
+    }
+        
 }
-?>
+

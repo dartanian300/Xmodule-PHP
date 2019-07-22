@@ -1,18 +1,66 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class BaseLayers extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
+        $this->data = array();
 	}
-	abstract function addRoadmap (); 
-	abstract function addSatellite (); 
-	abstract function addHybrid (); 
-	abstract function addTerrain (); 
-	abstract function removeRoadmap (); 
-	abstract function removeSatellite (); 
-	abstract function removeHybrid (); 
-	abstract function removeTerrain (); 
+    
+	public function addRoadmap()
+    {
+        $this->data[] = 'roadmap';
+    }
+    
+	public function Satellite()
+    {
+        $this->data[] = 'satellite';
+    }
+    
+	public function Hybrid()
+    {
+        $this->data[] = 'hybrid';
+    }
+    
+	public function Terrain()
+    {
+        $this->data[] = 'terrain';
+    }
+    
+    
+	public function removeRoadmap()
+    {
+        $this->remove('roadmap');
+    }
+    
+	public function removeSatellite()
+    {
+        $this->remove('satellite');
+    }
+    
+	public function removeHybrid()
+    {
+        $this->remove('hybrid');
+    }
+    
+	public function removeTerrain()
+    {
+        $this->remove('terrain');
+    }
+    
+    /**
+     *  Removes a string from the data array
+     *  @param string $value The string to remove
+     */
+    private function remove($value){
+        $position = array_search($value, $this->data);
+        
+        if ($position !== false)
+            array_splice($this->data, $position, 1);
+    }
+    
 }
-?>
+

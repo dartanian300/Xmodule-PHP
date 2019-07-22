@@ -1,14 +1,33 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class HorizontalSpacing extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function extraTight (); 
-	abstract function tight (); 
-	abstract function normal (); 
-	abstract function loose (); 
+    
+	public function extraTight()
+    {
+        $this->data = 'extraTight';
+    }
+        
+	public function tight()
+    {
+        $this->data = 'tight';
+    }
+        
+	public function normal()
+    {
+        $this->data = 'normal';
+    }
+        
+	public function loose()
+    {
+        $this->data = 'loose';
+    }
+        
 }
-?>
+

@@ -1,12 +1,23 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class Shortcut extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function moduleParentHome (); 
-	abstract function personaHome (); 
+    
+	public function moduleParentHome()
+    {
+        $this->data = 'moduleParentHome';
+    }
+    
+	public function personaHome()
+    {
+        $this->data = 'personaHome';
+    }
+    
 }
-?>
+

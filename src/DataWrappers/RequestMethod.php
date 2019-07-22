@@ -1,12 +1,23 @@
 <?php
+namespace XModule\DataWrapper;
+
+require_once(__DIR__."/DataWrapperBase.php");
+
 class RequestMethod extends DataWrapperBase {
-	public static function constructor__ () 
+	public function __construct() 
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct();
 	}
-	abstract function get (); 
-	abstract function post (); 
+    
+	public function get()
+    {
+        $this->data = 'get';
+    }
+        
+	public function post()
+    {
+        $this->data = 'post';
+    }
+        
 }
-?>
+

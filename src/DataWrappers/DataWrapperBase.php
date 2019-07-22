@@ -1,5 +1,7 @@
 <?php
-abstract class DataWrapperBase implements JsonSerializable {
+namespace XModule\DataWrapper;
+
+abstract class DataWrapperBase implements \JsonSerializable {
     /** @var mixed */
 	protected $data;
     

@@ -3,20 +3,20 @@ namespace XModule\DataWrapper;
 
 require_once(__DIR__."/DataWrapperBase.php");
 
-class MenuPosition extends DataWrapperBase {
+class Boolean extends DataWrapperBase {
 	public function __construct() 
 	{
 		parent::__construct();
 	}
     
-	public function left()
+	public function true()
     {
-        $this->data = 'left';
+        $this->data = true;
     }
         
-	public function right()
+	public function false()
     {
-        $this->data = 'right';
+        $this->data = false;
     }
         
 }
