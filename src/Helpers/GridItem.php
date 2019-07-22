@@ -1,9 +1,13 @@
 <?php
+namespace XModule\Helpers;
+
 require_once(__DIR__."/../Link.php");
 require_once(__DIR__."/../Forms/Label.php");
 require_once(__DIR__."/../Image.php");
 
-class GridItem implements JsonSerializable {
+use XModule\DataWrapper as DataWrapper;
+
+class GridItem implements \JsonSerializable {
     /** @var Image */
 	public $image;
     /** @var Label */
@@ -14,6 +18,10 @@ class GridItem implements JsonSerializable {
 	public  function __construct() 
 	{
 //		parent::__construct();
+        
+        $this->image = new Image();
+        $this->label = new Label();
+        $this->link = new Link();
 	}
     
     public function jsonSerialize()

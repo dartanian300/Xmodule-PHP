@@ -1,17 +1,21 @@
 <?php
+namespace XModule\Helpers;
+
 require_once(__DIR__."/../DataWrappers/MaxHeight.php");
 require_once(__DIR__."/../DataWrappers/MaxWidth.php");
 require_once(__DIR__."/../DataWrappers/Alt.php");
 require_once(__DIR__."/../DataWrappers/Boolean.php");
-require_once(__DIR__."/../Image.php");
+require_once(__DIR__."/../DataWrappers/URL.php");
+require_once(__DIR__."/Badge.php");
+
+use XModule\DataWrapper as DataWrapper;
 
 /**
- *  @todo resolve image conflict
+ *  TODO: resolve image conflict
  *  @todo ensure booleans are coming across as classes in documentation
  */
-
-class Thumbnail implements JsonSerializable {
-    /** @var Image */
+class Thumbnail implements \JsonSerializable {
+    /** @var URL */
 	public $url;
     /** @var MaxWidth */
 	public $maxWidth;
@@ -30,16 +34,27 @@ class Thumbnail implements JsonSerializable {
 	public  function __construct() 
 	{
 //		parent::__construct();
+        
+        $this->url = new DataWrapper\URL();
+        $this->maxWidth = new DataWrapper\MaxWidth();
+        $this->maxHeight = new DataWrapper\MaxHeight();
+        $this->crop = new DataWrapper\Boolean();
+        $this->alt = new DataWrapper\Alt();
+        $this->badge = new Badge();
 	}
     
     public function jsonSerialize()
     {        
+//        if ($this->url->get() === null)
+//            return;
+        
         $format = array(
             'url' => $this->url,
             'maxWidth' => $this->maxWidth,
             'maxHeight' => $this->maxHeight,
             'crop' => $this->crop,
             'alt' => $this->alt,
+            'badge' => $this->badge
         );
         
         return $format;

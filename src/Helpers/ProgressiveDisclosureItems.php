@@ -1,12 +1,15 @@
 <?php
+namespace XModule\Helpers;
+
+use XModule\DataWrapper as DataWrapper;
 
 /**
  *  @todo might need toJSON method
  *  @todo I think each key can have multiple elements...might need to rewrite this to allow that
- *  TODO: Use ModifiableArray?
+ *  @todo Use ModifiableArray?
  */
 
-class ProgressiveDisclosureItems implements JsonSerializable {
+class ProgressiveDisclosureItems implements \JsonSerializable {
     /** @var mixed[] An associative array */
 	private $items;
     

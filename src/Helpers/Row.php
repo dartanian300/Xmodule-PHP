@@ -1,6 +1,10 @@
 <?php
+namespace XModule\Helpers;
+
 require_once(__DIR__."/../Link.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
+
+use XModule\DataWrapper as DataWrapper;
 
 /**
  *  Summary.
@@ -11,7 +15,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
  *
  *  @todo: figure out why these methods aren't parsing
  */
-class Row implements JsonSerializable {
+class Row implements \JsonSerializable {
     use ModifiableArray;
     
     /** @var Cell[] */

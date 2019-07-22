@@ -1,9 +1,13 @@
 <?php
+namespace XModule\Helpers;
+
 require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/Number.php");
 require_once(__DIR__."/QueryParameters.php");
 
-class NativePlugin implements JsonSerializable {
+use XModule\DataWrapper as DataWrapper;
+
+class NativePlugin implements \JsonSerializable {
     /** @var XString */
 	public $id;
     /** @var QueryParameters */
@@ -19,6 +23,10 @@ class NativePlugin implements JsonSerializable {
 	public function __construct() 
 	{
 //		parent::__construct();
+        
+        $this->id = new DataWrapper\XString();
+        $this->queryParameters = new QueryParameters();
+        $this->version = new DataWrapper\Number();
 	}
     
     public function jsonSerialize()

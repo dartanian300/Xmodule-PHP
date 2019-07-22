@@ -1,10 +1,14 @@
 <?php
+namespace XModule\Helpers;
+
 require_once(__DIR__."/../Link.php");
 require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/Description.php");
 
-class ListItem implements JsonSerializable {
+use XModule\DataWrapper as DataWrapper;
+
+class ListItem implements \JsonSerializable {
     /** @var Title */
 	public $title;
     /** @var XString */
@@ -19,6 +23,12 @@ class ListItem implements JsonSerializable {
 	public function __construct() 
 	{
 //		parent::__construct();
+        
+        $this->title = new DataWrapper\Title();
+        $this->label = new DataWrapper\XString();
+        $this->description = new DataWrapper\Description();
+        $this->link = new Link();
+        $this->thumbnail = new Thumbnail();
 	}
     
     public function jsonSerialize()

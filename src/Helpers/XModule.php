@@ -1,13 +1,19 @@
 <?php
+namespace XModule\Helpers;
+
 require_once(__DIR__."/../DataWrappers/XString.php");
 
-class XModule implements JsonSerializable {
+use XModule\DataWrapper as DataWrapper;
+
+class XModule implements \JsonSerializable {
     /** @var XString */
 	public $relativePath;
     
 	public function __construct() 
 	{
 //		parent::__construct();
+        
+        $this->relativePath = new DataWrapper\XString();
 	}
     
     public function jsonSerialize()
