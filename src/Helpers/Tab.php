@@ -6,18 +6,6 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-/**
-    @todo does this need to check type???? Modifiable array add
-*/
-/**
- *  Summary.
- *  Description.
- *  @method void add(mixed $item)
- *  @method mixed get(integer $position = null)
- *  @method void delete(integer $position)
- *
- *  @todo: figure out why these methods aren't parsing
- */
 class Tab implements \JsonSerializable {
     use ModifiableArray;
     
@@ -29,11 +17,39 @@ class Tab implements \JsonSerializable {
 	public  function __construct() 
 	{
 //		parent::__construct();
-        $this->setModifiableProperties(array('content'));
         
         $this->title = new DataWrapper\Title();
         $this->content = array();
 	}
+    
+    /**
+     *  Adds an element to the content of Tab.
+     *  @param mixed $item An object to add
+     */
+    public function add($item)
+    {
+        $this->addArray('content', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of Tab.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('content', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of Tab.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('content', $position);
+    }
     
     public function jsonSerialize()
     {        

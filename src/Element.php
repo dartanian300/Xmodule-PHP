@@ -1,23 +1,57 @@
 <?php
+/**
+ *  @package Elements
+ *  
+ */
+
 abstract class Element {
-	protected $elementType;	// String
-	protected $id;	// String
-	public static function constructor__String ($elementType) // [String elementType]
+    /** @var string */
+	protected $elementType;
+    /** @var string */
+	protected $id;
+    
+    /**
+     *  @param string $elementType
+     *  @param string $id
+     */
+	public function __construct($elementType, $id = '')
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		$this->setId($id);
+        $this->setElementType($elementType);
 	}
-	abstract function toJSON (); 
-	public function getElementType () 
+    
+    /**
+     *  @return string
+     */
+	public function getElementType() 
 	{
-		return "";
+		return $this->elementType;
 	}
-	abstract function setElementType (); 
-	public function getId () 
+    
+    /**
+     *  @return string
+     */
+	public function getId() 
 	{
-		return "";
+		return $this->id;
 	}
-	abstract function setId (); 
+    
+    /**
+     *  @return string
+     */
+    private function setElementType($elType)
+    {
+        $this->elementType = $elType;
+    }
+    
+    /**
+     *  @param string
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+    
+//    abstract function toJSON(); 
+	
 }
-?>

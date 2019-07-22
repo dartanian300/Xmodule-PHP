@@ -6,16 +6,6 @@
 require_once(__DIR__."/Element.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-/**
- *  Summary.
- *  Description.
- *  @method void add(mixed $item)
- *  @method mixed get(integer $position = null)
- *  @method void delete(integer $position)
- *
- *  @todo: figure out why these methods aren't parsing
- *  @todo: recode ModifiableArray so that actual methods are in classes
- */
 class ButtonContainer extends Element implements \JsonSerializable {
     use ModifiableArray; 
     
@@ -25,10 +15,38 @@ class ButtonContainer extends Element implements \JsonSerializable {
 	public function __construct($id = '')
 	{
 		parent::__construct('buttonContainer', $id);
-        $this->setModifiableProperties(array('buttons'));
         
         $this->buttons = array();
 	}
+    
+    /**
+     *  Adds an element to the content of ButtonContainer.
+     *  @param mixed $item An object to add
+     */
+    public function add($item)
+    {
+        $this->addArray('buttons', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of ButtonContainer.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('buttons', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of ButtonContainer.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('buttons', $position);
+    }
     
     public function jsonSerialize()
     {        

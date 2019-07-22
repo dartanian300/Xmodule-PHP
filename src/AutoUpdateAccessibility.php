@@ -1,16 +1,41 @@
 <?php
-require_once("model/DataWrappers/Boolean.php");
-require_once("model/DataWrappers/TextAlignment.php");
-require_once("model/DataWrappers/DisclaimerType.php");
-class AutoUpdateAccessibility extends Element {
-	public $disclaimerType;	// DisclaimerType
-	public $textAlignment;	// TextAlignment
-	public $inset;	// boolean
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Elements
+ *  
+ */
+
+require_once(__DIR__."/Element.php");
+require_once(__DIR__."/DataWrappers/Boolean.php");
+require_once(__DIR__."/DataWrappers/TextAlignment.php");
+require_once(__DIR__."/DataWrappers/DisclaimerType.php");
+
+class AutoUpdateAccessibility extends Element implements \JsonSerializable {
+    /** @var DisclaimerType */
+	public $disclaimerType;
+    /** @var TextAlignment */
+	public $textAlignment;
+    /** @var \Boolean */
+	public $inset;
+    
+	public function __construct($id = '')
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('autoUpdateAccessibility', $id);
+        
+        $this->disclaimerType = new disclaimerType();
+        $this->textAlignment = new textAlignment();
+        $this->inset = new Boolean();
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'disclaimerType' => $this->disclaimerType,
+            'textAlignment' => $this->textAlignment,
+            'inset' => $this->inset
+        );
+        
+        return $format;
+    }
 }
-?>
+

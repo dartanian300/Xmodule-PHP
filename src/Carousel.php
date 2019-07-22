@@ -1,17 +1,63 @@
 <?php
-require_once("model/Package/CarouselItem.php");
-class Carousel extends Element {
-	protected $items;	// array
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Elements
+ *  
+ */
+require_once(__DIR__."/Element.php");
+require_once(__DIR__."/Helpers/CarouselItem.php");
+require_once(__DIR__."/Traits/ModifiableArray.php");
+
+class Carousel extends Element implements \JsonSerializable {
+    use ModifiableArray; 
+    
+    /** @var CarouselItem[] */
+	private $items;
+    
+	public function __construct($id = '')
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('carousel', $id);
+        
+        $this->items = array();
 	}
-	abstract function add ($item); // [CarouselItem item]
-	public function get ($position) // [int position]
-	{
-		return NULL;
-	}
+    
+    /**
+     *  Adds an element to the content of Carousel.
+     *  @param mixed $item A CarouselItem object to add
+     */
+    public function add($item)
+    {
+        $this->addArray('items', $item, 'CarouselItem');
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of Carousel.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('items', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of Carousel.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('items', $position);
+    }
+	
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'id' => $this->id,
+            'items' => $this->items,
+        );
+        
+        return $format;
+    }
 }
-?>
+

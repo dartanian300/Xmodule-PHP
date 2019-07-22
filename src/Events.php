@@ -1,7 +1,6 @@
 <?php
 /**
  *  @package Traits
- *  TODO: Figure out how traits work with JSON
  */
 require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");

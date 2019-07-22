@@ -10,15 +10,6 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-/**
- *  Summary.
- *  Description.
- *  @method void add(mixed $row)
- *  @method MenuItem get(integer $position = null)
- *  @method void delete(integer $position)
- *
- *  @todo: figure out why these methods aren't parsing
- */
 class ToolbarMenu extends Element implements \JsonSerializable {
     use ModifiableArray; 
     
@@ -28,10 +19,38 @@ class ToolbarMenu extends Element implements \JsonSerializable {
 	public function __construct($id = '') 
 	{
 		parent::__construct('toolbarMenu', $id);
-        $this->setModifiableProperties(array('items'));
         
         $this->items = array();
 	}
+    
+    /**
+     *  Adds an element to the content of ToolbarMenu.
+     *  @param mixed $item A MenuItem object to add
+     */
+    public function add($item)
+    {
+        $this->addArray('items', $item, 'MenuItem');
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of ToolbarMenu.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('items', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of ToolbarMenu.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('items', $position);
+    }
     
     public function jsonSerialize()
     {        

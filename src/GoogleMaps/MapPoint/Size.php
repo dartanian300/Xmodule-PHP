@@ -10,7 +10,7 @@ require_once(__DIR__."/../../DataWrappers/Width.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-class Size implements JsonSerializable {
+class Size implements \JsonSerializable {
     /** @var Width */
 	public $width;
     /** @var Height */

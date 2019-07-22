@@ -10,19 +10,6 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
 use XModule\DataWrapper as DataWrapper;
 use XModule\Helpers as Helpers;
 
-/**
- *  Summary.
- *  Description.
- *  @method void addOptionLabel(string $item)
- *  @method mixed getOptionLabel(integer $position = null)
- *  @method void deleteOptionLabel(integer $position)
- *
- *  @method void addOptionValue(string $item)
- *  @method mixed getOptionValue(integer $position = null)
- *  @method void deleteOptionValue(integer $position)
- *
- *  @todo: figure out why these methods aren't parsing
- */
 class SelectMenu extends FormElement implements \JsonSerializable {
 	use ModifiableArray; 
     
@@ -36,12 +23,69 @@ class SelectMenu extends FormElement implements \JsonSerializable {
 	public function __construct() 
 	{
 		parent::__construct('select');
-        $this->setModifiableProperties(array('optionLabels' => 'optionLabel', 'optionValues' => 'optionValue'));
         
         $this->optionLabels = array();
         $this->optionValues = array();
         $this->progressiveDisclosureItems = new Helpers\ProgressiveDisclosureItems();
 	}
+    
+    /**
+     *  Adds an element to the content of SelectMenu.
+     *  @param mixed $item An object to add
+     */
+    public function addOptionLabel($item)
+    {
+        $this->addArray('optionLabels', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of SelectMenu.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function getOptionLabel($position = null)
+    {
+        $this->getArray('optionLabels', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of SelectMenu.
+     *  @param int $position The element position to delete
+     */
+    public function deleteOptionLabel($position)
+    {
+        $this->deleteArray('optionLabels', $position);
+    }
+    
+    /**
+     *  Adds an element to the content of SelectMenu.
+     *  @param mixed $item An object to add
+     */
+    public function addOptionValue($item)
+    {
+        $this->addArray('optionValues', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of SelectMenu.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function getOptionValue($position = null)
+    {
+        $this->getArray('optionValues', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of SelectMenu.
+     *  @param int $position The element position to delete
+     */
+    public function deleteOptionValue($position)
+    {
+        $this->deleteArray('optionValues', $position);
+    }
     
     public function jsonSerialize()
     {        

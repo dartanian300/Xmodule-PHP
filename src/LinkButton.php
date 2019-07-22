@@ -11,7 +11,7 @@ require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/DataWrappers/Title.php");
 require_once(__DIR__."/Events.php");
 
-class LinkButton extends Element implements JsonSerializable {    
+class LinkButton extends Element implements \JsonSerializable {    
     /** @var Title */
 	public $title;
     /** @var Link */
@@ -23,7 +23,7 @@ class LinkButton extends Element implements JsonSerializable {
     /** @var ActionType */
 	public $actionType;
     /** @var Events */
-    private $events;
+    public $events;
     
 	public function __construct($id = '')
 	{

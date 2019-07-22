@@ -9,7 +9,7 @@ require_once(__DIR__."/../../DataWrappers/Number.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-class Anchor implements JsonSerializable {
+class Anchor implements \JsonSerializable {
     /** @var Number */
 	public $x;
     /** @var Number */

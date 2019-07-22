@@ -1,24 +1,86 @@
 <?php
-require_once("model/DataWrappers/String.php");
-require_once("model/DataWrappers/Size.php");
-require_once("model/DataWrappers/Title.php");
-class Portlet extends Element {
-	public $navbarTitle;	// Title
-	public $navbarIcon;	// String
-	public $navbarLink;	// Link
-	protected $content;	// array
-	protected $height;	// Size
-	public $forceAjaxOnLoad;	// boolean
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Elements
+ *  
+ */
+require_once(__DIR__."/Element.php");
+require_once(__DIR__."/DataWrappers/XString.php");
+require_once(__DIR__."/DataWrappers/Size.php");
+require_once(__DIR__."/DataWrappers/Title.php");
+require_once(__DIR__."/Traits/ModifiableArray.php");
+
+class Portlet extends Element implements \JsonSerializable {
+    use ModifiableArray;
+    
+    /** @var Title */
+	public $navbarTitle;
+    /** @var XString */
+	public $navbarIcon;
+    /** @var Link */
+	public $navbarLink;
+    /** @var \Boolean */
+    public $forceAjaxOnLoad;
+    /** @var mixed[] */
+	private $content;
+    /** @var Size */
+	private $height;
+	
+    
+	public function __construct($id = '')
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('portlet', $id);
+        
+        $this->navbarTitle = new Title();
+        $this->navbarIcon = new XString();
+        $this->navbarLink = new Link();
+        $this->forceAjaxOnLoad = new Boolean();
+        $this->content = array();
+        $this->height = new Size();
 	}
-	abstract function add ($item); // [mixed item]
-	public function get ($position) // [int position]
-	{
-		return NULL;
-	}
+    
+    /**
+     *  Adds an element to the content of Portlet.
+     *  @param mixed $item An object to add
+     */
+    public function add($item)
+    {
+        $this->addArray('content', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of Portlet.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('content', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of Portlet.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('content', $position);
+    }
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'id' => $this->id,
+            'navbarTitle' => $this->navbarTitle,
+            'navbarIcon' => $this->navbarIcon,
+            'navbarLink' => $this->navbarLink,
+            'content' => $this->content,
+            'height' => $this->height,
+            'forceAjaxOnLoad' => $this->forceAjaxOnLoad,
+        );
+        
+        return $format;
+    }
 }
-?>
+

@@ -16,16 +16,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-/**
- *  Summary.
- *  Description.
- *  @method void add(Point $item)
- *  @method mixed get(integer $position = null)
- *  @method void delete(integer $position)
- *
- *  @todo: figure out why these methods aren't parsing
- */
-class MapPolyline extends Element implements JsonSerializable {
+class MapPolyline extends Element implements \JsonSerializable {
     use ModifiableArray; 
     
     /** @var Title */
@@ -46,7 +37,6 @@ class MapPolyline extends Element implements JsonSerializable {
 	public function __construct($id = '') 
 	{
 		parent::__construct('mapPolyline', $id);
-        $this->setModifiableProperties(array('polyline'));
         
         $this->title = new DataWrapper\Title();
         $this->description = new DataWrapper\Description();
@@ -56,6 +46,35 @@ class MapPolyline extends Element implements JsonSerializable {
         $this->lineWidth = new DataWrapper\LineWidth();
         $this->polyline = array();
 	}
+    
+    /**
+     *  Adds an element to the content of MapPolyline.
+     *  @param mixed $item A Point object to add
+     */
+    public function add($item)
+    {
+        $this->addArray('polyline', $item, 'Point');
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of MapPolyline.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('polyline', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of MapPolyline.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('polyline', $position);
+    }
     
     public function jsonSerialize()
     {        

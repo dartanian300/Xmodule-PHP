@@ -1,10 +1,10 @@
 <?php
 class HeaderFooter {
-	public static function constructor__ () 
+	public  function __construct() 
 	{
 		$me = new self();
-		parent::constructor__();
+		parent::__construct();
 		return $me;
 	}
 }
-?>
+

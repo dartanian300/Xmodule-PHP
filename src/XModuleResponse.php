@@ -1,16 +1,8 @@
 <?php
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-/**
- *  Summary.
- *  Description.
- *  @method void add(mixed $item)
- *  @method mixed get(integer $position = null)
- *  @method void delete(integer $position)
- *
- *  @todo: figure out why these methods aren't parsing
- */
-class XModuleResponse implements JsonSerializable {
+
+class XModuleResponse implements \JsonSerializable {
     use ModifiableArray; 
     
     /** @var string[] Associative array of metadata properties */
@@ -20,22 +12,52 @@ class XModuleResponse implements JsonSerializable {
     /** @var mixed[] Same as $content, but for AJAX content */
 	private $regionContent;
     
+    /**
+     *
+     */
 	public function __construct() 
-	{
-        $this->setModifiableProperties(array('content'));
-        
+	{        
 		$this->metadata = array();
         $this->content = array();
         $this->regionContent = array();
         
         $this->initializeMetadata();
 	}
-        
+    
+    /**
+     *  Adds an element to the content of XModuleResponse.
+     *  @param mixed $item An object that inherits from Element
+     */
+    public function add($item)
+    {
+        $this->addArray('content', $item, 'Element');
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of XModuleResponse.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('content', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of XModuleResponse.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('content', $position);
+    }
+    
     /**
      *  Creates JSON response for xmodule
      *  @return string JSON representation of object
      */
-	public function print() 
+	public function json() 
 	{
         return json_encode($this);
 	}

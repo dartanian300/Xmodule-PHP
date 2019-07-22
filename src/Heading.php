@@ -1,17 +1,41 @@
 <?php
-require_once("model/DataWrappers/String.php");
-require_once("model/DataWrappers/Boolean.php");
-require_once("model/DataWrappers/Title.php");
-require_once("model/DataWrappers/Description.php");
-class Heading extends Element {
-	public $title;	// Title
-	public $description;	// Description
-	public $inset;	// boolean
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Elements
+ *  
+ */
+require_once(__DIR__."/Element.php");
+require_once(__DIR__."/DataWrappers/Boolean.php");
+require_once(__DIR__."/DataWrappers/Title.php");
+require_once(__DIR__."/DataWrappers/Description.php");
+
+class Heading extends Element implements \JsonSerializable {
+    /** @var Title */
+	public $title;
+    /** @var Description */
+	public $description;
+    /** @var \Boolean */
+	public $inset;
+    
+	public function __construct($id = '')
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('heading', $id);
+        
+        $this->title = new Title();
+        $this->description = new Description();
+        $this->inset = new Inset();
 	}
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'inset' => $this->inset,
+        );
+        
+        return $format;
+    }
 }
-?>
+

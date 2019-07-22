@@ -10,7 +10,7 @@ require_once(__DIR__."/../DataWrappers/Latitude.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-class Point implements JsonSerializable {
+class Point implements \JsonSerializable {
     /** @var Latitude */
 	public $latitude;
     /** @var Longitude */

@@ -1,22 +1,73 @@
 <?php
-require_once("model/DataWrappers/String.php");
-require_once("model/DataWrappers/Boolean.php");
-require_once("model/Package/Tab.php");
-require_once("model/DataWrappers/TabType.php");
-class Tabs extends Element {
-	protected $tabs;	// array
-	public $tabType;	// TabType
-	public $forceAjaxOnLoad;	// boolean
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Elements
+ *  
+ */
+require_once(__DIR__."/Element.php");
+require_once(__DIR__."/DataWrappers/Boolean.php");
+require_once(__DIR__."/Helpers/Tab.php");
+require_once(__DIR__."/DataWrappers/TabType.php");
+require_once(__DIR__."/Traits/ModifiableArray.php");
+
+class Tabs extends Element implements \JsonSerializable {
+    use ModifiableArray; 
+    
+    /** @var Tab[] */
+	private $tabs;
+    /** @var TabType */
+	public $tabType;
+    /** @var \Boolean */
+	public $forceAjaxOnLoad;
+    
+	public function __construct($id = '')
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('tabs', $id);
+        
+        $this->tabs = array();
+        $this->tabType = new TabType();
+        $this->forceAjaxOnLoad = new Boolean();
 	}
-	abstract function add ($tab); // [Tab tab]
-	public function get ($position) // [int position]
-	{
-		return NULL;
-	}
+    
+    /**
+     *  Adds an element to the content of Tabs.
+     *  @param mixed $item A Tab object to add
+     */
+    public function add($item)
+    {
+        $this->addArray('tabs', $item, 'Tab');
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of Tabs.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('tabs', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of Tabs.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('tabs', $position);
+    }
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'id' => $this->id,
+            'tabs' => $this->tabs,
+            'tabType' => $this->tabType,
+            'forceAjaxOnLoad' => $this->forceAjaxOnLoad,
+        );
+        
+        return $format;
+    }
 }
-?>
+

@@ -12,7 +12,7 @@ require_once(__DIR__."/Anchor.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-class Icon implements JsonSerializable {
+class Icon implements \JsonSerializable {
     /** @var URL */
 	public $url;
     /** @var Scale */

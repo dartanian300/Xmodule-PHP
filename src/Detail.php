@@ -1,23 +1,84 @@
 <?php
-require_once("model/Package/Thumbnail.php");
-require_once("model/DataWrappers/String.php");
-require_once("model/DataWrappers/Title.php");
-class Detail extends Element {
-	public $title;	// Title
-	public $subtitle;	// Title
-	public $body;	// String
-	protected $content;	// array
-	public $thumbnail;	// Thumbnail
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Elements
+ *  
+ */
+require_once(__DIR__."/Element.php");
+require_once(__DIR__."/Traits/ModifiableArray.php");
+require_once(__DIR__."/DataWrappers/Title.php");
+require_once(__DIR__."/DataWrappers/XString.php");
+require_once(__DIR__."/Helpers/Thumbnail.php");
+
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
+class Detail extends Element implements \JsonSerializable {
+    use ModifiableArray;
+    
+    /** @var Title */
+	public $title;
+    /** @var Title */
+	public $subtitle;
+    /** @var XString */
+	public $body;
+    /** @var Thumbnail */
+	public $thumbnail;
+    /** @var mixed[] */
+    private $content;
+    
+	public function __construct($id = '')
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('detail', $id);
+        
+        $this->title = new DataWrapper\Title();
+        $this->subtitle = new DataWrapper\Title();
+        $this->body = new DataWrapper\XString();
+        $this->thumbnail = new Helpers\Thumbnail();
+        $this->content = array();
 	}
-	abstract function add ($item); // [mixed item]
-	public function get ($position) // [int position]
-	{
-		return NULL;
-	}
+    
+    /**
+     *  Adds an element to the content of Detail.
+     *  @param mixed $item An object to add
+     */
+    public function add($item)
+    {
+        $this->addArray('content', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of Detail.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function get($position = null)
+    {
+        $this->getArray('content', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of Detail.
+     *  @param int $position The element position to delete
+     */
+    public function delete($position)
+    {
+        $this->deleteArray('content', $position);
+    }
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'id' => $this->id,
+            'title' => $this->title,
+            'subtitle' => $this->subtitle,
+            'body' => $this->body,
+            'thumbnail' => $this->thumbnail,
+            'content' => $this->content
+        );
+        
+        return $format;
+    }
 }
-?>
+

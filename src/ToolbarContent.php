@@ -1,40 +1,172 @@
 <?php
-require_once("model/DataWrappers/String.php");
-require_once("model/Toolbar/MenuItem.php");
-require_once("model/DataWrappers/MenuPosition.php");
-require_once("model/DataWrappers/Number.php");
-class ToolbarContent extends Element {
-	protected $menuItems;	// array
-	public $menuPosition;	// MenuPosition
-	public $ajaxUpdateInterval;	// Number
-	protected $left;	// array
-	protected $middle;	// array
-	protected $right;	// array
-	public static function constructor__String ($id) // [String id]
+/**
+ *  @package Elements
+ *  
+ */
+require_once(__DIR__."/Element.php");
+require_once(__DIR__."/Toolbar/MenuItem.php");
+require_once(__DIR__."/DataWrappers/MenuPosition.php");
+require_once(__DIR__."/DataWrappers/Number.php");
+require_once(__DIR__."/Traits/ModifiableArray.php");
+
+class ToolbarContent extends Element implements \JsonSerializable {
+    use ModifiableArray; 
+    
+    /** @var MenuPosition */
+	public $menuPosition;
+    /** @var Number */
+	public $ajaxUpdateInterval;
+    /** @var MenuItem[] */
+	private $menuItems;
+    /** @var mixed[] Elements can be ToolbarButton and ToolbarLabel */
+	private $left;
+    /** @var mixed[] Elements can be ToolbarButton and ToolbarLabel  */
+	private $middle;
+    /** @var mixed[] Elements can be ToolbarButton and ToolbarLabel  */
+	private $right;
+    
+	public function __construct($id = '') // [String id]
 	{
-		$me = new self();
-		parent::constructor__();
-		return $me;
+		parent::__construct('toolbarContentAjax', $id);
+        
+        $this->menuPosition =  new MenuPosition();
+        $this->ajaxUpdateInterval = new Number();;
+        $this->menuItems = array()
+        $this->left = array()
+        $this->middle = array()
+        $this->right = array()
 	}
-	abstract function addMenuItems ($item); // [MenuItem item]
-	abstract function addLeft ($item); // [mixed item]
-	abstract function addMiddle ($item); // [mixed item]
-	abstract function addRight ($item); // [mixed item]
-	public function getMenuItem ($position) // [int position]
-	{
-		return NULL;
-	}
-	public function getLeft ($position) // [int position]
-	{
-		return NULL;
-	}
-	public function getMiddle ($position) // [int position]
-	{
-		return NULL;
-	}
-	public function getRight ($position) // [int position]
-	{
-		return NULL;
-	}
+    
+    /**
+     *  Adds an element to the content of ToolbarContent.
+     *  @param mixed $item A ToolbarButton or ToolbarLabel object to add
+     */
+    public function addLeft($item)
+    {
+        $this->addArray('left', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of ToolbarContent.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function getLeft($position = null)
+    {
+        $this->getArray('left', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of ToolbarContent.
+     *  @param int $position The element position to delete
+     */
+    public function deleteLeft($position)
+    {
+        $this->deleteArray('left', $position);
+    }
+    
+    /**
+     *  Adds an element to the content of ToolbarContent.
+     *  @param mixed $item A ToolbarButton or ToolbarLabel object to add
+     */
+    public function addMiddle($item)
+    {
+        $this->addArray('middle', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of ToolbarContent.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function getMiddle($position = null)
+    {
+        $this->getArray('middle', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of ToolbarContent.
+     *  @param int $position The element position to delete
+     */
+    public function deleteMiddle($position)
+    {
+        $this->deleteArray('middle', $position);
+    }
+    
+    /**
+     *  Adds an element to the content of ToolbarContent.
+     *  @param mixed $item A ToolbarButton or ToolbarLabel object to add
+     */
+    public function addRight($item)
+    {
+        $this->addArray('right', $item);
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of ToolbarContent.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function getRight($position = null)
+    {
+        $this->getArray('right', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of ToolbarContent.
+     *  @param int $position The element position to delete
+     */
+    public function deleteRight($position)
+    {
+        $this->deleteArray('right', $position);
+    }
+    
+    /**
+     *  Adds an element to the content of ToolbarContent.
+     *  @param mixed $item A MenuItem object to add
+     */
+    public function addMenuItem($item)
+    {
+        $this->addArray('menuItems', $item, 'MenuItem');
+    }
+    
+    /**
+     *  Returns an element (or all elements) from the content of ToolbarContent.
+     *  @param int $position (optional) The element position to return.
+     *  @return array|mixed If $position is provided, returns the element at that
+     *    index in the array. If not, returns the entire array.
+     */
+    public function getMenuItem($position = null)
+    {
+        $this->getArray('menuItems', $position);
+    }
+    
+    /**
+     *  Deletes an element from the content of ToolbarContent.
+     *  @param int $position The element position to delete
+     */
+    public function deleteMenuItem($position)
+    {
+        $this->deleteArray('menuItems', $position);
+    }
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'elementType' => $this->elementType,
+            'id' => $this->id,
+            'menuItems' => $this->menuItems,
+            'menuPosition' => $this->menuPosition,
+            'ajaxUpdateInterval' => $this->ajaxUpdateInterval,
+            'left' => $this->left,
+            'middle' => $this->middle,
+            'right' => $this->right,
+        );
+        
+        return $format;
+    }
 }
-?>
+
