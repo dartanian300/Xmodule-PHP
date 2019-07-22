@@ -11,6 +11,8 @@ require_once(__DIR__."/../DataWrappers/RequestMethod.php");
 require_once(__DIR__."/../Events.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
+use XModule\DataWrapper as DataWrapper;
+
 /**
  *  Summary.
  *  Description.
@@ -20,7 +22,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
  *
  *  @todo: figure out why these methods aren't parsing
  */
-class Form extends Element implements JsonSerializable {
+class Form extends Element implements \JsonSerializable {
     use ModifiableArray;
     
     /** @var XString */
@@ -38,19 +40,19 @@ class Form extends Element implements JsonSerializable {
     /** @var mixed[] */
     private $items;
     /** @var Events */
-    private $events;
+    public $events;
     
 	public function __construct($id = '')
 	{
 		parent::__construct('form', $id);
         $this->setModifiableProperties(array('items'));
         
-        $this->relativePath = new XString();
-        $this->requestMethod = new RequestMethod();
-        $this->postType = new PostType();
-        $this->heading = new XString();
-        $this->disableScrim = new Boolean();
-        $this->loadingTitle = new XString();
+        $this->relativePath = new DataWrapper\XString();
+        $this->requestMethod = new DataWrapper\RequestMethod();
+        $this->postType = new DataWrapper\PostType();
+        $this->heading = new DataWrapper\XString();
+        $this->disableScrim = new DataWrapper\Boolean();
+        $this->loadingTitle = new DataWrapper\XString();
         $this->items = array();
         $this->events = new Events();
 	}

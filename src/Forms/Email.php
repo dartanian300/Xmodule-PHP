@@ -6,7 +6,9 @@
 require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../DataWrappers/XString.php");
 
-class Email extends FormElement implements JsonSerializable {
+use XModule\DataWrapper as DataWrapper;
+
+class Email extends FormElement implements \JsonSerializable {
     /** @var XString */
 	public $placeholder;
     
@@ -14,7 +16,7 @@ class Email extends FormElement implements JsonSerializable {
 	{
 		parent::__construct('email');
         
-        $this->placeholder = new XString();
+        $this->placeholder = new DataWrapper\XString();
 	}
     
     public function jsonSerialize()

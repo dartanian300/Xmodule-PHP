@@ -6,7 +6,9 @@
 require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../DataWrappers/Number.php");
 
-class Upload extends FormElement implements JsonSerializable {
+use XModule\DataWrapper as DataWrapper;
+
+class Upload extends FormElement implements \JsonSerializable {
     /** @var Number */
 	public $maxFileSize;
     
@@ -14,7 +16,7 @@ class Upload extends FormElement implements JsonSerializable {
 	{
 		parent::__construct();
         
-        $this->maxFileSize = new Number();
+        $this->maxFileSize = new DataWrapper\Number();
 	}
     
     public function jsonSerialize()

@@ -7,6 +7,9 @@ require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../Helpers/ProgressiveDisclosureItems.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
 /**
  *  Summary.
  *  Description.
@@ -20,7 +23,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
  *
  *  @todo: figure out why these methods aren't parsing
  */
-class SelectMenu extends FormElement implements JsonSerializable {
+class SelectMenu extends FormElement implements \JsonSerializable {
 	use ModifiableArray; 
     
     /** @var string[] */
@@ -37,7 +40,7 @@ class SelectMenu extends FormElement implements JsonSerializable {
         
         $this->optionLabels = array();
         $this->optionValues = array();
-        $this->progressiveDisclosureItems = new ProgressiveDisclosureItems();
+        $this->progressiveDisclosureItems = new Helpers\ProgressiveDisclosureItems();
 	}
     
     public function jsonSerialize()

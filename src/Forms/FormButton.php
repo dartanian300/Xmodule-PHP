@@ -10,7 +10,9 @@ require_once(__DIR__."/../DataWrappers/AccessoryIcon.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/ButtonType.php");
 
-class FormButton extends FormElement implements JsonSerializable {
+use XModule\DataWrapper as DataWrapper;
+
+class FormButton extends FormElement implements \JsonSerializable {
     /** @var Title */
 	public $title;
     /** @var ButtonType */
@@ -26,11 +28,11 @@ class FormButton extends FormElement implements JsonSerializable {
 	{
 		parent::__construct('formButton');
         
-        $this->title = new Title();
-        $this->buttonType = new ButtonType();
-        $this->accessoryIcon = new AccessoryIcon();
-        $this->accessoryIconPosition = new AccessoryIconPosition();
-        $this->actionType = new ActionType();
+        $this->title = new DataWrapper\Title();
+        $this->buttonType = new DataWrapper\ButtonType();
+        $this->accessoryIcon = new DataWrapper\AccessoryIcon();
+        $this->accessoryIconPosition = new DataWrapper\AccessoryIconPosition();
+        $this->actionType = new DataWrapper\ActionType();
 	}
     
     public function jsonSerialize()
