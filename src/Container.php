@@ -3,9 +3,9 @@
  *  @package Elements
  */
 require_once(__DIR__."/Element.php");
-require_once(__DIR__."/Traits/ModifiableArray.php");
 require_once(__DIR__."/DataWrappers/Margins.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
+require_once(__DIR__."/Traits/ModifiableArray.php");
 
 use XModule\DataWrapper as DataWrapper;
 use XModule\Helpers as Helpers;

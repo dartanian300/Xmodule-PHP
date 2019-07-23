@@ -2,8 +2,8 @@
 namespace XModule\Helpers;
 
 require_once(__DIR__."/../Link.php");
-require_once(__DIR__."/../Forms/Label.php");
 require_once(__DIR__."/../Image.php");
+require_once(__DIR__."/../Forms/Label.php");
 
 use XModule\DataWrapper as DataWrapper;
 

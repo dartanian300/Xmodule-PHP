@@ -6,8 +6,8 @@ namespace XModule\GoogleMaps;
  *  
  */
 require_once(__DIR__."/../Element.php");
-require_once(__DIR__."/../DataWrappers/Color.php");
 require_once(__DIR__."/../Link.php");
+require_once(__DIR__."/../DataWrappers/Color.php");
 require_once(__DIR__."/../DataWrappers/LineWidth.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/Description.php");

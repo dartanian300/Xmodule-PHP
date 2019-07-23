@@ -4,7 +4,6 @@
  *  
  */
 require_once(__DIR__."/Element.php");
-require_once(__DIR__."/Traits/ModifiableArray.php");
 require_once(__DIR__."/DataWrappers/ZoomLevel.php");
 require_once(__DIR__."/DataWrappers/AspectRatio.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
@@ -12,6 +11,7 @@ require_once(__DIR__."/DataWrappers/Longitude.php");
 require_once(__DIR__."/DataWrappers/Latitude.php");
 require_once(__DIR__."/DataWrappers/BaseLayers.php");
 require_once(__DIR__."/GoogleMaps/DynamicPlacemarks.php");
+require_once(__DIR__."/Traits/ModifiableArray.php");
 
 use XModule\DataWrapper as DataWrapper;
 use XModule\Helpers as Helpers;

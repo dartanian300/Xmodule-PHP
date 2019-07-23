@@ -4,11 +4,11 @@
  *  
  */
 require_once(__DIR__."/../Element.php");
+require_once(__DIR__."/../Events.php");
 require_once(__DIR__."/../DataWrappers/PostType.php");
 require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/Boolean.php");
 require_once(__DIR__."/../DataWrappers/RequestMethod.php");
-require_once(__DIR__."/../Events.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
 use XModule\DataWrapper as DataWrapper;

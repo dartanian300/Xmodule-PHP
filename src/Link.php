@@ -4,8 +4,6 @@
  *  
  */
 require_once(__DIR__."/DataWrappers/BackActionTarget.php");
-require_once(__DIR__."/Helpers/QueryParameters.php");
-require_once(__DIR__."/Helpers/Module.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/DataWrappers/Shortcut.php");
 require_once(__DIR__."/DataWrappers/RequestMethod.php");
@@ -15,6 +13,8 @@ require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/Helpers/Authority.php");
 require_once(__DIR__."/Helpers/NativeApp.php");
 require_once(__DIR__."/Helpers/XModule.php");
+require_once(__DIR__."/Helpers/QueryParameters.php");
+require_once(__DIR__."/Helpers/Module.php");
 
 use XModule\DataWrapper as DataWrapper;
 use XModule\Helpers as Helpers;

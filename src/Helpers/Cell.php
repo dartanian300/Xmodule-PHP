@@ -1,11 +1,11 @@
 <?php
 namespace XModule\Helpers;
 
-require_once(__DIR__."/../DataWrappers/VerticalAlignment.php");
 require_once(__DIR__."/../Link.php");
-require_once(__DIR__."/Thumbnail.php");
+require_once(__DIR__."/../DataWrappers/VerticalAlignment.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/HorizontalAlignment.php");
+require_once(__DIR__."/Thumbnail.php");
 
 use XModule\DataWrapper as DataWrapper;
 
