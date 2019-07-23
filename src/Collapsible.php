@@ -1,11 +1,6 @@
 <?php
 /**
-
-@todo if ModifiableArray works, remove add/get/remove methods from Class Diagram
-
  *  @package Elements
- *
- *  
  */
 require_once(__DIR__."/Element.php");
 require_once(__DIR__."/DataWrappers/DisclosureIcon.php");
@@ -15,15 +10,6 @@ require_once(__DIR__."/Traits/ModifiableArray.php");
 use XModule\DataWrapper as DataWrapper;
 use XModule\Helpers as Helpers;
 
-/**
- *  Summary.
- *  Description.
- *  @method void add(mixed $item)
- *  @method mixed get(integer $position = null)
- *  @method void delete(integer $position)
- *
- *  @todo: figure out why these methods aren't parsing
- */
 class Collapsible extends Element implements \JsonSerializable {
     use ModifiableArray; 
     

@@ -18,7 +18,10 @@ class Image extends XString implements \JsonSerializable {
 	}
     
     public function jsonSerialize()
-    {        
+    {
+        if ($this->get() === null)
+            throw new Exceptions\RequiredProperty('url', __CLASS__);
+        
         $format = array(
             'url' => $this->data,
             'badge' => $this->badge

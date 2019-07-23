@@ -21,6 +21,11 @@ class Phone extends FormElement implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
+        if ($this->name->get() === null)
+            throw new Exceptions\RequiredProperty('name', __CLASS__);
+        if ($this->label->get() === null)
+            throw new Exceptions\RequiredProperty('label', __CLASS__);
+        
         $format = array(
             'elementType' => $this->elementType,
             'inputType' => $this->inputType,

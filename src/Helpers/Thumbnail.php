@@ -12,7 +12,6 @@ use XModule\DataWrapper as DataWrapper;
 
 /**
  *  TODO: resolve image conflict
- *  @todo ensure booleans are coming across as classes in documentation
  */
 class Thumbnail implements \JsonSerializable {
     /** @var URL */
@@ -45,8 +44,8 @@ class Thumbnail implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
-//        if ($this->url->get() === null)
-//            return;
+        if ($this->url->get() === null)
+            throw new Exceptions\RequiredProperty('url', __CLASS__);
         
         $format = array(
             'url' => $this->url,

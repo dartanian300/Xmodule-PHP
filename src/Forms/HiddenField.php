@@ -15,6 +15,11 @@ class HiddenField extends FormElement implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
+        if ($this->name->get() === null)
+            throw new Exceptions\RequiredProperty('name', __CLASS__);
+        if ($this->value->get() === null)
+            throw new Exceptions\RequiredProperty('value', __CLASS__);
+        
         $format = array(
             'elementType' => $this->elementType,
             'inputType' => $this->inputType,

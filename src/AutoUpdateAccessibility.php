@@ -8,9 +8,11 @@ require_once(__DIR__."/Element.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/DataWrappers/TextAlignment.php");
 require_once(__DIR__."/DataWrappers/DisclaimerType.php");
+require_once(__DIR__."/Exceptions/RequiredProperty.php");
 
 use XModule\DataWrapper as DataWrapper;
 use XModule\Helpers as Helpers;
+use XModule\Exceptions as Exceptions;
 
 class AutoUpdateAccessibility extends Element implements \JsonSerializable {
     /** @var DisclaimerType */
@@ -31,6 +33,9 @@ class AutoUpdateAccessibility extends Element implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
+        if ($this->disclaimerType->get() === null)
+            throw new Exceptions\RequiredProperty('disclaimerType', __CLASS__);
+            
         $format = array(
             'elementType' => $this->elementType,
             'disclaimerType' => $this->disclaimerType,

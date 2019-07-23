@@ -26,7 +26,7 @@ class FormButton extends FormElement implements \JsonSerializable {
     
 	public function __construct()
 	{
-		parent::__construct('formButton');
+		parent::__construct('', 'formButton');
         
         $this->title = new DataWrapper\Title();
         $this->buttonType = new DataWrapper\ButtonType();
@@ -37,6 +37,9 @@ class FormButton extends FormElement implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
+        if ($this->title->get() === null)
+            throw new Exceptions\RequiredProperty('title', __CLASS__);
+        
         $format = array(
             'elementType' => $this->elementType,
             'title' => $this->title,

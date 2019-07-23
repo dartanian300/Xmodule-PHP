@@ -24,12 +24,12 @@ class MultiColumn extends Element implements \JsonSerializable {
      */
 	public function __construct($numColumns = 1, $id = '')
 	{
-		parent::__construct('multicolumn', $id);
-        
-        $this->setNumColumns($numColumns);
+		parent::__construct('multicolumn', $id);        
         
         $this->columns = array();
         $this->numColumns = new DataWrapper\Number();
+        
+        $this->setNumColumns($numColumns);
 	}
     
     /**

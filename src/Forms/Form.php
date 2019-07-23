@@ -1,7 +1,7 @@
 <?php
 /**
  *  @package Forms
- *  
+ *  @todo Add exceptions for when a required parameter isn't filled out
  */
 require_once(__DIR__."/../Element.php");
 require_once(__DIR__."/../Events.php");
@@ -53,7 +53,7 @@ class Form extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('items', $item, 'FormElement');
+        $this->addArray('items', $item);
     }
     
     /**
@@ -78,6 +78,9 @@ class Form extends Element implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
+        if ($this->relativePath->get() === null)
+            throw new Exceptions\RequiredProperty('relativePath', __CLASS__);
+        
         $format = array(
             'elementType' => $this->elementType,
             'id' => $this->id,

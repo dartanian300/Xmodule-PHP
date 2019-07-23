@@ -157,6 +157,9 @@ class ToolbarContent extends Element implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
+        if ($this->menuPosition->get() === null)
+            throw new Exceptions\RequiredProperty('menuPosition', __CLASS__);
+        
         $format = array(
             'elementType' => $this->elementType,
             'id' => $this->id,

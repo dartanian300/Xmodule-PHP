@@ -25,7 +25,12 @@ class Point implements \JsonSerializable {
 	}
     
     public function jsonSerialize()
-    {        
+    {
+        if ($this->latitude->get() === null)
+            throw new Exceptions\RequiredProperty('latitude', __CLASS__);
+        if ($this->longitude->get() === null)
+            throw new Exceptions\RequiredProperty('longitude', __CLASS__);
+        
         $format = array(
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,

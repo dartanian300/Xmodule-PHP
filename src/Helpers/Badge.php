@@ -24,7 +24,12 @@ class Badge implements \JsonSerializable {
 	}
     
     public function jsonSerialize()
-    {        
+    {
+        if ($this->value->get() === null)
+            throw new Exceptions\RequiredProperty('value', __CLASS__);
+        if ($this->descriptor->get() === null)
+            throw new Exceptions\RequiredProperty('descriptor', __CLASS__);
+        
         $format = array(
             'value' => $this->value,
             'descriptor' => $this->descriptor,

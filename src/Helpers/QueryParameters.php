@@ -5,10 +5,6 @@ require_once(__DIR__."/../DataWrappers/XString.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-/**
- *  @todo probably need toJSON method
- */
-
 class QueryParameters implements \JsonSerializable {
     /** @var mixed[] An associative array */
 	private $parameters;
@@ -47,9 +43,6 @@ class QueryParameters implements \JsonSerializable {
             return $this->$parameters[$key];
 	}
     
-    /**
-        @todo implement this
-    */
     public function jsonSerialize()
     {        
         $format = array(

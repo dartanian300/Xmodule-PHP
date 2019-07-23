@@ -33,6 +33,9 @@ class Image extends Element implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
+        if ($this->url->get() === null)
+            throw new Exceptions\RequiredProperty('url', __CLASS__);
+        
         $format = array(
             'elementType' => $this->elementType,
             'id' => $this->id,

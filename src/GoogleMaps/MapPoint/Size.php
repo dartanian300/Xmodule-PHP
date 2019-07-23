@@ -25,7 +25,12 @@ class Size implements \JsonSerializable {
 	}
     
     public function jsonSerialize()
-    {        
+    {       
+        if ($this->width->get() === null)
+            throw new Exceptions\RequiredProperty('width', __CLASS__);
+        if ($this->height->get() === null)
+            throw new Exceptions\RequiredProperty('height', __CLASS__);
+        
         $format = array(
             'height' => $this->height,
             'width' => $this->width,

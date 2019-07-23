@@ -20,7 +20,7 @@ class Table extends Element implements \JsonSerializable {
     /** @var Row[] */
 	private $rows;
     
-	public function __construct($id)
+	public function __construct($id = '')
 	{
 		parent::__construct('table', $id);
         

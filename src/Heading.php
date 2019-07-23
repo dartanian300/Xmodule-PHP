@@ -25,11 +25,14 @@ class Heading extends Element implements \JsonSerializable {
         
         $this->title = new DataWrapper\Title();
         $this->description = new DataWrapper\Description();
-        $this->inset = new DataWrapper\Inset();
+        $this->inset = new DataWrapper\Boolean();
 	}
     
     public function jsonSerialize()
     {        
+        if ($this->title->get() === null)
+            throw new Exceptions\RequiredProperty('title', __CLASS__);
+        
         $format = array(
             'elementType' => $this->elementType,
             'id' => $this->id,
