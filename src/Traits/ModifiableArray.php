@@ -7,9 +7,9 @@
 trait ModifiableArray {
     /**
      *  Adds an element to the property array.
-     *  @param string $property The property to operate on
+     *  @param string[] $property The property to operate on
      *  @param mixed $item The element to add to the property array
-     *  @param string $expectedType The native type (integer, string, etc) or object name that all $items should be
+     *  @param string[] $expectedType The native type (integer, string, etc) or object name that all $items should be
      */
 	private function addArray($property, $item, $expectedType = null)
     {
