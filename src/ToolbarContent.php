@@ -32,11 +32,11 @@ class ToolbarContent extends Element implements \JsonSerializable {
 		parent::__construct('toolbarContentAjax', $id);
         
         $this->menuPosition =  new DataWrapper\MenuPosition();
-        $this->ajaxUpdateInterval = new DataWrapper\Number();;
-        $this->menuItems = array()
-        $this->left = array()
-        $this->middle = array()
-        $this->right = array()
+        $this->ajaxUpdateInterval = new DataWrapper\Number();
+        $this->menuItems = array();
+        $this->left = array();
+        $this->middle = array();
+        $this->right = array();
 	}
     
     /**
