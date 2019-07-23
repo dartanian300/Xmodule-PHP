@@ -12,6 +12,9 @@ require_once(__DIR__."/Traits/ModifiableArray.php");
 require_once(__DIR__."/DataWrappers/DisclosureIcon.php");
 require_once(__DIR__."/DataWrappers/Title.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
 /**
  *  Summary.
  *  Description.
@@ -37,9 +40,9 @@ class Collapsible extends Element implements \JsonSerializable {
 	{
 		parent::__construct('collapsible', $id);
         
-        $this->title = new Title();
-        $this->collapsed = new Boolean();
-        $this->disclosureIcon = new disclosureIcon();
+        $this->title = new DataWrapper\Title();
+        $this->collapsed = new DataWrapper\Boolean();
+        $this->disclosureIcon = new DataWrapper\DisclosureIcon();
         $this->content = array();
 	}
     

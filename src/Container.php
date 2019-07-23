@@ -7,6 +7,9 @@ require_once(__DIR__."/Traits/ModifiableArray.php");
 require_once(__DIR__."/DataWrappers/Margins.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
 class Container extends Element implements \JsonSerializable {
     use ModifiableArray; 
     
@@ -22,8 +25,8 @@ class Container extends Element implements \JsonSerializable {
 		parent::__construct('container', $id);
         
         $this->content = array();
-        $this->hidden = new Boolean();
-        $this->margins = new Margins();
+        $this->hidden = new DataWrapper\Boolean();
+        $this->margins = new DataWrapper\Margins();
 	}
     
     /**

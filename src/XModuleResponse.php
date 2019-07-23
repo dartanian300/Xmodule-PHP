@@ -1,7 +1,6 @@
 <?php
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-
 class XModuleResponse implements \JsonSerializable {
     use ModifiableArray; 
     

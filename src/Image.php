@@ -8,6 +8,9 @@ require_once(__DIR__."/DataWrappers/Alt.php");
 require_once(__DIR__."/DataWrappers/URL.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
 class Image extends Element implements \JsonSerializable {
     /** @var URL */
 	public $url;
@@ -22,10 +25,10 @@ class Image extends Element implements \JsonSerializable {
 	{
 		parent::__construct('image', $id);
         
-        $this->url = new URL();
-        $this->alt = new Alt();
-        $this->scaleToFull = new Boolean();
-        $this->enableZoomControls = new Boolean();
+        $this->url = new DataWrapper\URL();
+        $this->alt = new DataWrapper\Alt();
+        $this->scaleToFull = new DataWrapper\Boolean();
+        $this->enableZoomControls = new DataWrapper\Boolean();
 	}
     
     public function jsonSerialize()

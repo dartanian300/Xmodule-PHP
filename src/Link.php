@@ -16,6 +16,9 @@ require_once(__DIR__."/Helpers/Authority.php");
 require_once(__DIR__."/Helpers/NativeApp.php");
 require_once(__DIR__."/Helpers/XModule.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
 class Link implements \JsonSerializable {
     /** @var XString */
 	public $relativePath;
@@ -48,20 +51,20 @@ class Link implements \JsonSerializable {
     
 	public function __construct() 
 	{        
-        $this->relativePath = new XString();
-        $this->external = new XString();
-        $this->module = new Module();
-        $this->xmodule = new XModule();
-        $this->authority = new Authority();
-        $this->shortcut = new Shortcut();
-        $this->nativeApp = new NativeApp();
-        $this->nativePlugin = new XString();
-        $this->accessoryIcon = new AccessoryIcon();
-        $this->browserType = new BrowserType();
-        $this->targetNewWindow = new Boolean();
-        $this->backActionTarget = new BackActionTarget();
-        $this->requestMethod = new RequestMethod();
-        $this->postData = new QueryParameters();
+        $this->relativePath = new DataWrapper\XString();
+        $this->external = new DataWrapper\XString();
+        $this->module = new Helpers\Module();
+        $this->xmodule = new Helpers\XModule();
+        $this->authority = new Helpers\Authority();
+        $this->shortcut = new DataWrapper\Shortcut();
+        $this->nativeApp = new Helpers\NativeApp();
+        $this->nativePlugin = new DataWrapper\XString();
+        $this->accessoryIcon = new DataWrapper\AccessoryIcon();
+        $this->browserType = new DataWrapper\BrowserType();
+        $this->targetNewWindow = new DataWrapper\Boolean();
+        $this->backActionTarget = new DataWrapper\BackActionTarget();
+        $this->requestMethod = new DataWrapper\RequestMethod();
+        $this->postData = new Helpers\QueryParameters();
 	}
     
     public function jsonSerialize()

@@ -9,6 +9,9 @@ require_once(__DIR__."/DataWrappers/Size.php");
 require_once(__DIR__."/DataWrappers/Title.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
 class Portlet extends Element implements \JsonSerializable {
     use ModifiableArray;
     
@@ -30,12 +33,12 @@ class Portlet extends Element implements \JsonSerializable {
 	{
 		parent::__construct('portlet', $id);
         
-        $this->navbarTitle = new Title();
-        $this->navbarIcon = new XString();
+        $this->navbarTitle = new DataWrapper\Title();
+        $this->navbarIcon = new DataWrapper\XString();
         $this->navbarLink = new Link();
-        $this->forceAjaxOnLoad = new Boolean();
+        $this->forceAjaxOnLoad = new DataWrapper\Boolean();
         $this->content = array();
-        $this->height = new Size();
+        $this->height = new DataWrapper\Size();
 	}
     
     /**

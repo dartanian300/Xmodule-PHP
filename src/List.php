@@ -6,8 +6,10 @@
 require_once(__DIR__."/Element.php");
 require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
-require_once(__DIR__."/Helpers/ListItem.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
+
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
 
 class List extends Element implements \JsonSerializable {
     use ModifiableArray;
@@ -23,8 +25,8 @@ class List extends Element implements \JsonSerializable {
 	{
 		parent::__construct('list', $id);
         
-        $this->heading = new XString();
-        $this->grouped = new Boolean();
+        $this->heading = new DataWrapper\XString();
+        $this->grouped = new DataWrapper\Boolean();
         $this->items = array();
 	}
     

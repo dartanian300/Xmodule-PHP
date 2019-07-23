@@ -13,6 +13,10 @@ require_once(__DIR__."/DataWrappers/Latitude.php");
 require_once(__DIR__."/DataWrappers/BaseLayers.php");
 require_once(__DIR__."/GoogleMaps/DynamicPlacemarks.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+use XModule\GoogleMaps as GoogleMaps;
+
 class GoogleMap extends Element implements \JsonSerializable {
     use ModifiableArray;
     
@@ -51,21 +55,21 @@ class GoogleMap extends Element implements \JsonSerializable {
 	{
 		parent::__construct('googleMap', $id);
         
-        $this->initialLatitude = new Latitude();
-        $this->initialLongitude = new Longitude();
-        $this->initialZoomLevel = new ZoomLevel();
-        $this->disableZoomToPlacemarks = new Boolean();
-        $this->defaultToUserLocated = new Boolean();
-        $this->minZoomLevel = new ZoomLevel();
-        $this->maxZoomLevel = new ZoomLevel();
-        $this->aspectRatio = new AspectRatio();
-        $this->inset = new Boolean();
-        $this->showUserLocationButton = new Boolean();
-        $this->showRecenterButton = new Boolean();
-        $this->showZoomButtons = new Boolean();
-        $this->baseLayers = new BaseLayers();
+        $this->initialLatitude = new DataWrapper\Latitude();
+        $this->initialLongitude = new DataWrapper\Longitude();
+        $this->initialZoomLevel = new DataWrapper\ZoomLevel();
+        $this->disableZoomToPlacemarks = new DataWrapper\Boolean();
+        $this->defaultToUserLocated = new DataWrapper\Boolean();
+        $this->minZoomLevel = new DataWrapper\ZoomLevel();
+        $this->maxZoomLevel = new DataWrapper\ZoomLevel();
+        $this->aspectRatio = new DataWrapper\AspectRatio();
+        $this->inset = new DataWrapper\Boolean();
+        $this->showUserLocationButton = new DataWrapper\Boolean();
+        $this->showRecenterButton = new DataWrapper\Boolean();
+        $this->showZoomButtons = new DataWrapper\Boolean();
+        $this->baseLayers = new DataWrapper\BaseLayers();
 
-        $this->dynamicPlacemarks = new DynamicPlacemarks();
+        $this->dynamicPlacemarks = new GoogleMaps\DynamicPlacemarks();
         $this->staticPlacemarks = array();
 	}
     

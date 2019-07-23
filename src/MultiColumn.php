@@ -6,6 +6,9 @@
 require_once(__DIR__."/Element.php");
 require_once(__DIR__."/DataWrappers/Number.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
 /**
  *  The number of columns must be set to add content to them
  *  
@@ -26,7 +29,7 @@ class MultiColumn extends Element implements \JsonSerializable {
         $this->setNumColumns($numColumns);
         
         $this->columns = array();
-        $this->numColumns = new Number();
+        $this->numColumns = new DataWrapper\Number();
 	}
     
     /**

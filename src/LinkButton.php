@@ -11,6 +11,9 @@ require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/DataWrappers/Title.php");
 require_once(__DIR__."/Events.php");
 
+use XModule\DataWrapper as DataWrapper;
+use XModule\Helpers as Helpers;
+
 class LinkButton extends Element implements \JsonSerializable {    
     /** @var Title */
 	public $title;
@@ -29,11 +32,11 @@ class LinkButton extends Element implements \JsonSerializable {
 	{
 		parent::__construct('linkButton', $id);
         
-        $this->title = new Title();
+        $this->title = new DataWrapper\Title();
         $this->link = new Link();
-        $this->disabled = new Boolean();
-        $this->accessoryIconPosition = new AccessoryIconPosition();
-        $this->actionType = new actionType();
+        $this->disabled = new DataWrapper\Boolean();
+        $this->accessoryIconPosition = new DataWrapper\AccessoryIconPosition();
+        $this->actionType = new DataWrapper\actionType();
         $this->events = new Events();
 	}
     
