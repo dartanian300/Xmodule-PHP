@@ -7,24 +7,56 @@
 trait ModifiableArray {
     /**
      *  Adds an element to the property array.
-     *  @param string[] $property The property to operate on
-     *  @param mixed $item The element to add to the property array
-     *  @param string[] $expectedType The native type (integer, string, etc) or object name that all $items should be
+     *  @param string $property The property to operate on. Can be a string or array of strings
+     *  @param mixed|mixed[] $items The element to add to the property array. Can be a string or array of strings.
+     *  @param string|string[] $expectedType The native type (integer, string, etc) or object name that all $items should be.
+     *    
      */
-	private function addArray($property, $item, $expectedType = null)
+	private function addArray($property, $items, $expectedType = null)
     {
-        // enforce type
-        if ($expectedType !== null){
-            $realType = gettype($item);
-            if ($realType == 'object'){
-                if (!is_a($item, $expectedType))
-                    throw new InvalidArgumentException('$item should be of type '.$expectedType.'. '.$realType.' was provided ');
-            } else {
-                if (!$realType == $expectedType)
-                    throw new InvalidArgumentException('$item should be of type '.$expectedType.'. '.$realType.' was provided ');
+        // make array
+        if (!is_array($items))
+            $items = array($items);
+        
+        // make array
+        if ($expectedType !== null && !is_array($expectedType))
+            $expectedType = array($expectedType);
+        
+        foreach($items as $item){
+            // enforce type
+            if ($expectedType !== null && is_array($expectedType)){
+                if (!$this->isValidType($item, $expectedType)){
+                    $type = gettype($item) == 'object' ? get_class($item) : gettype($item);
+                    throw new InvalidArgumentException('$item should be of type '.implode(', ', $expectedType).'. '.$type.' was provided ');
+                }
+            }
+            
+            $this->{$property}[] = $item;
+        }
+    }
+    
+    /**
+     *  Checks if a given argument matches one of the given types
+     *  @param string $item The item for which to check
+     *  @param string[] $expectedType The types for which $item is valid
+     *  @return bool
+     */
+    private function isValidType($item, $expectedType){
+        $realType = gettype($item);
+                
+        if ($realType == 'object'){
+            foreach($expectedType as $t){
+                if (is_a($item, $t))
+                    return true;
+            }
+        } else {
+            foreach($expectedType as $t){
+                if ($realType == $t)
+                    return true;
             }
         }
-        $this->{$property}[] = $item;
+        
+        return false;
     }
     
     /**
