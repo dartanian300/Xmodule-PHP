@@ -22,7 +22,10 @@ class XString extends DataWrapperBase {
      */
 	public function set($str)
     {
-        $this->data = $str;
+        if ($this->format !== null && $this->validateFormat($str))
+            $this->data = $str;
+        else
+            throw new InvalidArgumentException('$str should be in the format '.$this->format.' ');
     }
     
     /**
@@ -31,13 +34,14 @@ class XString extends DataWrapperBase {
      *  is stored) or via the validateFormat parameter (in which case it
      *  is only used for the single call).
      *
+     *  @param string $string The string to check the format against
      *  @param string $format A regex for which the string needs to adhear
      *  @return boolean
      */
-	protected function validateFormat($format = null){
+	protected function validateFormat($string, $format = null){
         $f = $format == null ? $this->format : $format;
         
-        return preg_match($f, $this->get());
+        return preg_match($f, $string());
     }
 }
 
