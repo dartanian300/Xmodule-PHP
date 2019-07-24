@@ -52,7 +52,7 @@ class Form extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('items', $item);
+        $this->addArray('items', $item, array('ButtonContainer', 'Collapsible', 'Checkbox', 'Email', 'HiddenField', 'Label', 'Password', 'Phone', 'RadioButtons', 'SelectMenu', 'TextInput', 'TextArea', 'Upload', 'Heading', 'HTML', 'Image', 'Table'));
     }
     
     /**

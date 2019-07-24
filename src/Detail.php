@@ -43,7 +43,7 @@ class Detail extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('content', $item);
+        $this->addArray('content', $item, array('ButtonContainer', 'Container', 'Form', 'Tabs', 'Heading', 'HTML', 'Image', 'XList', 'Table'));
     }
     
     /**

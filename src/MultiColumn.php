@@ -11,7 +11,7 @@ use XModule\Helpers as Helpers;
 
 /**
  *  The number of columns must be set to add content to them
- *  
+ *  @todo see how to implement same func for 'add' as others
  */
 class MultiColumn extends Element implements \JsonSerializable {
     /** @var mixed[] 2D array */

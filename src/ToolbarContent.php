@@ -45,7 +45,7 @@ class ToolbarContent extends Element implements \JsonSerializable {
      */
     public function addLeft($item)
     {
-        $this->addArray('left', $item);
+        $this->addArray('left', $item, array('XModule\Toolbar\ToolbarButton', 'XModule\Toolbar\ToolbarLabel'));
     }
     
     /**
@@ -74,7 +74,7 @@ class ToolbarContent extends Element implements \JsonSerializable {
      */
     public function addMiddle($item)
     {
-        $this->addArray('middle', $item);
+        $this->addArray('middle', $item, array('XModule\Toolbar\ToolbarButton', 'XModule\Toolbar\ToolbarLabel'));
     }
     
     /**
@@ -103,7 +103,7 @@ class ToolbarContent extends Element implements \JsonSerializable {
      */
     public function addRight($item)
     {
-        $this->addArray('right', $item);
+        $this->addArray('right', $item, array('XModule\Toolbar\ToolbarButton', 'XModule\Toolbar\ToolbarLabel'));
     }
     
     /**

@@ -28,7 +28,7 @@ class ButtonContainer extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('buttons', $item);
+        $this->addArray('buttons', $item, array('FormButton', 'LinkButton'));
     }
     
     /**

@@ -47,7 +47,7 @@ class Portlet extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('content', $item);
+        $this->addArray('content', $item, array('ButtonContainer', 'Carousel', 'Collapsible', 'Container', 'Detail', 'Form', 'Tabs', 'Heading', 'HTML', 'Image', 'XList', 'Table'));
     }
     
     /**

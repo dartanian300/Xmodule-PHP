@@ -28,7 +28,7 @@ class Tab implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('content', $item);
+        $this->addArray('content', $item, array('ButtonContainer', 'Collapsible', 'Container', 'Detail', 'Form', 'Heading', 'HTML', 'Image', 'XList', 'Table', 'Tabs'));
     }
     
     /**

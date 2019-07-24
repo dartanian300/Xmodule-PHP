@@ -38,7 +38,7 @@ class Collapsible extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('content', $item);
+        $this->addArray('content', $item, array('ButtonContainer', 'Container', 'Form', 'Heading', 'HTML', 'Image', 'Checkbox', 'Email', 'HiddenField', 'Label', 'Password', 'Phone', 'RadioButtons', 'SelectMenu', 'TextInput', 'TextArea', 'Upload', 'XList', 'Table'));
     }
     
     /**

@@ -35,7 +35,7 @@ class Container extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('content', $item);
+        $this->addArray('content', $item, array('ButtonContainer', 'Collapsible', 'Container', 'Form', 'GoogleMap', 'Grid', 'Heading', 'HTML', 'Image', 'Portlet', 'Table', 'Tabs'));
     }
     
     /**
