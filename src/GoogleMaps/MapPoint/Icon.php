@@ -24,7 +24,7 @@ class Icon implements \JsonSerializable {
     
 	public function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
         
         $this->url = new DataWrapper\URL();
         $this->scale = new DataWrapper\Scale();

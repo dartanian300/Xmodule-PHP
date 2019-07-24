@@ -16,7 +16,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-class MapPolygon extends Element implements \JsonSerializable {
+class MapPolygon extends \Element implements \JsonSerializable {
     use ModifiableArray; 
     
     /** @var Title */

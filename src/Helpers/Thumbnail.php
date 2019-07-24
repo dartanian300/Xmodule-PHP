@@ -10,9 +10,6 @@ require_once(__DIR__."/Badge.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-/**
- *  TODO: resolve image conflict
- */
 class Thumbnail implements \JsonSerializable {
     /** @var URL */
 	public $url;

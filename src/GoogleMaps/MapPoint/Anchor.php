@@ -17,10 +17,10 @@ class Anchor implements \JsonSerializable {
     
 	public function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
         
         $this->x = new DataWrapper\Number();
-        $this->y = new NDataWrapper\umber();
+        $this->y = new DataWrapper\Number();
 	}
     
     public function jsonSerialize()

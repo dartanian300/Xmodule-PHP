@@ -1,9 +1,6 @@
 <?php
 namespace XModule\DataWrapper;
 
-/**
-    @todo resolve conflict between this Size and Size inside of Map Package
-*/
 require_once(__DIR__."/DataWrapperBase.php");
 
 class Size extends DataWrapperBase {

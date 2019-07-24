@@ -79,7 +79,7 @@ class GoogleMap extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('staticPlacemarks', $item);
+        $this->addArray('staticPlacemarks', $item, array('XModule\GoogleMaps\MapPoint', 'XModule\GoogleMaps\MapPolyline', 'XModule\GoogleMaps\MapPolygon'));
     }
     
     /**

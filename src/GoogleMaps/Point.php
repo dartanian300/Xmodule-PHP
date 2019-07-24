@@ -18,7 +18,7 @@ class Point implements \JsonSerializable {
     
 	public function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
         
         $this->latitude = new DataWrapper\Latitude();
         $this->longitude = new DataWrapper\Longitude();

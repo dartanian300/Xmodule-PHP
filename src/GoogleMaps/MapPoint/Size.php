@@ -18,7 +18,7 @@ class Size implements \JsonSerializable {
     
 	public function __construct() 
 	{
-		parent::__construct();
+//		parent::__construct();
         
         $this->width = new DataWrapper\Width();
         $this->height = new DataWrapper\Height();

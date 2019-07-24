@@ -1,7 +1,6 @@
 <?php
 /**
  *  @package Forms
- *  @todo Add exceptions for when a required parameter isn't filled out
  */
 require_once(__DIR__."/../Element.php");
 require_once(__DIR__."/../Events.php");

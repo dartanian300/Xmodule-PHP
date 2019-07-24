@@ -16,7 +16,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
 
 use XModule\DataWrapper as DataWrapper;
 
-class MapPolyline extends Element implements \JsonSerializable {
+class MapPolyline extends \Element implements \JsonSerializable {
     use ModifiableArray; 
     
     /** @var Title */
