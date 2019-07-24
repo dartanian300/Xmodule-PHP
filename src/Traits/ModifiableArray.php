@@ -1,8 +1,6 @@
 <?php
 /**
  *  @internal
- *  @todo Let addArray take array as for expected types
- *  @todo make $expectedType take array
  */
 trait ModifiableArray {
     /**
