@@ -3,9 +3,6 @@ namespace XModule\DataWrappers;
 
 require_once(__DIR__."/XString.php");
 
-/**
- *  @todo Enforce color format (hex)
- */
 class Color extends XString {
 	public function __construct($color) 
 	{
