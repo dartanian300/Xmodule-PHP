@@ -3,6 +3,7 @@ namespace XModule\DataWrappers;
 
 require_once(__DIR__."/XString.php");
 require_once(__DIR__."../Helpers/Badge.php");
+require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
 class Image extends XString implements \JsonSerializable {
     /**

@@ -5,6 +5,7 @@
  */
 require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../DataWrappers/Number.php");
+require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
 

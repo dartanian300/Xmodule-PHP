@@ -7,6 +7,7 @@ namespace XModule\GoogleMaps\MapPoint;
  */
 require_once(__DIR__."/../../DataWrappers/Height.php");
 require_once(__DIR__."/../../DataWrappers/Width.php");
+require_once(__DIR__."/../../Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
 

@@ -9,6 +9,7 @@ require_once(__DIR__."/../DataWrappers/ActionType.php");
 require_once(__DIR__."/../DataWrappers/AccessoryIcon.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/ButtonType.php");
+require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
 
