@@ -9,12 +9,12 @@ class RequestMethod extends DataWrapperBase {
 		parent::__construct();
 	}
     
-	public function get()
+	public function setGet()
     {
         $this->data = 'get';
     }
         
-	public function post()
+	public function setPost()
     {
         $this->data = 'post';
     }
