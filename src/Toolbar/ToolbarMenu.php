@@ -8,7 +8,7 @@ use XModule\Toolbar;
 require_once(__DIR__."/../Element.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class ToolbarMenu extends Element implements \JsonSerializable {
     use ModifiableArray; 

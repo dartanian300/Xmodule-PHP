@@ -1,5 +1,5 @@
 <?php
-namespace XModule\DataWrapper;
+namespace XModule\DataWrappers;
 
 require_once(__DIR__."/DataWrapperBase.php");
 
@@ -22,10 +22,10 @@ class XString extends DataWrapperBase {
      */
 	public function set($str)
     {
-        if ($this->format !== null && $this->validateFormat($str))
-            $this->data = $str;
-        else
-            throw new InvalidArgumentException('$str should be in the format '.$this->format.' ');
+        if ($this->format !== null && !$this->validateFormat($str))
+            throw new \InvalidArgumentException('$str should be in the format '.$this->format.' ');
+            
+        $this->data = $str;
     }
     
     /**
@@ -41,7 +41,7 @@ class XString extends DataWrapperBase {
 	protected function validateFormat($string, $format = null){
         $f = $format == null ? $this->format : $format;
         
-        return preg_match($f, $string());
+        return preg_match($f, $string);
     }
 }
 

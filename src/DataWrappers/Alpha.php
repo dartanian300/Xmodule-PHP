@@ -1,5 +1,5 @@
 <?php
-namespace XModule\DataWrapper;
+namespace XModule\DataWrappers;
 
 require_once(__DIR__."/Number.php");
 

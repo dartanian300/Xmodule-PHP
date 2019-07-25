@@ -1,5 +1,5 @@
 <?php
-namespace XModule\DataWrapper;
+namespace XModule\DataWrappers;
 
 abstract class DataWrapperBase implements \JsonSerializable {
     /** @var mixed */

@@ -5,7 +5,7 @@ require_once(__DIR__."/../Link.php");
 require_once(__DIR__."/../Image.php");
 require_once(__DIR__."/../Forms/Label.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class GridItem implements \JsonSerializable {
     /** @var Image */

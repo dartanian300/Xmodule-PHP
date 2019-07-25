@@ -13,7 +13,7 @@ require_once(__DIR__."/DataWrappers/BaseLayers.php");
 require_once(__DIR__."/GoogleMaps/DynamicPlacemarks.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
 use XModule\GoogleMaps as GoogleMaps;
 

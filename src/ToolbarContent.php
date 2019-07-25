@@ -8,7 +8,7 @@ require_once(__DIR__."/DataWrappers/MenuPosition.php");
 require_once(__DIR__."/DataWrappers/Number.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
 
 class ToolbarContent extends Element implements \JsonSerializable {

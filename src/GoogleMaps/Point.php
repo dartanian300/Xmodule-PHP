@@ -8,7 +8,7 @@ namespace XModule\GoogleMaps;
 require_once(__DIR__."/../DataWrappers/Longitude.php");
 require_once(__DIR__."/../DataWrappers/Latitude.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class Point implements \JsonSerializable {
     /** @var Latitude */

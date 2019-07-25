@@ -10,7 +10,7 @@ require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/Boolean.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class MenuItem implements \JsonSerializable {
     /** @var Title */

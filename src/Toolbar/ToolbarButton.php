@@ -11,7 +11,7 @@ require_once(__DIR__."/../DataWrappers/AccessoryIconPosition.php");
 require_once(__DIR__."/../DataWrappers/ActionType.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class ToolbarButton extends Element implements \JsonSerializable {
     /** @var Title */

@@ -12,7 +12,7 @@ require_once(__DIR__."/../DataWrappers/Description.php");
 require_once(__DIR__."/../GoogleMaps/MapPoint/Icon.php");
 require_once(__DIR__."/Point.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\GoogleMaps\MapPoint as MapPoint;
 
 class MapPoint extends \Element implements \JsonSerializable {

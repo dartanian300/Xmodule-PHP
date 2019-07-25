@@ -7,7 +7,7 @@ require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../DataWrappers/Boolean.php");
 require_once(__DIR__."/../Helpers/ProgressiveDisclosureItems.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
 
 class Checkbox extends FormElement implements \JsonSerializable {

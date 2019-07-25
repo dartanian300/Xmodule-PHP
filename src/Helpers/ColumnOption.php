@@ -6,7 +6,7 @@ require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/StringWidth.php");
 require_once(__DIR__."/../DataWrappers/HorizontalAlignment.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class ColumnOption implements \JsonSerializable {
     /** @var XString */

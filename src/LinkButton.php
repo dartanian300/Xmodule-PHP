@@ -11,7 +11,7 @@ require_once(__DIR__."/DataWrappers/ActionType.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/DataWrappers/Title.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
 
 class LinkButton extends Element implements \JsonSerializable {    

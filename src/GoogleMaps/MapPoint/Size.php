@@ -8,7 +8,7 @@ namespace XModule\GoogleMaps\MapPoint;
 require_once(__DIR__."/../../DataWrappers/Height.php");
 require_once(__DIR__."/../../DataWrappers/Width.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class Size implements \JsonSerializable {
     /** @var Width */

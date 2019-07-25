@@ -8,7 +8,7 @@ require_once(__DIR__."/DataWrappers/Alt.php");
 require_once(__DIR__."/DataWrappers/URL.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
 
 class Image extends Element implements \JsonSerializable {

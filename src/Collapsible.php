@@ -7,7 +7,7 @@ require_once(__DIR__."/DataWrappers/DisclosureIcon.php");
 require_once(__DIR__."/DataWrappers/Title.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
 
 class Collapsible extends Element implements \JsonSerializable {

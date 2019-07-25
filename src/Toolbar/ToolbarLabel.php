@@ -8,7 +8,7 @@ use XModule\Toolbar;
 require_once(__DIR__."/../Element.php");
 require_once(__DIR__."/../DataWrappers/XString.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class ToolbarLabel extends Element implements \JsonSerializable {
     /** @var XString */

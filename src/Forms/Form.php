@@ -10,7 +10,7 @@ require_once(__DIR__."/../DataWrappers/Boolean.php");
 require_once(__DIR__."/../DataWrappers/RequestMethod.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class Form extends Element implements \JsonSerializable {
     use ModifiableArray;

@@ -9,7 +9,7 @@ require_once(__DIR__."/../DataWrappers/Boolean.php");
 require_once(__DIR__."/../DataWrappers/Name.php");
 require_once(__DIR__."/../DataWrappers/Description.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 abstract class FormElement extends Element {
     /** @var string */

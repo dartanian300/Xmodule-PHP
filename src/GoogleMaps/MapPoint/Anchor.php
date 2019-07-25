@@ -7,7 +7,7 @@ namespace XModule\GoogleMaps\MapPoint;
  */
 require_once(__DIR__."/../../DataWrappers/Number.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class Anchor implements \JsonSerializable {
     /** @var Number */

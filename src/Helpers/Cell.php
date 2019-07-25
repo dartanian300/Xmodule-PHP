@@ -7,7 +7,7 @@ require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/HorizontalAlignment.php");
 require_once(__DIR__."/Thumbnail.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class Cell implements \JsonSerializable {
     /** @var Title */

@@ -6,7 +6,7 @@
 require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../DataWrappers/Number.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class Upload extends FormElement implements \JsonSerializable {
     /** @var Number */

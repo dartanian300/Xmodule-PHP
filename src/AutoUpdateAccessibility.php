@@ -10,7 +10,7 @@ require_once(__DIR__."/DataWrappers/TextAlignment.php");
 require_once(__DIR__."/DataWrappers/DisclaimerType.php");
 require_once(__DIR__."/Exceptions/RequiredProperty.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
 use XModule\Exceptions as Exceptions;
 

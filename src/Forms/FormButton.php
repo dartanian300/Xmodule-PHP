@@ -10,7 +10,7 @@ require_once(__DIR__."/../DataWrappers/AccessoryIcon.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/ButtonType.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 
 class FormButton extends FormElement implements \JsonSerializable {
     /** @var Title */

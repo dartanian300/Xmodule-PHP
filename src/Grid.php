@@ -11,7 +11,7 @@ require_once(__DIR__."/DataWrappers/HorizontalAlignment.php");
 require_once(__DIR__."/DataWrappers/HorizontalSpacing.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrapper as DataWrapper;
+use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
 
 class Grid extends Element implements \JsonSerializable {

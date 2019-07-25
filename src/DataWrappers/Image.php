@@ -1,5 +1,5 @@
 <?php
-namespace XModule\DataWrapper;
+namespace XModule\DataWrappers;
 
 require_once(__DIR__."/XString.php");
 require_once(__DIR__."../Helpers/Badge.php");
