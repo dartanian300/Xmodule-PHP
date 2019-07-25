@@ -6,7 +6,7 @@ require_once(__DIR__."/XString.php");
 class Color extends XString {
 	public function __construct($color) 
 	{
-		parent::__construct($color, '/#[0-9a-z]{6}/');
+		parent::__construct($color, '/#[0-9a-f]{6}/');
 	}
 }
 
