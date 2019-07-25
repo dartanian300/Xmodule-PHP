@@ -15,17 +15,17 @@ class BaseLayers extends DataWrapperBase {
         $this->data[] = 'roadmap';
     }
     
-	public function Satellite()
+	public function addSatellite()
     {
         $this->data[] = 'satellite';
     }
     
-	public function Hybrid()
+	public function addHybrid()
     {
         $this->data[] = 'hybrid';
     }
     
-	public function Terrain()
+	public function addTerrain()
     {
         $this->data[] = 'terrain';
     }
