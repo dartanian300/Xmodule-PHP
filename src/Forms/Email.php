@@ -8,6 +8,7 @@ require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
+use XModule\Exceptions as Exceptions;
 
 class Email extends FormElement implements \JsonSerializable {
     /** @var XString */

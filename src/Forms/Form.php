@@ -12,6 +12,7 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
+use XModule\Exceptions as Exceptions;
 
 class Form extends Element implements \JsonSerializable {
     use ModifiableArray;

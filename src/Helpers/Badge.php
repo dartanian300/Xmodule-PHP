@@ -6,6 +6,7 @@ require_once(__DIR__."/../DataWrappers/Size.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
+use XModule\Exceptions as Exceptions;
 
 class Badge implements \JsonSerializable {
     /** @var XString */

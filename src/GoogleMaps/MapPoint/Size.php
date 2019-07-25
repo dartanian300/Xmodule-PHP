@@ -10,6 +10,7 @@ require_once(__DIR__."/../../DataWrappers/Width.php");
 require_once(__DIR__."/../../Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
+use XModule\Exceptions as Exceptions;
 
 class Size implements \JsonSerializable {
     /** @var Width */

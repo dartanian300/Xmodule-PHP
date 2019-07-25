@@ -11,6 +11,7 @@ require_once(__DIR__."/Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
 use XModule\Helpers as Helpers;
+use XModule\Exceptions as Exceptions;
 
 class Image extends Element implements \JsonSerializable {
     /** @var URL */

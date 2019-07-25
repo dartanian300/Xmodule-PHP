@@ -5,6 +5,8 @@ require_once(__DIR__."/XString.php");
 require_once(__DIR__."../Helpers/Badge.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
+use XModule\Exceptions as Exceptions;
+
 class Image extends XString implements \JsonSerializable {
     /**
      *  @var Badge Used in GridItem

@@ -7,6 +7,7 @@ require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrapper;
+use XModule\Exceptions as Exceptions;
 
 class HiddenField extends FormElement implements \JsonSerializable {
 	public function __construct() 
