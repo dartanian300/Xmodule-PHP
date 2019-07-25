@@ -11,27 +11,27 @@ class AspectRatio extends DataWrapperBase {
     
 	public function sixteenNine()
     {
-        $this->data = 'sixteenNine';
+        $this->data = '16:9';
     }
         
 	public function fourThree()
     {
-        $this->data = 'fourThree';
+        $this->data = '4:3';
     }
         
 	public function oneOne()
     {
-        $this->data = 'oneOne';
+        $this->data = '1:1';
     }
         
 	public function thirteenFour()
     {
-        $this->data = 'thirteenFour';
+        $this->data = '13:4';
     }
         
 	public function nineSixteen()
     {
-        $this->data = 'nineSixteen';
+        $this->data = '9:16';
     }
         
 }
