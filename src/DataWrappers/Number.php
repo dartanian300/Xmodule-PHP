@@ -25,19 +25,19 @@ class Number extends DataWrapperBase {
         
         if ($this->min !== null && $this->max !== null){
             // enforce min & max
-            if ($num > $this->min && $num < $this->max)
+            if ($num >= $this->min && $num <= $this->max)
                 $this->data = $num;
             else
                 throw new \OutOfRangeException("Parameter must be between $this->min and $this->max.");
         } else if ($this->min !== null){
             // enforce min
-            if ($num > $this->min)
+            if ($num >= $this->min)
                 $this->data = $num;
             else
                 throw new \OutOfRangeException("Parameter must be larger than $this->min.");
         } else if ($this->max !== null){
             // enforce max
-            if ($num < $this->max)
+            if ($num <= $this->max)
                 $this->data = $num;
             else
                 throw new \OutOfRangeException("Parameter must be smaller than $this->max.");
