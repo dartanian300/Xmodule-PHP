@@ -23,28 +23,46 @@ class Number extends DataWrapperBase {
      */
 	public function set($num){
         
-        if ($this->min != null && $this->max != null){
+        if ($this->min !== null && $this->max !== null){
             // enforce min & max
             if ($num > $this->min && $num < $this->max)
                 $this->data = $num;
             else
-                throw new OutOfRangeException("Parameter must be between $this->min and $this->max.");
-        } else if ($this->min != null){
+                throw new \OutOfRangeException("Parameter must be between $this->min and $this->max.");
+        } else if ($this->min !== null){
             // enforce min
             if ($num > $this->min)
                 $this->data = $num;
             else
-                throw new OutOfRangeException("Parameter must be larger than $this->min.");
-        } else if ($this->max != null){
+                throw new \OutOfRangeException("Parameter must be larger than $this->min.");
+        } else if ($this->max !== null){
             // enforce max
             if ($num < $this->max)
                 $this->data = $num;
             else
-                throw new OutOfRangeException("Parameter must be smaller than $this->max.");
+                throw new \OutOfRangeException("Parameter must be smaller than $this->max.");
         } else {
             // no enforcement
             $this->data = $num;
         }
+    }
+    
+    /**
+     *  Sets the max that Number can be
+     *  @param number $max
+     */
+    public function setMax($max)
+    {
+        $this->max = $max;
+    }
+    
+    /**
+     *  Sets the min that Number can be
+     *  @param number $min
+     */
+    public function setMin($min)
+    {
+        $this->min = $min;
     }
 }
 
