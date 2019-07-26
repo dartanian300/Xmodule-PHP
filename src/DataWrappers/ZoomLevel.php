@@ -8,8 +8,8 @@ class ZoomLevel extends Number {
 	{
 		parent::__construct();
         
-        $this->min = 0;
-        $this->max = 22;
+        $this->setMin(0);
+        $this->setMax(22);
 	}
 }
 
