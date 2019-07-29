@@ -13,7 +13,7 @@ class XString extends DataWrapperBase {
 	public function __construct($value = '', $format = null) 
 	{
         parent::__construct();
-        $this->format = $format;
+        $this->setFormat($format);
         $this->set($value);
 	}
     
@@ -26,6 +26,16 @@ class XString extends DataWrapperBase {
             throw new \InvalidArgumentException('$str should be in the format '.$this->format.' ');
             
         $this->data = $str;
+    }
+    
+    /**
+     *  Sets the format this string must adhear to. Must be set prior to 
+     *  calling set() in order to be acknowledged 
+     *  @param string $format A valid PHP regex string
+     */
+    public function setFormat($format)
+    {
+        $this->format = $format;
     }
     
     /**
