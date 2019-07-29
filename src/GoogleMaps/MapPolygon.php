@@ -70,7 +70,7 @@ class MapPolygon extends \Element implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('polygon', $position);
+        return $this->getArray('polygon', $position);
     }
     
     /**

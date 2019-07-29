@@ -64,7 +64,7 @@ class MapPolyline extends \Element implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('polyline', $position);
+        return $this->getArray('polyline', $position);
     }
     
     /**

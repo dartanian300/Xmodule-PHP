@@ -39,7 +39,7 @@ class ButtonContainer extends Element implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('buttons', $position);
+        return $this->getArray('buttons', $position);
     }
     
     /**

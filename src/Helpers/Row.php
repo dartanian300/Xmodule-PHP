@@ -28,7 +28,7 @@ class Row implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('cells', $item, 'Cell');
+        $this->addArray('cells', $item, '\XModule\Helpers\Cell');
     }
     
     /**
@@ -39,7 +39,7 @@ class Row implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('cells', $position);
+        return $this->getArray('cells', $position);
     }
     
     /**

@@ -65,7 +65,7 @@ class Form extends Element implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('items', $position);
+        return $this->getArray('items', $position);
     }
     
     /**

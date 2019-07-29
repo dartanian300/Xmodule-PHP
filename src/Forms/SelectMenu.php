@@ -48,7 +48,7 @@ class SelectMenu extends FormElement implements \JsonSerializable {
      */
     public function getOptionLabel($position = null)
     {
-        $this->getArray('optionLabels', $position);
+        return $this->getArray('optionLabels', $position);
     }
     
     /**
@@ -77,7 +77,7 @@ class SelectMenu extends FormElement implements \JsonSerializable {
      */
     public function getOptionValue($position = null)
     {
-        $this->getArray('optionValues', $position);
+        return $this->getArray('optionValues', $position);
     }
     
     /**

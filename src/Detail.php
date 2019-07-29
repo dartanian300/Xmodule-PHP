@@ -54,7 +54,7 @@ class Detail extends Element implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('content', $position);
+        return $this->getArray('content', $position);
     }
     
     /**

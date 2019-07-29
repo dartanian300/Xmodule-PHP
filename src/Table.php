@@ -46,7 +46,7 @@ class Table extends Element implements \JsonSerializable {
      */
     public function getRow($position = null)
     {
-        $this->getArray('rows', $position);
+        return $this->getArray('rows', $position);
     }
     
     /**
@@ -75,7 +75,7 @@ class Table extends Element implements \JsonSerializable {
      */
     public function getColumnOption($position = null)
     {
-        $this->getArray('columnOptions', $position);
+        return $this->getArray('columnOptions', $position);
     }
     
     /**

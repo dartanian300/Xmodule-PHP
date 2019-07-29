@@ -47,7 +47,7 @@ class Tabs extends Element implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('tabs', $position);
+        return $this->getArray('tabs', $position);
     }
     
     /**

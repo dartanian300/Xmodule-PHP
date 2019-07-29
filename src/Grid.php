@@ -30,7 +30,7 @@ class Grid extends Element implements \JsonSerializable {
     /** @var GridItem[] */
 	private $items;
     
-	public  function __construct($id = '')
+	public function __construct($id = '')
 	{
 		parent::__construct('grid', $id);
         
@@ -59,7 +59,7 @@ class Grid extends Element implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('items', $position);
+        return $this->getArray('items', $position);
     }
     
     /**

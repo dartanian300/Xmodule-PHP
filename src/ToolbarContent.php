@@ -58,7 +58,7 @@ class ToolbarContent extends Element implements \JsonSerializable {
      */
     public function getLeft($position = null)
     {
-        $this->getArray('left', $position);
+        return $this->getArray('left', $position);
     }
     
     /**
@@ -87,7 +87,7 @@ class ToolbarContent extends Element implements \JsonSerializable {
      */
     public function getMiddle($position = null)
     {
-        $this->getArray('middle', $position);
+        return $this->getArray('middle', $position);
     }
     
     /**
@@ -116,7 +116,7 @@ class ToolbarContent extends Element implements \JsonSerializable {
      */
     public function getRight($position = null)
     {
-        $this->getArray('right', $position);
+        return $this->getArray('right', $position);
     }
     
     /**
@@ -145,7 +145,7 @@ class ToolbarContent extends Element implements \JsonSerializable {
      */
     public function getMenuItem($position = null)
     {
-        $this->getArray('menuItems', $position);
+        return $this->getArray('menuItems', $position);
     }
     
     /**

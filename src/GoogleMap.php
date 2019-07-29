@@ -90,7 +90,7 @@ class GoogleMap extends Element implements \JsonSerializable {
      */
     public function get($position = null)
     {
-        $this->getArray('staticPlacemarks', $position);
+        return $this->getArray('staticPlacemarks', $position);
     }
     
     /**
