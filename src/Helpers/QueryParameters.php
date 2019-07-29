@@ -34,13 +34,18 @@ class QueryParameters implements \JsonSerializable {
     /**
      *  @param string $key The key to get from the array
      *  @return array|string Returns the entire array or a single value if the key is provided
+     *  @throws OutOfBoundsException when fetching a key that does not exist
      */
 	public function get($key = null)
 	{
-        if ($key === null)
+        if ($key === null){
             return $this->parameters;
-        else
-            return $this->parameters[$key];
+        }
+        else {
+            if (!isset($this->parameters[$key]))
+                throw new \OutOfBoundsException('key '.$key.' does not exist ');
+            return $this->parameters[$key]->get();
+        }
 	}
     
     public function jsonSerialize()
