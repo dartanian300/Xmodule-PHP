@@ -30,7 +30,7 @@ class Cell implements \JsonSerializable {
         $this->title = new DataWrapper\Title();
         $this->subtitle = new DataWrapper\Title();
         $this->link = new \Link();
-        $this->thumbnail = new \Thumbnail();
+        $this->thumbnail = new Thumbnail();
         $this->verticalAlign = new DataWrapper\VerticalAlignment();
         $this->horizontalAlign = new DataWrapper\HorizontalAlignment();
 	}
