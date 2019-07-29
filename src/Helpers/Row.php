@@ -19,7 +19,7 @@ class Row implements \JsonSerializable {
 //		parent::__construct();
         
         $this->cells = array();
-        $this->link = new Link();
+        $this->link = new \Link();
 	}
     
     /**

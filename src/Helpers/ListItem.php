@@ -27,7 +27,7 @@ class ListItem implements \JsonSerializable {
         $this->title = new DataWrapper\Title();
         $this->label = new DataWrapper\XString();
         $this->description = new DataWrapper\Description();
-        $this->link = new Link();
+        $this->link = new \Link();
         $this->thumbnail = new Thumbnail();
 	}
     

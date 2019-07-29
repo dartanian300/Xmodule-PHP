@@ -23,8 +23,8 @@ class CarouselItem implements \JsonSerializable {
         
         $this->title = new DataWrapper\Title();
         $this->subtitle = new DataWrapper\Title();
-        $this->image = new Image();
-        $this->link = new Link();
+        $this->image = new \Image();
+        $this->link = new \Link();
 	}
     
     public function jsonSerialize()

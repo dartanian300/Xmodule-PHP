@@ -28,7 +28,7 @@ class ToolbarButton extends Element implements \JsonSerializable {
 		parent::__construct('toolbarButton', $id);
         
         $this->title = new DataWrapper\Title();
-        $this->link = new Link();
+        $this->link = new \Link();
         $this->accessoryIconPosition = new DataWrapper\AccessoryIconPosition();
         $this->actionType = new DataWrapper\ActionType();
 	}

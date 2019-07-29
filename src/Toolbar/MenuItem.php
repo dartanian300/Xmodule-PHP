@@ -28,7 +28,7 @@ class MenuItem implements \JsonSerializable {
         
         $this->title = new DataWrapper\Title();
         $this->selected = new DataWrapper\Boolean();
-        $this->link = new Link();
+        $this->link = new \Link();
         $this->ajaxRelativePath = new DataWrapper\XString();
 	}
     

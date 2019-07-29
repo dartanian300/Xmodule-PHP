@@ -44,7 +44,7 @@ class MapPolygon extends \Element implements \JsonSerializable {
         
         $this->title = new DataWrapper\Title();
         $this->description = new DataWrapper\Description();
-        $this->link = new Link();
+        $this->link = new \Link();
         $this->lineColor = new DataWrapper\Color();
         $this->lineAlpha = new DataWrapper\Alpha();
         $this->lineWidth = new DataWrapper\LineWidth();

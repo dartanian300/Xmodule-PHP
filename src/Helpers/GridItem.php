@@ -19,9 +19,9 @@ class GridItem implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->image = new Image();
-        $this->label = new Label();
-        $this->link = new Link();
+        $this->image = new \Image();
+        $this->label = new \Label();
+        $this->link = new \Link();
 	}
     
     public function jsonSerialize()
