@@ -5,6 +5,7 @@ require_once(__DIR__."/../Link.php");
 require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/Description.php");
+require_once(__DIR__."/Thumbnail.php");
 
 use XModule\DataWrappers as DataWrapper;
 
