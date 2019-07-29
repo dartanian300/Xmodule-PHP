@@ -6,7 +6,7 @@
 require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 
 class Password extends FormElement implements \JsonSerializable {

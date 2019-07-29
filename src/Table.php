@@ -7,7 +7,7 @@ require_once(__DIR__."/Element.php");
 require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class Table extends Element implements \JsonSerializable {
@@ -24,7 +24,7 @@ class Table extends Element implements \JsonSerializable {
 	{
 		parent::__construct('table', $id);
         
-        $this->heading = new DataWrapper\XString();
+        $this->heading = new DataWrappers\XString();
         $this->columnOptions = array();
         $this->rows = array();
 	}

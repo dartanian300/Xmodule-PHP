@@ -8,7 +8,7 @@ require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/DataWrappers/TabType.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class Tabs extends Element implements \JsonSerializable {
@@ -26,8 +26,8 @@ class Tabs extends Element implements \JsonSerializable {
 		parent::__construct('tabs', $id);
         
         $this->tabs = array();
-        $this->tabType = new DataWrapper\TabType();
-        $this->forceAjaxOnLoad = new DataWrapper\Boolean();
+        $this->tabType = new DataWrappers\TabType();
+        $this->forceAjaxOnLoad = new DataWrappers\Boolean();
 	}
     
     /**

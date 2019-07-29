@@ -7,7 +7,7 @@ require_once(__DIR__."/Element.php");
 require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class LoadingIndicator extends Element implements \JsonSerializable {
@@ -20,8 +20,8 @@ class LoadingIndicator extends Element implements \JsonSerializable {
 	{
 		parent::__construct('loadingIndicator', $id);
         
-        $this->label = new DataWrapper\XString();
-        $this->hidden = new DataWrapper\Boolean();
+        $this->label = new DataWrappers\XString();
+        $this->hidden = new DataWrappers\Boolean();
 	}
     
     public function jsonSerialize()

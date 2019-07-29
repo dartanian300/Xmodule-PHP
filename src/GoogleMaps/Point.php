@@ -9,7 +9,7 @@ require_once(__DIR__."/../DataWrappers/Longitude.php");
 require_once(__DIR__."/../DataWrappers/Latitude.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 
 class Point implements \JsonSerializable {
@@ -22,8 +22,8 @@ class Point implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->latitude = new DataWrapper\Latitude();
-        $this->longitude = new DataWrapper\Longitude();
+        $this->latitude = new DataWrappers\Latitude();
+        $this->longitude = new DataWrappers\Longitude();
 	}
     
     public function jsonSerialize()

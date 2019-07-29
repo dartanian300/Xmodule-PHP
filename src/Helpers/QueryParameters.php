@@ -3,7 +3,7 @@ namespace XModule\Helpers;
 
 require_once(__DIR__."/../DataWrappers/XString.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class QueryParameters implements \JsonSerializable {
     /** @var mixed[] An associative array */
@@ -21,14 +21,14 @@ class QueryParameters implements \JsonSerializable {
      */
 	public function add($key, $element)
     {
-        $this->$parameters[$key] = new XString($element);
+        $this->parameters[$key] = new DataWrappers\XString($element);
     }
     
     /**
      *  @param string $key The key to remove from the array
      */
 	public function delete($key){
-        unset($this->$parameters[$key]);
+        unset($this->parameters[$key]);
     }
     
     /**
@@ -38,9 +38,9 @@ class QueryParameters implements \JsonSerializable {
 	public function get($key = null)
 	{
         if ($key === null)
-            return $this->$parameters;
+            return $this->parameters;
         else
-            return $this->$parameters[$key];
+            return $this->parameters[$key];
 	}
     
     public function jsonSerialize()

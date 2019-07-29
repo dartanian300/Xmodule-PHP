@@ -3,7 +3,7 @@ namespace XModule\Helpers;
 
 require_once(__DIR__."/../DataWrappers/XString.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class XModule implements \JsonSerializable {
     /** @var XString */
@@ -13,7 +13,7 @@ class XModule implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->relativePath = new DataWrapper\XString();
+        $this->relativePath = new DataWrappers\XString();
 	}
     
     public function jsonSerialize()

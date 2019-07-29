@@ -5,7 +5,7 @@ require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/Size.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 
 class Badge implements \JsonSerializable {
@@ -20,9 +20,9 @@ class Badge implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->value = new DataWrapper\XString();
-        $this->descriptor = new DataWrapper\XString();
-        $this->size = new DataWrapper\Size();
+        $this->value = new DataWrappers\XString();
+        $this->descriptor = new DataWrappers\XString();
+        $this->size = new DataWrappers\Size();
 	}
     
     public function jsonSerialize()

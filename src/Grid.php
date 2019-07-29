@@ -11,7 +11,7 @@ require_once(__DIR__."/DataWrappers/HorizontalAlignment.php");
 require_once(__DIR__."/DataWrappers/HorizontalSpacing.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class Grid extends Element implements \JsonSerializable {
@@ -34,11 +34,11 @@ class Grid extends Element implements \JsonSerializable {
 	{
 		parent::__construct('grid', $id);
         
-        $this->horizontalSpacing = new DataWrapper\HorizontalSpacing();
-        $this->horizontalAlignment = new DataWrapper\HorizontalAlignment();
-        $this->containerPadding = new DataWrapper\ContainerPadding();
-        $this->perItemPadding = new DataWrapper\PerItemPadding();
-        $this->suppressVisibleLabels = new DataWrapper\Boolean();
+        $this->horizontalSpacing = new DataWrappers\HorizontalSpacing();
+        $this->horizontalAlignment = new DataWrappers\HorizontalAlignment();
+        $this->containerPadding = new DataWrappers\ContainerPadding();
+        $this->perItemPadding = new DataWrappers\PerItemPadding();
+        $this->suppressVisibleLabels = new DataWrappers\Boolean();
         $this->items = array();
 	}
     

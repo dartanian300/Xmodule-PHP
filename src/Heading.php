@@ -9,7 +9,7 @@ require_once(__DIR__."/DataWrappers/Title.php");
 require_once(__DIR__."/DataWrappers/Description.php");
 require_once(__DIR__."/Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 use XModule\Exceptions as Exceptions;
 
@@ -25,9 +25,9 @@ class Heading extends Element implements \JsonSerializable {
 	{
 		parent::__construct('heading', $id);
         
-        $this->title = new DataWrapper\Title();
-        $this->description = new DataWrapper\Description();
-        $this->inset = new DataWrapper\Boolean();
+        $this->title = new DataWrappers\Title();
+        $this->description = new DataWrappers\Description();
+        $this->inset = new DataWrappers\Boolean();
 	}
     
     public function jsonSerialize()

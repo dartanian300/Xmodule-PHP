@@ -13,7 +13,7 @@ require_once(__DIR__."/DataWrappers/BaseLayers.php");
 require_once(__DIR__."/GoogleMaps/DynamicPlacemarks.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 use XModule\GoogleMaps as GoogleMaps;
 
@@ -55,19 +55,19 @@ class GoogleMap extends Element implements \JsonSerializable {
 	{
 		parent::__construct('googleMap', $id);
         
-        $this->initialLatitude = new DataWrapper\Latitude();
-        $this->initialLongitude = new DataWrapper\Longitude();
-        $this->initialZoomLevel = new DataWrapper\ZoomLevel();
-        $this->disableZoomToPlacemarks = new DataWrapper\Boolean();
-        $this->defaultToUserLocated = new DataWrapper\Boolean();
-        $this->minZoomLevel = new DataWrapper\ZoomLevel();
-        $this->maxZoomLevel = new DataWrapper\ZoomLevel();
-        $this->aspectRatio = new DataWrapper\AspectRatio();
-        $this->inset = new DataWrapper\Boolean();
-        $this->showUserLocationButton = new DataWrapper\Boolean();
-        $this->showRecenterButton = new DataWrapper\Boolean();
-        $this->showZoomButtons = new DataWrapper\Boolean();
-        $this->baseLayers = new DataWrapper\BaseLayers();
+        $this->initialLatitude = new DataWrappers\Latitude();
+        $this->initialLongitude = new DataWrappers\Longitude();
+        $this->initialZoomLevel = new DataWrappers\ZoomLevel();
+        $this->disableZoomToPlacemarks = new DataWrappers\Boolean();
+        $this->defaultToUserLocated = new DataWrappers\Boolean();
+        $this->minZoomLevel = new DataWrappers\ZoomLevel();
+        $this->maxZoomLevel = new DataWrappers\ZoomLevel();
+        $this->aspectRatio = new DataWrappers\AspectRatio();
+        $this->inset = new DataWrappers\Boolean();
+        $this->showUserLocationButton = new DataWrappers\Boolean();
+        $this->showRecenterButton = new DataWrappers\Boolean();
+        $this->showZoomButtons = new DataWrappers\Boolean();
+        $this->baseLayers = new DataWrappers\BaseLayers();
 
         $this->dynamicPlacemarks = new GoogleMaps\DynamicPlacemarks();
         $this->staticPlacemarks = array();

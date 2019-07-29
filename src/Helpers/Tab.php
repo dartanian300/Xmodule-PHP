@@ -4,7 +4,7 @@ namespace XModule\Helpers;
 require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class Tab implements \JsonSerializable {
     use \ModifiableArray;
@@ -18,7 +18,7 @@ class Tab implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->title = new DataWrapper\Title();
+        $this->title = new DataWrappers\Title();
         $this->content = array();
 	}
     

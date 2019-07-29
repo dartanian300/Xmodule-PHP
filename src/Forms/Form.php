@@ -11,7 +11,7 @@ require_once(__DIR__."/../DataWrappers/RequestMethod.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 
 class Form extends Element implements \JsonSerializable {
@@ -38,12 +38,12 @@ class Form extends Element implements \JsonSerializable {
 	{
 		parent::__construct('form', $id);
         
-        $this->relativePath = new DataWrapper\XString();
-        $this->requestMethod = new DataWrapper\RequestMethod();
-        $this->postType = new DataWrapper\PostType();
-        $this->heading = new DataWrapper\XString();
-        $this->disableScrim = new DataWrapper\Boolean();
-        $this->loadingTitle = new DataWrapper\XString();
+        $this->relativePath = new DataWrappers\XString();
+        $this->requestMethod = new DataWrappers\RequestMethod();
+        $this->postType = new DataWrappers\PostType();
+        $this->heading = new DataWrappers\XString();
+        $this->disableScrim = new DataWrappers\Boolean();
+        $this->loadingTitle = new DataWrappers\XString();
         $this->items = array();
         $this->events = new Events();
 	}

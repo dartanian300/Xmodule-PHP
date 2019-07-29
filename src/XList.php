@@ -8,7 +8,7 @@ require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class XList extends Element implements \JsonSerializable {
@@ -25,8 +25,8 @@ class XList extends Element implements \JsonSerializable {
 	{
 		parent::__construct('list', $id);
         
-        $this->heading = new DataWrapper\XString();
-        $this->grouped = new DataWrapper\Boolean();
+        $this->heading = new DataWrappers\XString();
+        $this->grouped = new DataWrappers\Boolean();
         $this->items = array();
 	}
     

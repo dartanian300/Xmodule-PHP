@@ -7,7 +7,7 @@ require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/HorizontalAlignment.php");
 require_once(__DIR__."/Thumbnail.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class Cell implements \JsonSerializable {
     /** @var Title */
@@ -27,12 +27,12 @@ class Cell implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->title = new DataWrapper\Title();
-        $this->subtitle = new DataWrapper\Title();
+        $this->title = new DataWrappers\Title();
+        $this->subtitle = new DataWrappers\Title();
         $this->link = new \Link();
         $this->thumbnail = new Thumbnail();
-        $this->verticalAlign = new DataWrapper\VerticalAlignment();
-        $this->horizontalAlign = new DataWrapper\HorizontalAlignment();
+        $this->verticalAlign = new DataWrappers\VerticalAlignment();
+        $this->horizontalAlign = new DataWrappers\HorizontalAlignment();
 	}
     
     public function jsonSerialize()

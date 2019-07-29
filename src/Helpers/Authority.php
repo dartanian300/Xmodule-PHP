@@ -3,7 +3,7 @@ namespace XModule\Helpers;
 
 require_once(__DIR__."/../DataWrappers/XString.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class Authority implements \JsonSerializable {
     /** @var XString */
@@ -13,7 +13,7 @@ class Authority implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->type = new DataWrapper\XString();
+        $this->type = new DataWrappers\XString();
 	}
     
     public function jsonSerialize()

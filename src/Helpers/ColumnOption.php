@@ -6,7 +6,7 @@ require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/StringWidth.php");
 require_once(__DIR__."/../DataWrappers/HorizontalAlignment.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class ColumnOption implements \JsonSerializable {
     /** @var XString */
@@ -22,10 +22,10 @@ class ColumnOption implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->header = new DataWrapper\XString();
-        $this->width = new DataWrapper\StringWidth();
-        $this->verticalAlign = new DataWrapper\VerticalAlignment();
-        $this->horizontalAlign = new DataWrapper\HorizontalAlignment();
+        $this->header = new DataWrappers\XString();
+        $this->width = new DataWrappers\StringWidth();
+        $this->verticalAlign = new DataWrappers\VerticalAlignment();
+        $this->horizontalAlign = new DataWrappers\HorizontalAlignment();
 	}
     
     public function jsonSerialize()

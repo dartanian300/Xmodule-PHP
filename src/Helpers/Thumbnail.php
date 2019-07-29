@@ -9,7 +9,7 @@ require_once(__DIR__."/../DataWrappers/URL.php");
 require_once(__DIR__."/Badge.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 
 class Thumbnail implements \JsonSerializable {
@@ -33,11 +33,11 @@ class Thumbnail implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->url = new DataWrapper\URL();
-        $this->maxWidth = new DataWrapper\MaxWidth();
-        $this->maxHeight = new DataWrapper\MaxHeight();
-        $this->crop = new DataWrapper\Boolean();
-        $this->alt = new DataWrapper\Alt();
+        $this->url = new DataWrappers\URL();
+        $this->maxWidth = new DataWrappers\MaxWidth();
+        $this->maxHeight = new DataWrappers\MaxHeight();
+        $this->crop = new DataWrappers\Boolean();
+        $this->alt = new DataWrappers\Alt();
         $this->badge = new Badge();
 	}
     

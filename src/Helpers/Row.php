@@ -4,7 +4,7 @@ namespace XModule\Helpers;
 require_once(__DIR__."/../Link.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class Row implements \JsonSerializable {
     use \ModifiableArray;

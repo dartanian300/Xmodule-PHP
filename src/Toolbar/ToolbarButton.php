@@ -11,7 +11,7 @@ require_once(__DIR__."/../DataWrappers/AccessoryIconPosition.php");
 require_once(__DIR__."/../DataWrappers/ActionType.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class ToolbarButton extends Element implements \JsonSerializable {
     /** @var Title */
@@ -27,10 +27,10 @@ class ToolbarButton extends Element implements \JsonSerializable {
 	{
 		parent::__construct('toolbarButton', $id);
         
-        $this->title = new DataWrapper\Title();
+        $this->title = new DataWrappers\Title();
         $this->link = new \Link();
-        $this->accessoryIconPosition = new DataWrapper\AccessoryIconPosition();
-        $this->actionType = new DataWrapper\ActionType();
+        $this->accessoryIconPosition = new DataWrappers\AccessoryIconPosition();
+        $this->actionType = new DataWrappers\ActionType();
 	}
     
     public function jsonSerialize()

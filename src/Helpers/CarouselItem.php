@@ -5,7 +5,7 @@ require_once(__DIR__."/../Link.php");
 require_once(__DIR__."/../Image.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class CarouselItem implements \JsonSerializable {
     /** @var Title */
@@ -21,8 +21,8 @@ class CarouselItem implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->title = new DataWrapper\Title();
-        $this->subtitle = new DataWrapper\Title();
+        $this->title = new DataWrappers\Title();
+        $this->subtitle = new DataWrappers\Title();
         $this->image = new \Image();
         $this->link = new \Link();
 	}

@@ -4,7 +4,7 @@ namespace XModule\Helpers;
 require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/QueryParameters.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class Module implements \JsonSerializable {
     /** @var XString */
@@ -18,8 +18,8 @@ class Module implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->id = new DataWrapper\XString();
-        $this->page = new DataWrapper\XString();
+        $this->id = new DataWrappers\XString();
+        $this->page = new DataWrappers\XString();
         $this->queryParameters = new QueryParameters();
 	}
     

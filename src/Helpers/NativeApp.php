@@ -4,7 +4,7 @@ namespace XModule\Helpers;
 require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/URL.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class NativeApp implements \JsonSerializable {
     /** @var URL */
@@ -16,8 +16,8 @@ class NativeApp implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->nativeAppURL = new DataWrapper\URL();
-        $this->fallbackLink = new DataWrapper\XString();
+        $this->nativeAppURL = new DataWrappers\URL();
+        $this->fallbackLink = new DataWrappers\XString();
 	}
     
     public function jsonSerialize()

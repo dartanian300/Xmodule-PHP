@@ -14,7 +14,7 @@ require_once(__DIR__."/../DataWrappers/Description.php");
 require_once(__DIR__."/../DataWrappers/Alpha.php");
 require_once(__DIR__."/../Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class MapPolyline extends \Element implements \JsonSerializable {
     use ModifiableArray; 
@@ -38,12 +38,12 @@ class MapPolyline extends \Element implements \JsonSerializable {
 	{
 		parent::__construct('mapPolyline', $id);
         
-        $this->title = new DataWrapper\Title();
-        $this->description = new DataWrapper\Description();
+        $this->title = new DataWrappers\Title();
+        $this->description = new DataWrappers\Description();
         $this->link = new \Link();
-        $this->lineColor = new DataWrapper\Color();
-        $this->lineAlpha = new DataWrapper\Alpha();
-        $this->lineWidth = new DataWrapper\LineWidth();
+        $this->lineColor = new DataWrappers\Color();
+        $this->lineAlpha = new DataWrappers\Alpha();
+        $this->lineWidth = new DataWrappers\LineWidth();
         $this->polyline = array();
 	}
     

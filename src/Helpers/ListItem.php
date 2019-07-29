@@ -7,7 +7,7 @@ require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/Description.php");
 require_once(__DIR__."/Thumbnail.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class ListItem implements \JsonSerializable {
     /** @var Title */
@@ -25,9 +25,9 @@ class ListItem implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->title = new DataWrapper\Title();
-        $this->label = new DataWrapper\XString();
-        $this->description = new DataWrapper\Description();
+        $this->title = new DataWrappers\Title();
+        $this->label = new DataWrappers\XString();
+        $this->description = new DataWrappers\Description();
         $this->link = new \Link();
         $this->thumbnail = new Thumbnail();
 	}

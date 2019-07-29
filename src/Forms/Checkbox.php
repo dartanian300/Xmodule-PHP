@@ -8,7 +8,7 @@ require_once(__DIR__."/../DataWrappers/Boolean.php");
 require_once(__DIR__."/../Helpers/ProgressiveDisclosureItems.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 use XModule\Exceptions as Exceptions;
 
@@ -22,7 +22,7 @@ class Checkbox extends FormElement implements \JsonSerializable {
 	{
 		parent::__construct('checkbox');
         
-        $this->checked = new DataWrapper\Boolean();
+        $this->checked = new DataWrappers\Boolean();
         $this->progressiveDisclosureItems = new Helpers\ProgressiveDisclosureItems();
 	}
     

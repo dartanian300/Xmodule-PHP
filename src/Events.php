@@ -5,7 +5,7 @@
 require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class Events {
@@ -22,10 +22,10 @@ class Events {
 	{
 //		parent::__construct();
         
-        $this->eventName = new DataWrapper\XString();
-        $this->targetId = new DataWrapper\XString();
-        $this->action = new DataWrapper\XString();
-        $this->useRelativePathToUpdate = new DataWrapper\Boolean();
+        $this->eventName = new DataWrappers\XString();
+        $this->targetId = new DataWrappers\XString();
+        $this->action = new DataWrappers\XString();
+        $this->useRelativePathToUpdate = new DataWrappers\Boolean();
 	}
 }
 

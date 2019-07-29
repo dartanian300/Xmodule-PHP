@@ -8,7 +8,7 @@ use XModule\Toolbar;
 require_once(__DIR__."/../Element.php");
 require_once(__DIR__."/../DataWrappers/XString.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class ToolbarLabel extends Element implements \JsonSerializable {
     /** @var XString */
@@ -18,7 +18,7 @@ class ToolbarLabel extends Element implements \JsonSerializable {
 	{
 		parent::__construct('toolbarLabel', $id);
         
-        $this->label = new DataWrapper\XString();
+        $this->label = new DataWrappers\XString();
 	}
     
     public function jsonSerialize()

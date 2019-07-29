@@ -1,7 +1,7 @@
 <?php
 namespace XModule\Helpers;
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 /**
  *  @todo I think each key can have multiple elements...might need to rewrite this to allow that

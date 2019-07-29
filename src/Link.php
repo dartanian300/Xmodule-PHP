@@ -16,7 +16,7 @@ require_once(__DIR__."/Helpers/XModule.php");
 require_once(__DIR__."/Helpers/QueryParameters.php");
 require_once(__DIR__."/Helpers/Module.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class Link implements \JsonSerializable {
@@ -51,19 +51,19 @@ class Link implements \JsonSerializable {
     
 	public function __construct() 
 	{        
-        $this->relativePath = new DataWrapper\XString();
-        $this->external = new DataWrapper\XString();
+        $this->relativePath = new DataWrappers\XString();
+        $this->external = new DataWrappers\XString();
         $this->module = new Helpers\Module();
         $this->xmodule = new Helpers\XModule();
         $this->authority = new Helpers\Authority();
-        $this->shortcut = new DataWrapper\Shortcut();
+        $this->shortcut = new DataWrappers\Shortcut();
         $this->nativeApp = new Helpers\NativeApp();
-        $this->nativePlugin = new DataWrapper\XString();
-        $this->accessoryIcon = new DataWrapper\AccessoryIcon();
-        $this->browserType = new DataWrapper\BrowserType();
-        $this->targetNewWindow = new DataWrapper\Boolean();
-        $this->backActionTarget = new DataWrapper\BackActionTarget();
-        $this->requestMethod = new DataWrapper\RequestMethod();
+        $this->nativePlugin = new DataWrappers\XString();
+        $this->accessoryIcon = new DataWrappers\AccessoryIcon();
+        $this->browserType = new DataWrappers\BrowserType();
+        $this->targetNewWindow = new DataWrappers\Boolean();
+        $this->backActionTarget = new DataWrappers\BackActionTarget();
+        $this->requestMethod = new DataWrappers\RequestMethod();
         $this->postData = new Helpers\QueryParameters();
 	}
     

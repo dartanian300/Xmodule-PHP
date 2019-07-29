@@ -7,7 +7,7 @@ require_once(__DIR__."/Element.php");
 require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class HTML extends Element implements \JsonSerializable {
@@ -22,9 +22,9 @@ class HTML extends Element implements \JsonSerializable {
 	{
 		parent::__construct('html', $id);
         
-        $this->html = new DataWrapper\XString();
-        $this->focal = new DataWrapper\Boolean();
-        $this->inset = new DataWrapper\Boolean();
+        $this->html = new DataWrappers\XString();
+        $this->focal = new DataWrappers\Boolean();
+        $this->inset = new DataWrappers\Boolean();
 	}
     
     public function jsonSerialize()

@@ -11,7 +11,7 @@ require_once(__DIR__."/../DataWrappers/Title.php");
 require_once(__DIR__."/../DataWrappers/ButtonType.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 
 class FormButton extends FormElement implements \JsonSerializable {
@@ -30,11 +30,11 @@ class FormButton extends FormElement implements \JsonSerializable {
 	{
 		parent::__construct('', 'formButton');
         
-        $this->title = new DataWrapper\Title();
-        $this->buttonType = new DataWrapper\ButtonType();
-        $this->accessoryIcon = new DataWrapper\AccessoryIcon();
-        $this->accessoryIconPosition = new DataWrapper\AccessoryIconPosition();
-        $this->actionType = new DataWrapper\ActionType();
+        $this->title = new DataWrappers\Title();
+        $this->buttonType = new DataWrappers\ButtonType();
+        $this->accessoryIcon = new DataWrappers\AccessoryIcon();
+        $this->accessoryIconPosition = new DataWrappers\AccessoryIconPosition();
+        $this->actionType = new DataWrappers\ActionType();
 	}
     
     public function jsonSerialize()

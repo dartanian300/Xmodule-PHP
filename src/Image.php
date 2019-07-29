@@ -9,7 +9,7 @@ require_once(__DIR__."/DataWrappers/URL.php");
 require_once(__DIR__."/DataWrappers/Boolean.php");
 require_once(__DIR__."/Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 use XModule\Exceptions as Exceptions;
 
@@ -27,10 +27,10 @@ class Image extends Element implements \JsonSerializable {
 	{
 		parent::__construct('image', $id);
         
-        $this->url = new DataWrapper\URL();
-        $this->alt = new DataWrapper\Alt();
-        $this->scaleToFull = new DataWrapper\Boolean();
-        $this->enableZoomControls = new DataWrapper\Boolean();
+        $this->url = new DataWrappers\URL();
+        $this->alt = new DataWrappers\Alt();
+        $this->scaleToFull = new DataWrappers\Boolean();
+        $this->enableZoomControls = new DataWrappers\Boolean();
 	}
     
     public function jsonSerialize()

@@ -10,7 +10,7 @@ require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../DataWrappers/Boolean.php");
 require_once(__DIR__."/../DataWrappers/Title.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class MenuItem implements \JsonSerializable {
     /** @var Title */
@@ -26,10 +26,10 @@ class MenuItem implements \JsonSerializable {
 	{
 		parent::__construct();
         
-        $this->title = new DataWrapper\Title();
-        $this->selected = new DataWrapper\Boolean();
+        $this->title = new DataWrappers\Title();
+        $this->selected = new DataWrappers\Boolean();
         $this->link = new \Link();
-        $this->ajaxRelativePath = new DataWrapper\XString();
+        $this->ajaxRelativePath = new DataWrappers\XString();
 	}
     
     public function jsonSerialize()

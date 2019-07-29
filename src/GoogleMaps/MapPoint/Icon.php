@@ -10,7 +10,7 @@ require_once(__DIR__."/../../DataWrappers/Scale.php");
 require_once(__DIR__."/Size.php");
 require_once(__DIR__."/Anchor.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 
 class Icon implements \JsonSerializable {
     /** @var URL */
@@ -26,8 +26,8 @@ class Icon implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->url = new DataWrapper\URL();
-        $this->scale = new DataWrapper\Scale();
+        $this->url = new DataWrappers\URL();
+        $this->scale = new DataWrappers\Scale();
         $this->size = new Size();
         $this->anchor = new Anchor();
 	}

@@ -10,7 +10,7 @@ require_once(__DIR__."/DataWrappers/TextAlignment.php");
 require_once(__DIR__."/DataWrappers/DisclaimerType.php");
 require_once(__DIR__."/Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 use XModule\Exceptions as Exceptions;
 
@@ -26,9 +26,9 @@ class AutoUpdateAccessibility extends Element implements \JsonSerializable {
 	{
 		parent::__construct('autoUpdateAccessibility', $id);
         
-        $this->disclaimerType = new DataWrapper\DisclaimerType();
-        $this->textAlignment = new DataWrapper\TextAlignment();
-        $this->inset = new DataWrapper\Boolean();
+        $this->disclaimerType = new DataWrappers\DisclaimerType();
+        $this->textAlignment = new DataWrappers\TextAlignment();
+        $this->inset = new DataWrappers\Boolean();
 	}
     
     public function jsonSerialize()

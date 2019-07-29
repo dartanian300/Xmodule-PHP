@@ -9,7 +9,7 @@ require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/Helpers/Thumbnail.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 
 class Detail extends Element implements \JsonSerializable {
@@ -30,9 +30,9 @@ class Detail extends Element implements \JsonSerializable {
 	{
 		parent::__construct('detail', $id);
         
-        $this->title = new DataWrapper\Title();
-        $this->subtitle = new DataWrapper\Title();
-        $this->body = new DataWrapper\XString();
+        $this->title = new DataWrappers\Title();
+        $this->subtitle = new DataWrappers\Title();
+        $this->body = new DataWrappers\XString();
         $this->thumbnail = new Helpers\Thumbnail();
         $this->content = array();
 	}

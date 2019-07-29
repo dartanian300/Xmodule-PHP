@@ -9,7 +9,7 @@ require_once(__DIR__."/DataWrappers/Number.php");
 require_once(__DIR__."/Traits/ModifiableArray.php");
 require_once(__DIR__."/Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 use XModule\Exceptions as Exceptions;
 
@@ -33,8 +33,8 @@ class ToolbarContent extends Element implements \JsonSerializable {
 	{
 		parent::__construct('toolbarContentAjax', $id);
         
-        $this->menuPosition =  new DataWrapper\MenuPosition();
-        $this->ajaxUpdateInterval = new DataWrapper\Number();
+        $this->menuPosition =  new DataWrappers\MenuPosition();
+        $this->ajaxUpdateInterval = new DataWrappers\Number();
         $this->menuItems = array();
         $this->left = array();
         $this->middle = array();

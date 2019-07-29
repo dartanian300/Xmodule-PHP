@@ -7,7 +7,7 @@ require_once(__DIR__."/FormElement.php");
 require_once(__DIR__."/../DataWrappers/XString.php");
 require_once(__DIR__."/../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 
 class TextInput extends FormElement implements \JsonSerializable {
@@ -18,7 +18,7 @@ class TextInput extends FormElement implements \JsonSerializable {
 	{
 		parent::__construct('text');
         
-        $this->placeholder = new DataWrapper\XString();
+        $this->placeholder = new DataWrappers\XString();
 	}
     
     public function jsonSerialize()

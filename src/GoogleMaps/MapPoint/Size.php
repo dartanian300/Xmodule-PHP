@@ -9,7 +9,7 @@ require_once(__DIR__."/../../DataWrappers/Height.php");
 require_once(__DIR__."/../../DataWrappers/Width.php");
 require_once(__DIR__."/../../Exceptions/RequiredProperty.php");
 
-use XModule\DataWrappers as DataWrapper;
+use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 
 class Size implements \JsonSerializable {
@@ -22,8 +22,8 @@ class Size implements \JsonSerializable {
 	{
 //		parent::__construct();
         
-        $this->width = new DataWrapper\Width();
-        $this->height = new DataWrapper\Height();
+        $this->width = new DataWrappers\Width();
+        $this->height = new DataWrappers\Height();
 	}
     
     public function jsonSerialize()
