@@ -28,7 +28,7 @@ class Carousel extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('items', $item, 'CarouselItem');
+        $this->addArray('items', $item, '\XModule\Helpers\CarouselItem');
     }
     
     /**
