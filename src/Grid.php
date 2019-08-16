@@ -48,7 +48,7 @@ class Grid extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('items', $item, 'GridItem');
+        $this->addArray('items', $item, '\XModule\Helpers\GridItem');
     }
     
     /**
