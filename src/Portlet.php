@@ -4,6 +4,7 @@
  *  
  */
 require_once(__DIR__."/Element.php");
+require_once(__DIR__."/Link.php");
 require_once(__DIR__."/DataWrappers/XString.php");
 require_once(__DIR__."/DataWrappers/Size.php");
 require_once(__DIR__."/DataWrappers/Title.php");
@@ -23,10 +24,10 @@ class Portlet extends Element implements \JsonSerializable {
 	public $navbarLink;
     /** @var \Boolean */
     public $forceAjaxOnLoad;
+    /** @var Size */
+	public $height;
     /** @var mixed[] */
 	private $content;
-    /** @var Size */
-	private $height;
 	
     
 	public function __construct($id = '')
@@ -37,8 +38,8 @@ class Portlet extends Element implements \JsonSerializable {
         $this->navbarIcon = new DataWrappers\XString();
         $this->navbarLink = new Link();
         $this->forceAjaxOnLoad = new DataWrappers\Boolean();
-        $this->content = array();
         $this->height = new DataWrappers\Size();
+        $this->content = array();
 	}
     
     /**
