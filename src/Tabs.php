@@ -36,7 +36,7 @@ class Tabs extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('tabs', $item, 'Tab');
+        $this->addArray('tabs', $item, '\XModule\Helpers\Tab');
     }
     
     /**
