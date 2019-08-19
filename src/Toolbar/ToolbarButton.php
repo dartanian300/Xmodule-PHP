@@ -1,5 +1,5 @@
 <?php
-use XModule\Toolbar;
+namespace XModule\Toolbar;
 
 /**
  *  @package Toolbar
@@ -13,7 +13,7 @@ require_once(__DIR__."/../DataWrappers/Title.php");
 
 use XModule\DataWrappers as DataWrappers;
 
-class ToolbarButton extends Element implements \JsonSerializable {
+class ToolbarButton extends \Element implements \JsonSerializable {
     /** @var Title */
 	public $title;
     /** @var Link */

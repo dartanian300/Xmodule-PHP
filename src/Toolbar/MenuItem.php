@@ -1,5 +1,5 @@
 <?php
-use XModule\Toolbar;
+namespace XModule\Toolbar;
 
 /**
  *  @package Toolbar

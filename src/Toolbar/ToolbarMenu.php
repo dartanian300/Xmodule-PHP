@@ -1,5 +1,5 @@
 <?php
-use XModule\Toolbar;
+namespace XModule\Toolbar;
 
 /**
  *  @package Toolbar
@@ -10,8 +10,8 @@ require_once(__DIR__."/../Traits/ModifiableArray.php");
 
 use XModule\DataWrappers as DataWrappers;
 
-class ToolbarMenu extends Element implements \JsonSerializable {
-    use ModifiableArray; 
+class ToolbarMenu extends \Element implements \JsonSerializable {
+    use \ModifiableArray; 
     
     /** @var MenuItem[] */
 	private $items;
