@@ -36,7 +36,7 @@ class XList extends Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('items', $item, 'ListItem');
+        $this->addArray('items', $item, 'XModule\Helpers\ListItem');
     }
     
     /**
