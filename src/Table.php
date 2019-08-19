@@ -35,7 +35,7 @@ class Table extends Element implements \JsonSerializable {
      */
     public function addRow($item)
     {
-        $this->addArray('rows', $item, 'Row');
+        $this->addArray('rows', $item, '\XModule\Helpers\Row');
     }
     
     /**
@@ -64,7 +64,7 @@ class Table extends Element implements \JsonSerializable {
      */
     public function addColumnOption($item)
     {
-        $this->addArray('columnOptions', $item, 'ColumnOption');
+        $this->addArray('columnOptions', $item, '\XModule\Helpers\ColumnOption');
     }
     
     /**
@@ -95,7 +95,7 @@ class Table extends Element implements \JsonSerializable {
         if (count($this->rows) == 0)
             return 0;
             
-		return count($this->rows[0]->cells);
+		return count($this->rows[0]->get());
 	}
     
     public function jsonSerialize()
