@@ -60,7 +60,7 @@ trait ModifiableArray {
     /**
      *  Gets the entire modifiable array. If $position is provided, returns only that key's value.
      *  @param string $property The property to operate on
-     *  @param int $position the array position of the value to return
+     *  @param int $position the array position of the value to return. Can use -1 to get last element.
      */
 	private function getArray($property, $position = null)
 	{
@@ -68,7 +68,12 @@ trait ModifiableArray {
             return $this->{$property};
         }
         else if (is_int($position)){
-            return $this->{$property}[$position];
+            if ($position == -1)
+                // get last element in array
+                return $this->{$property}[count($this->{$property}) - 1];
+            else
+                // get regular index
+                return $this->{$property}[$position];
         }
 	}
     

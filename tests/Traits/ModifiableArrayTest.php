@@ -85,7 +85,7 @@ class ModifiableArrayTest extends TestCase{
      *  Test getting each single element
      *  @depends testAddArray
      */
-    public function testGetSingle()
+    public function testGetSingleFront()
     {
         $this->assertIsIterable(self::$obj->get(), '$content is not iterable');
         $this->assertNotEmpty(self::$obj->get(), '$content is not empty');
@@ -94,8 +94,25 @@ class ModifiableArrayTest extends TestCase{
     }
     
     /**
+     *  Test getting the last element
+     *  @depends testAddArray
+     */
+    public function testGetSingleBack()
+    {
+        $this->assertIsIterable(self::$obj->get(), '$content is not iterable');
+        $this->assertNotEmpty(self::$obj->get(), '$content is not empty');
+        
+        $r = self::$obj->get(-1);
+        $this->assertIsObject($r);
+        $expected = $this->addArrayProvider()[0][0];
+        $expected = end($expected);
+        $this->assertInstanceOf(get_class($expected), $r);
+    }
+    
+    /**
      *  Test deleting an element from the back of array
-     *  @depends testGetSingle
+     *  @depends testGetSingleFront
+     *  @depends testGetSingleBack
      *  @depends testGetFull
      */
     public function testDeleteBack()
