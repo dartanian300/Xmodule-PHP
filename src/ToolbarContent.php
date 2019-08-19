@@ -134,7 +134,7 @@ class ToolbarContent extends Element implements \JsonSerializable {
      */
     public function addMenuItem($item)
     {
-        $this->addArray('menuItems', $item, 'MenuItem');
+        $this->addArray('menuItems', $item, 'XModule\Toolbar\MenuItem');
     }
     
     /**
