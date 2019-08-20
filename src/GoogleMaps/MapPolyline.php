@@ -53,7 +53,7 @@ class MapPolyline extends \Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('polyline', $item, 'Point');
+        $this->addArray('polyline', $item, '\XModule\GoogleMaps\Point');
     }
     
     /**

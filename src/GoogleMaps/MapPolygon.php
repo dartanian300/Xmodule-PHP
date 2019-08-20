@@ -59,7 +59,7 @@ class MapPolygon extends \Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('polygon', $item, 'Point');
+        $this->addArray('polygon', $item, '\XModule\GoogleMaps\Point');
     }
     
     /**
