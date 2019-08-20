@@ -49,18 +49,18 @@ class MultiColumn extends Element implements \JsonSerializable {
     }
     
     /**
-     *  @param int $columnNum The column to add the item to
+     *  @param int $columnNum The column to add the item to (0-indexed)
      *  @param mixed $item The object to add to that column
      */
 	public function add($columnNum, $item)
     {
-        if ($columnNum > $this->numColumns->get())
+        if ($columnNum > $this->numColumns->get() - 1)
             throw new OutOfBoundsException('The parameter $columnNum must be less than or equal to the number of columns for this object');
         
         if (gettype($this->columns[$numColumns]) != "array")
-            $this->columns[$numColumns] = array();
+            $this->columns[$numColumns - 1] = array();
         
-        $this->columns[$numColumns][] = $item;
+        $this->columns[$numColumns - 1][] = $item;
     }
     
     public function jsonSerialize()
