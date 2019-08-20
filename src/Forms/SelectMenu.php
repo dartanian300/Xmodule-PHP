@@ -33,11 +33,11 @@ class SelectMenu extends FormElement implements \JsonSerializable {
     
     /**
      *  Adds an element to the content of SelectMenu.
-     *  @param mixed $item An object to add
+     *  @param string $item A string to add
      */
     public function addOptionLabel($item)
     {
-        $this->addArray('optionLabels', $item);
+        $this->addArray('optionLabels', $item, 'string');
     }
     
     /**
@@ -62,11 +62,11 @@ class SelectMenu extends FormElement implements \JsonSerializable {
     
     /**
      *  Adds an element to the content of SelectMenu.
-     *  @param mixed $item An object to add
+     *  @param string $item A string to add
      */
     public function addOptionValue($item)
     {
-        $this->addArray('optionValues', $item);
+        $this->addArray('optionValues', $item, 'string');
     }
     
     /**
