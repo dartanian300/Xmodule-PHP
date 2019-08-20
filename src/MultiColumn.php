@@ -54,7 +54,7 @@ class MultiColumn extends Element implements \JsonSerializable {
      */
 	public function add($columnNum, $item)
     {
-        if ($columnNum > $this->numColumns->get() - 1)
+        if ($columnNum > $this->numColumns->get() - 1 || $columnNum < 0)
             throw new OutOfBoundsException('The parameter $columnNum must be less than or equal to the number of columns for this object');
         
         if (gettype($this->columns[$numColumns]) != "array")
