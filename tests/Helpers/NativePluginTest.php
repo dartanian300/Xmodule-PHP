@@ -20,7 +20,7 @@ class NativePluginTest extends TestCase{
         $this->assertClassHasAttribute('queryParameters', \XModule\Helpers\NativePlugin::class);
         $this->assertInstanceOf(\XModule\Helpers\QueryParameters::class, $this->obj->queryParameters);
         
-                $this->assertClassHasAttribute('version', \XModule\Helpers\NativePlugin::class);
+        $this->assertClassHasAttribute('version', \XModule\Helpers\NativePlugin::class);
         $this->assertInstanceOf(\XModule\DataWrappers\Number::class, $this->obj->version);
     }
 }
