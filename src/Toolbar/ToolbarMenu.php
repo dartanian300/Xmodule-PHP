@@ -29,7 +29,7 @@ class ToolbarMenu extends \Element implements \JsonSerializable {
      */
     public function add($item)
     {
-        $this->addArray('items', $item, 'MenuItem');
+        $this->addArray('items', $item, '\XModule\Toolbar\MenuItem');
     }
     
     /**
