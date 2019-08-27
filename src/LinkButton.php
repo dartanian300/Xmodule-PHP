@@ -3,13 +3,13 @@
  *  @package Elements
  *  
  */
-require_once(__DIR__."/Element.php");
-require_once(__DIR__."/Link.php");
-require_once(__DIR__."/Events.php");
-require_once(__DIR__."/DataWrappers/AccessoryIconPosition.php");
-require_once(__DIR__."/DataWrappers/ActionType.php");
-require_once(__DIR__."/DataWrappers/Boolean.php");
-require_once(__DIR__."/DataWrappers/Title.php");
+//require_once(__DIR__."/Element.php");
+//require_once(__DIR__."/Link.php");
+//require_once(__DIR__."/Events.php");
+//require_once(__DIR__."/DataWrappers/AccessoryIconPosition.php");
+//require_once(__DIR__."/DataWrappers/ActionType.php");
+//require_once(__DIR__."/DataWrappers/Boolean.php");
+//require_once(__DIR__."/DataWrappers/Title.php");
 
 use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
@@ -36,7 +36,7 @@ class LinkButton extends Element implements \JsonSerializable {
         $this->link = new Link();
         $this->disabled = new DataWrappers\Boolean();
         $this->accessoryIconPosition = new DataWrappers\AccessoryIconPosition();
-        $this->actionType = new DataWrappers\actionType();
+        $this->actionType = new DataWrappers\ActionType();
         $this->events = new Events();
 	}
     
