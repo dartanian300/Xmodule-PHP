@@ -4,11 +4,11 @@
  *  
  */
 
-require_once(__DIR__."/Element.php");
-require_once(__DIR__."/DataWrappers/Boolean.php");
-require_once(__DIR__."/DataWrappers/TextAlignment.php");
-require_once(__DIR__."/DataWrappers/DisclaimerType.php");
-require_once(__DIR__."/Exceptions/RequiredProperty.php");
+//require_once(__DIR__."/Element.php");
+//require_once(__DIR__."/DataWrappers/Boolean.php");
+//require_once(__DIR__."/DataWrappers/TextAlignment.php");
+//require_once(__DIR__."/DataWrappers/DisclaimerType.php");
+//require_once(__DIR__."/Exceptions/RequiredProperty.php");
 
 use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
