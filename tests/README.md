@@ -1,0 +1,2 @@
+# Testing
+Each file in `src/` with any functionality that is not provided by a parent class or trait should have a corresponding test file in `tests/`. To run these machines, simply run the `scripts/run_unit_tests.bash` file in the terminal in the root folder. This will automatically run all unit tests. ***note:** this file is written for Unix systems. It may need to be modified for Windows environments.
