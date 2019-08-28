@@ -3,6 +3,7 @@
 require_once(__DIR__.'/vendor/autoload.php');
 
 $loader = new Nette\Loaders\RobotLoader;
+$loader->setAutoRefresh(false);
 
 // Add directories for RobotLoader to index
 $loader->addDirectory(__DIR__ . '/src');
