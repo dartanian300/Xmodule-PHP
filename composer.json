@@ -3,7 +3,8 @@
     "description": "A PHP implementation of Modo Lab's Xmodule specification",
     "type": "project",
     "require": {
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^7.5",
+        "nette/robot-loader": "^3.2"
     },
     "require-dev": {
         "phpdocumentor/phpdocumentor": "2.*"
