@@ -1,5 +1,5 @@
 {
-    "name": "modolabs/xmodule",
+    "name": "dartanian300/xmodule-php",
     "description": "A PHP implementation of Modo Lab's Xmodule specification",
     "type": "library",
     "require": {
