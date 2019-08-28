@@ -1,8 +1,6 @@
 <?php
 namespace XModule\DataWrappers;
 
-require_once(__DIR__."/XString.php");
-
 class Alt extends XString {
 	public function __construct() 
 	{

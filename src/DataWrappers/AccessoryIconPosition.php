@@ -1,8 +1,6 @@
 <?php
 namespace XModule\DataWrappers;
 
-require_once(__DIR__."/DataWrapperBase.php");
-
 class AccessoryIconPosition extends DataWrapperBase {
 	public function __construct() 
 	{

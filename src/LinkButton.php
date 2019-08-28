@@ -1,16 +1,4 @@
 <?php
-/**
- *  @package Elements
- *  
- */
-//require_once(__DIR__."/Element.php");
-//require_once(__DIR__."/Link.php");
-//require_once(__DIR__."/Events.php");
-//require_once(__DIR__."/DataWrappers/AccessoryIconPosition.php");
-//require_once(__DIR__."/DataWrappers/ActionType.php");
-//require_once(__DIR__."/DataWrappers/Boolean.php");
-//require_once(__DIR__."/DataWrappers/Title.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 

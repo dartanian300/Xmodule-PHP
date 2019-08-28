@@ -1,17 +1,6 @@
 <?php
 namespace XModule\GoogleMaps;
 
-/**
- *  @package GoogleMaps
- *  
- */
-require_once(__DIR__."/../Element.php");
-require_once(__DIR__."/../Link.php");
-require_once(__DIR__."/../DataWrappers/Title.php");
-require_once(__DIR__."/../DataWrappers/Description.php");
-require_once(__DIR__."/../GoogleMaps/MapPoint/Icon.php");
-require_once(__DIR__."/Point.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\GoogleMaps\MapPoint as MapPoint;
 

@@ -1,8 +1,6 @@
 <?php
 namespace XModule\DataWrappers;
 
-require_once(__DIR__."/DataWrapperBase.php");
-
 class Margins extends DataWrapperBase {
 	public function __construct() 
 	{

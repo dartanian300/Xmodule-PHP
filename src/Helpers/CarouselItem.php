@@ -1,10 +1,6 @@
 <?php
 namespace XModule\Helpers;
 
-require_once(__DIR__."/../Link.php");
-require_once(__DIR__."/../Image.php");
-require_once(__DIR__."/../DataWrappers/Title.php");
-
 use XModule\DataWrappers as DataWrappers;
 
 class CarouselItem implements \JsonSerializable {

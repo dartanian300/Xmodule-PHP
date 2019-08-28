@@ -1,16 +1,4 @@
 <?php
-/**
- *  @package Elements
- *  
- */
-require_once(__DIR__."/Element.php");
-require_once(__DIR__."/DataWrappers/PerItemPadding.php");
-require_once(__DIR__."/DataWrappers/ContainerPadding.php");
-require_once(__DIR__."/DataWrappers/Boolean.php");
-require_once(__DIR__."/DataWrappers/HorizontalAlignment.php");
-require_once(__DIR__."/DataWrappers/HorizontalSpacing.php");
-require_once(__DIR__."/Traits/ModifiableArray.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 

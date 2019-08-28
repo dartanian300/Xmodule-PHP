@@ -1,8 +1,6 @@
 <?php
 namespace XModule\DataWrappers;
 
-require_once(__DIR__."/DataWrapperBase.php");
-
 class XString extends DataWrapperBase {
     /** @var string A regex for which the string needs to adhear */
 	protected $format;

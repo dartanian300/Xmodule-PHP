@@ -1,14 +1,6 @@
 <?php
 namespace XModule\Helpers;
 
-require_once(__DIR__."/../DataWrappers/MaxHeight.php");
-require_once(__DIR__."/../DataWrappers/MaxWidth.php");
-require_once(__DIR__."/../DataWrappers/Alt.php");
-require_once(__DIR__."/../DataWrappers/Boolean.php");
-require_once(__DIR__."/../DataWrappers/URL.php");
-require_once(__DIR__."/Badge.php");
-require_once(__DIR__."/../Exceptions/RequiredProperty.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 

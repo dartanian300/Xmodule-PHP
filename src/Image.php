@@ -1,14 +1,4 @@
 <?php
-/**
- *  @package Elements
- *  
- */
-require_once(__DIR__."/Element.php");
-require_once(__DIR__."/DataWrappers/Alt.php");
-require_once(__DIR__."/DataWrappers/URL.php");
-require_once(__DIR__."/DataWrappers/Boolean.php");
-require_once(__DIR__."/Exceptions/RequiredProperty.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 use XModule\Exceptions as Exceptions;

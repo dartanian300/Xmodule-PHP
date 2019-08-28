@@ -1,12 +1,4 @@
 <?php
-/**
- *  @package Elements
- */
-require_once(__DIR__."/Element.php");
-require_once(__DIR__."/DataWrappers/DisclosureIcon.php");
-require_once(__DIR__."/DataWrappers/Title.php");
-require_once(__DIR__."/Traits/ModifiableArray.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\Helpers as Helpers;
 

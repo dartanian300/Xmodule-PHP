@@ -1,14 +1,4 @@
 <?php
-/**
- *  @package Forms
- *  
- */
-require_once(__DIR__."/../Element.php");
-require_once(__DIR__."/../DataWrappers/XString.php");
-require_once(__DIR__."/../DataWrappers/Boolean.php");
-require_once(__DIR__."/../DataWrappers/Name.php");
-require_once(__DIR__."/../DataWrappers/Description.php");
-
 use XModule\DataWrappers as DataWrappers;
 
 abstract class FormElement extends Element {

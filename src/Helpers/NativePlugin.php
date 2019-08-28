@@ -1,10 +1,6 @@
 <?php
 namespace XModule\Helpers;
 
-require_once(__DIR__."/../DataWrappers/XString.php");
-require_once(__DIR__."/../DataWrappers/Number.php");
-require_once(__DIR__."/QueryParameters.php");
-
 use XModule\DataWrappers as DataWrappers;
 
 class NativePlugin implements \JsonSerializable {

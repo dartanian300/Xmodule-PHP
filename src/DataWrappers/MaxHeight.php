@@ -1,8 +1,6 @@
 <?php
 namespace XModule\DataWrappers;
 
-require_once(__DIR__."/Number.php");
-
 class MaxHeight extends Number {
 	public function __construct() 
 	{

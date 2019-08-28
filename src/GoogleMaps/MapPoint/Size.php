@@ -1,14 +1,6 @@
 <?php
 namespace XModule\GoogleMaps\MapPoint;
 
-/**
- *  @package GoogleMaps
- *  
- */
-require_once(__DIR__."/../../DataWrappers/Height.php");
-require_once(__DIR__."/../../DataWrappers/Width.php");
-require_once(__DIR__."/../../Exceptions/RequiredProperty.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 

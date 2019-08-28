@@ -1,9 +1,4 @@
 <?php
-/**
- *  @package Elements
- *  
- */
-
 abstract class Element {
     /** @var string */
 	protected $elementType;

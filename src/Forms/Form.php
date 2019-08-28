@@ -1,16 +1,4 @@
 <?php
-/**
- *  @package Forms
- */
-require_once(__DIR__."/../Element.php");
-require_once(__DIR__."/../Events.php");
-require_once(__DIR__."/../DataWrappers/PostType.php");
-require_once(__DIR__."/../DataWrappers/XString.php");
-require_once(__DIR__."/../DataWrappers/Boolean.php");
-require_once(__DIR__."/../DataWrappers/RequestMethod.php");
-require_once(__DIR__."/../Traits/ModifiableArray.php");
-require_once(__DIR__."/../Exceptions/RequiredProperty.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 

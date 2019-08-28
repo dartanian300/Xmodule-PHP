@@ -1,11 +1,6 @@
 <?php
 namespace XModule\Helpers;
 
-require_once(__DIR__."/../DataWrappers/VerticalAlignment.php");
-require_once(__DIR__."/../DataWrappers/XString.php");
-require_once(__DIR__."/../DataWrappers/StringWidth.php");
-require_once(__DIR__."/../DataWrappers/HorizontalAlignment.php");
-
 use XModule\DataWrappers as DataWrappers;
 
 class ColumnOption implements \JsonSerializable {

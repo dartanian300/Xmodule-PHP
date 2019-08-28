@@ -1,16 +1,6 @@
 <?php
 namespace XModule\Toolbar;
 
-/**
- *  @package Toolbar
- *  
- */
-require_once(__DIR__."/../Element.php");
-require_once(__DIR__."/../Link.php");
-require_once(__DIR__."/../DataWrappers/AccessoryIconPosition.php");
-require_once(__DIR__."/../DataWrappers/ActionType.php");
-require_once(__DIR__."/../DataWrappers/Title.php");
-
 use XModule\DataWrappers as DataWrappers;
 
 class ToolbarButton extends \Element implements \JsonSerializable {

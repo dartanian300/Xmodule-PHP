@@ -1,15 +1,6 @@
 <?php
 namespace XModule\GoogleMaps\MapPoint;
 
-/**
- *  @package GoogleMaps
- *  
- */
-require_once(__DIR__."/../../DataWrappers/URL.php");
-require_once(__DIR__."/../../DataWrappers/Scale.php");
-require_once(__DIR__."/Size.php");
-require_once(__DIR__."/Anchor.php");
-
 use XModule\DataWrappers as DataWrappers;
 
 class Icon implements \JsonSerializable {

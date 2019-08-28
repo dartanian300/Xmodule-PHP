@@ -1,8 +1,6 @@
 <?php
 namespace XModule\DataWrappers;
 
-require_once(__DIR__."/DataWrapperBase.php");
-
 class Number extends DataWrapperBase {
     /** @var int The minimum this number can be. Should be set by subclasses */
 	protected $min = null;

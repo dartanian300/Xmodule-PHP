@@ -1,14 +1,6 @@
 <?php
 namespace XModule\GoogleMaps;
 
-/**
- *  @package GoogleMaps
- *  
- */
-require_once(__DIR__."/../DataWrappers/Longitude.php");
-require_once(__DIR__."/../DataWrappers/Latitude.php");
-require_once(__DIR__."/../Exceptions/RequiredProperty.php");
-
 use XModule\DataWrappers as DataWrappers;
 use XModule\Exceptions as Exceptions;
 

@@ -1,12 +1,6 @@
 <?php
 namespace XModule\GoogleMaps\MapPoint;
 
-/**
- *  @package GoogleMaps
- *  
- */
-require_once(__DIR__."/../../DataWrappers/Number.php");
-
 use XModule\DataWrappers as DataWrappers;
 
 class Anchor implements \JsonSerializable {

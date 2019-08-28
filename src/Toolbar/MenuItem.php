@@ -1,15 +1,6 @@
 <?php
 namespace XModule\Toolbar;
 
-/**
- *  @package Toolbar
- *  
- */
-require_once(__DIR__."/../Link.php");
-require_once(__DIR__."/../DataWrappers/XString.php");
-require_once(__DIR__."/../DataWrappers/Boolean.php");
-require_once(__DIR__."/../DataWrappers/Title.php");
-
 use XModule\DataWrappers as DataWrappers;
 
 class MenuItem implements \JsonSerializable {
