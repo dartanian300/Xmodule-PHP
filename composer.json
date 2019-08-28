@@ -3,7 +3,7 @@
     "description": "A PHP implementation of Modo Lab's Xmodule specification",
     "type": "library",
     "require": {
-        
+        "php": ">=7.0.0"
     },
     "require-dev": {
         "phpdocumentor/phpdocumentor": "2.*",
