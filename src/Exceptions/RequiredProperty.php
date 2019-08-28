@@ -1,5 +1,4 @@
 <?php
-
 namespace XModule\Exceptions;
 
 class RequiredProperty extends \Exception {
