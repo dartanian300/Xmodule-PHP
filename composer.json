@@ -1,12 +1,14 @@
 {
     "name": "dartanian300/xmodule-php",
     "description": "A PHP implementation of Modo Lab's Xmodule specification",
-    "type": "project",
+    "type": "library",
     "require": {
-        "phpunit/phpunit": "^7.5",
-        "nette/robot-loader": "^3.2"
+        "phpunit/phpunit": "^7.5"
     },
     "require-dev": {
         "phpdocumentor/phpdocumentor": "2.*"
+    },
+    "autoload": {
+        "classmap": ["src/"]
     }
 }
