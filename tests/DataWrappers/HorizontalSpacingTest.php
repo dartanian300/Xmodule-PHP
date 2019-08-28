@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/HorizontalSpacing.php');
-
 use PHPUnit\Framework\TestCase;
 
 class HorizontalSpacingTest extends TestCase{

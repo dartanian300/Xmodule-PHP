@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/QueryParameters.php');
-
 use PHPUnit\Framework\TestCase;
 
 class QueryParametersTest extends TestCase{

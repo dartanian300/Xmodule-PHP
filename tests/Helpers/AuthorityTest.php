@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/Authority.php');
-
 use PHPUnit\Framework\TestCase;
 
 class AuthorityTest extends TestCase{

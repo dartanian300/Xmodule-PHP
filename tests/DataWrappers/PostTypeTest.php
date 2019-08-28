@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/PostType.php');
-
 use PHPUnit\Framework\TestCase;
 
 class PostTypeTest extends TestCase{

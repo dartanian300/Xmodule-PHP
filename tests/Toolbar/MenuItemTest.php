@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Toolbar/MenuItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class MenuItemTest extends TestCase{

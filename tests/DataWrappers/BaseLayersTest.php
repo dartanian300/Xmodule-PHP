@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/BaseLayers.php');
-
 use PHPUnit\Framework\TestCase;
 
 class BaseLayersTest extends TestCase{

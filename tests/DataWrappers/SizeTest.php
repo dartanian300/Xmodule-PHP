@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/Size.php');
-
 use PHPUnit\Framework\TestCase;
 
 class SizeTest extends TestCase{

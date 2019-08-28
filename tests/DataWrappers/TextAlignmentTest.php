@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/TextAlignment.php');
-
 use PHPUnit\Framework\TestCase;
 
 class TextAlignmentTest extends TestCase{

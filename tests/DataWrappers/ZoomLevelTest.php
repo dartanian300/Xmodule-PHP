@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/ZoomLevel.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ZoomLevelTest extends TestCase{

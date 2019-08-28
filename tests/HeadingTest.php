@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/Heading.php');
-
 use PHPUnit\Framework\TestCase;
 
 class HeadingTest extends TestCase{

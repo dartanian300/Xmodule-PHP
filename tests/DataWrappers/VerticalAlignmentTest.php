@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/VerticalAlignment.php');
-
 use PHPUnit\Framework\TestCase;
 
 class VerticalAlignmentTest extends TestCase{

@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/RequestMethod.php');
-
 use PHPUnit\Framework\TestCase;
 
 class RequestMethodTest extends TestCase{

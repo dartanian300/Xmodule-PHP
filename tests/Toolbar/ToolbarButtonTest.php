@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Toolbar/ToolbarButton.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ToolbarButtonTest extends TestCase{

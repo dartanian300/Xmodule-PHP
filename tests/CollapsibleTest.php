@@ -1,11 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/Collapsible.php');
-require_once(__DIR__.'/../src/Forms/Form.php');
-require_once(__DIR__.'/../src/ButtonContainer.php');
-require_once(__DIR__.'/../src/Heading.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class CollapsibleTest extends TestCase{

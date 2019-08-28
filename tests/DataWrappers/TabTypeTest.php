@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/TabType.php');
-
 use PHPUnit\Framework\TestCase;
 
 class TabTypeTest extends TestCase{

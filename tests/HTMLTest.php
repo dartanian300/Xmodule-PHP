@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/HTML.php');
-
 use PHPUnit\Framework\TestCase;
 
 class HTMLTest extends TestCase{

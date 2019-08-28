@@ -1,10 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/ButtonContainer.php');
-require_once(__DIR__.'/../src/LinkButton.php');
-require_once(__DIR__.'/../src/Forms/FormButton.php');
-require_once(__DIR__.'/../src/Helpers/Row.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ButtonContainerTest extends TestCase{

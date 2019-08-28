@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/Margins.php');
-
 use PHPUnit\Framework\TestCase;
 
 class MarginsTest extends TestCase{

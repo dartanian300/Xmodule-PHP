@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/DisclosureIcon.php');
-
 use PHPUnit\Framework\TestCase;
 
 class DisclosureIconTest extends TestCase{

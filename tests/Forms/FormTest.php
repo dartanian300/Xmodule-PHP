@@ -1,27 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Forms/Form.php');
-require_once(__DIR__.'/../../src/Helpers/CarouselItem.php');
-
-// for testing
-require_once(__DIR__.'/../../src/ButtonContainer.php');
-require_once(__DIR__.'/../../src/Collapsible.php');
-require_once(__DIR__.'/../../src/Forms/Checkbox.php');
-require_once(__DIR__.'/../../src/Forms/Email.php');
-require_once(__DIR__.'/../../src/Forms/HiddenField.php');
-require_once(__DIR__.'/../../src/Forms/Label.php');
-require_once(__DIR__.'/../../src/Forms/Password.php');
-require_once(__DIR__.'/../../src/Forms/Phone.php');
-require_once(__DIR__.'/../../src/Forms/RadioButtons.php');
-require_once(__DIR__.'/../../src/Forms/SelectMenu.php');
-require_once(__DIR__.'/../../src/Forms/TextInput.php');
-require_once(__DIR__.'/../../src/Forms/TextArea.php');
-require_once(__DIR__.'/../../src/Forms/Upload.php');
-require_once(__DIR__.'/../../src/Heading.php');
-require_once(__DIR__.'/../../src/HTML.php');
-require_once(__DIR__.'/../../src/Image.php');
-require_once(__DIR__.'/../../src/Table.php');
-
 use PHPUnit\Framework\TestCase;
 
 class FormTest extends TestCase{

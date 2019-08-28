@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/AspectRatio.php');
-
 use PHPUnit\Framework\TestCase;
 
 class AspectRatioTest extends TestCase{

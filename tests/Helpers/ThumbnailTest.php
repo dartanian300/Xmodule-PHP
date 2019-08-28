@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/Thumbnail.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ThumbnailTest extends TestCase{

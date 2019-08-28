@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/BackActionTarget.php');
-
 use PHPUnit\Framework\TestCase;
 
 class BackActionTargetTest extends TestCase{

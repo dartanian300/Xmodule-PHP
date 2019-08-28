@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/Image.php');
-
 use PHPUnit\Framework\TestCase;
 
 class DataWrapperImageTest extends TestCase{

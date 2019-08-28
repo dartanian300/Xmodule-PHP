@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/MultiColumn.php');
-
 use PHPUnit\Framework\TestCase;
 
 class MultiColumnTest extends TestCase{

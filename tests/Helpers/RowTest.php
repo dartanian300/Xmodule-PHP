@@ -1,8 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/Row.php');
-require_once(__DIR__.'/../../src/Helpers/Cell.php');
-
 use PHPUnit\Framework\TestCase;
 
 class RowTest extends TestCase{

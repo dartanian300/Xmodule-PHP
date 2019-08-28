@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/ListItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ListItemTest extends TestCase{

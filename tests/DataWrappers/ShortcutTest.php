@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/Shortcut.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ShortcutTest extends TestCase{

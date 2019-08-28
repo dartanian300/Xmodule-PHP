@@ -1,9 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/XList.php');
-require_once(__DIR__.'/../src/Helpers/ListItem.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class XListTest extends TestCase{

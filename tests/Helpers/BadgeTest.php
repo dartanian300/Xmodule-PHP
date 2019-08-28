@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/Badge.php');
-
 use PHPUnit\Framework\TestCase;
 
 class BadgeTest extends TestCase{

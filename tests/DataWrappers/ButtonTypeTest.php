@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/ButtonType.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ButtonTypeTest extends TestCase{

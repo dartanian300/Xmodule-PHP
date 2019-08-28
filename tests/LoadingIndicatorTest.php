@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/LoadingIndicator.php');
-
 use PHPUnit\Framework\TestCase;
 
 class LoadingIndicatorTest extends TestCase{

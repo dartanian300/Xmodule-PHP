@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Forms/Checkbox.php');
-
 use PHPUnit\Framework\TestCase;
 
 class CheckboxTest extends TestCase{

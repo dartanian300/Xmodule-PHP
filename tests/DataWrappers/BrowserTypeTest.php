@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/BrowserType.php');
-
 use PHPUnit\Framework\TestCase;
 
 class BrowserTypeTest extends TestCase{

@@ -1,9 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Forms/RadioButtons.php');
-//require_once(__DIR__.'/../../src/Helpers/GridItem.php');
-require_once(__DIR__.'/../../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class RadioButtonsTest extends TestCase{

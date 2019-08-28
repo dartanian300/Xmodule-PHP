@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Forms/Email.php');
-
 use PHPUnit\Framework\TestCase;
 
 class EmailTest extends TestCase{

@@ -1,9 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/Carousel.php');
-require_once(__DIR__.'/../src/Forms/FormButton.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class CarouselTest extends TestCase{

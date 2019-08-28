@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Forms/Phone.php');
-
 use PHPUnit\Framework\TestCase;
 
 class PhoneTest extends TestCase{

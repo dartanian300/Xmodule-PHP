@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/ColumnOption.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ColumnOptionTest extends TestCase{

@@ -1,22 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/Tab.php');
-
-// includes for testing valid input types
-require_once(__DIR__.'/../../src/ButtonContainer.php');
-require_once(__DIR__.'/../../src/Collapsible.php');
-require_once(__DIR__.'/../../src/Container.php');
-require_once(__DIR__.'/../../src/Detail.php');
-require_once(__DIR__.'/../../src/Grid.php');
-require_once(__DIR__.'/../../src/Heading.php');
-require_once(__DIR__.'/../../src/HTML.php');
-require_once(__DIR__.'/../../src/Image.php');
-require_once(__DIR__.'/../../src/LinkButton.php');
-require_once(__DIR__.'/../../src/XList.php');
-require_once(__DIR__.'/../../src/Table.php');
-require_once(__DIR__.'/../../src/Tabs.php');
-require_once(__DIR__.'/../../src/Forms/Form.php');
-
 use PHPUnit\Framework\TestCase;
 
 class TabTest extends TestCase{

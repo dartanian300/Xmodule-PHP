@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/Cell.php');
-
 use PHPUnit\Framework\TestCase;
 
 class CellTest extends TestCase{

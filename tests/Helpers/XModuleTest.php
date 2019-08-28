@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/XModule.php');
-
 use PHPUnit\Framework\TestCase;
 
 class XModuleTest extends TestCase{

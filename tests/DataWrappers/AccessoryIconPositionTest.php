@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/AccessoryIconPosition.php');
-
 use PHPUnit\Framework\TestCase;
 
 class AccessoryIconPositionTest extends TestCase{

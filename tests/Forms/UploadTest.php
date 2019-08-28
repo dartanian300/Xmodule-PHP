@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Forms/Upload.php');
-
 use PHPUnit\Framework\TestCase;
 
 class UploadTest extends TestCase{

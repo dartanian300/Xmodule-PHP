@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/XString.php');
-
 use PHPUnit\Framework\TestCase;
 
 class XStringTest extends TestCase{

@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/ActionType.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ActionTypeTest extends TestCase{

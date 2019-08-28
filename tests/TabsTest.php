@@ -1,9 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/Tabs.php');
-require_once(__DIR__.'/../src/Helpers/Tab.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class TabsTest extends TestCase{

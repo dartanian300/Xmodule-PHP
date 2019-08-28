@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/AutoUpdateAccessibility.php');
-
 use PHPUnit\Framework\TestCase;
 
 class AutoUpdateAccessibilityTest extends TestCase{

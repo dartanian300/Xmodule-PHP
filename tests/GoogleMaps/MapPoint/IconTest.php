@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../../src/GoogleMaps/MapPoint/Icon.php');
-
 use PHPUnit\Framework\TestCase;
 
 class IconTest extends TestCase{

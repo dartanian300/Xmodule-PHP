@@ -1,11 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/Toolbar.php');
-require_once(__DIR__.'/../src/Toolbar/ToolbarButton.php');
-require_once(__DIR__.'/../src/Toolbar/ToolbarLabel.php');
-require_once(__DIR__.'/../src/Toolbar/ToolbarMenu.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ToolbarTest extends TestCase{

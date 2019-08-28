@@ -1,9 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/XModuleResponse.php');
-require_once(__DIR__.'/../src/Element.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class XModuleResponseTest extends TestCase{

@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/Image.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ImageTest extends TestCase{

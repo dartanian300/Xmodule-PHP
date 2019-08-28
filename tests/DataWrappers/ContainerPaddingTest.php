@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/ContainerPadding.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ContainerPaddingTest extends TestCase{

@@ -1,12 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/GoogleMap.php');
-
-require_once(__DIR__.'/../src/GoogleMaps/MapPoint.php');
-require_once(__DIR__.'/../src/GoogleMaps/MapPolyline.php');
-require_once(__DIR__.'/../src/GoogleMaps/MapPolygon.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class GoogleMapTest extends TestCase{

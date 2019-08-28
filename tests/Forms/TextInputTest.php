@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Forms/TextInput.php');
-
 use PHPUnit\Framework\TestCase;
 
 class TextInputTest extends TestCase{

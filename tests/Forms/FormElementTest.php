@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Forms/FormButton.php');
-
 use PHPUnit\Framework\TestCase;
 
 class FormButtonTest extends TestCase{

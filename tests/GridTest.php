@@ -1,9 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/Grid.php');
-require_once(__DIR__.'/../src/Helpers/GridItem.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class GridTest extends TestCase{

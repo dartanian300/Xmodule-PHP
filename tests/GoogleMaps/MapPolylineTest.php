@@ -1,9 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/GoogleMaps/MapPolyline.php');
-require_once(__DIR__.'/../../src/Helpers/CarouselItem.php');
-require_once(__DIR__.'/../../src/GoogleMaps/Point.php');
-
 use PHPUnit\Framework\TestCase;
 
 class MapPolylineTest extends TestCase{

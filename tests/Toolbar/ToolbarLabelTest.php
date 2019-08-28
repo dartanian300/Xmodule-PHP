@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Toolbar/ToolbarLabel.php');
-
 use PHPUnit\Framework\TestCase;
 
 class ToolbarLabelTest extends TestCase{

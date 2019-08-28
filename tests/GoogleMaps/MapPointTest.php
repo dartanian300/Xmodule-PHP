@@ -1,8 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/GoogleMaps/MapPoint.php');
-require_once(__DIR__.'/../../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class MapPointTest extends TestCase{

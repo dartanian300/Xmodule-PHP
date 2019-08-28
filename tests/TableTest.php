@@ -1,11 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../src/Table.php');
-require_once(__DIR__.'/../src/Helpers/ColumnOption.php');
-require_once(__DIR__.'/../src/Helpers/Cell.php');
-require_once(__DIR__.'/../src/Helpers/Row.php');
-require_once(__DIR__.'/../src/Helpers/CarouselItem.php');
-
 use PHPUnit\Framework\TestCase;
 
 class TableTest extends TestCase{

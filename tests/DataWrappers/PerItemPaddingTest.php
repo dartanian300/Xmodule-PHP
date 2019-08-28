@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/PerItemPadding.php');
-
 use PHPUnit\Framework\TestCase;
 
 class PerItemPaddingTest extends TestCase{

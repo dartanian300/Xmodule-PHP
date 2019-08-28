@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../../src/GoogleMaps/MapPoint/Anchor.php');
-
 use PHPUnit\Framework\TestCase;
 
 class AnchorTest extends TestCase{

@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../../src/GoogleMaps/MapPoint/Size.php');
-
 use PHPUnit\Framework\TestCase;
 
 class MapSizeTest extends TestCase{

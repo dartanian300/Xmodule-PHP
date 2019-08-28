@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/Helpers/NativeApp.php');
-
 use PHPUnit\Framework\TestCase;
 
 class NativeAppTest extends TestCase{

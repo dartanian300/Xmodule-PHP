@@ -1,7 +1,4 @@
 <?php
-
-require_once(__DIR__.'/../../src/DataWrappers/Boolean.php');
-
 use PHPUnit\Framework\TestCase;
 
 class BooleanTest extends TestCase{
