@@ -7,7 +7,12 @@ class SelectMenuTest extends TestCase{
     // Setup object for testing
     public static function setUpBeforeClass(): void
     {
-        self::$obj = new SelectMenu();
+        self::$obj = self::make();
+    }
+    
+    public static function make()
+    {
+        return new SelectMenu();
     }
     
     public function testProperties()
@@ -20,6 +25,54 @@ class SelectMenuTest extends TestCase{
         $this->assertClassHasAttribute('optionLabels', RadioButtons::class);
     }
     
+    /**
+     *  Make sure exeption isn't thrown when optionLabels & optionValues are same length
+     *  @dataProvider validOptionLabelsValuesProvider
+     */
+    public function testOptionLabelsValuesSameLength($labels, $values){
+        $obj = self::make();
+        $obj->addOptionLabel($labels);
+        $obj->addOptionValue($values);
+        $this->assertSame(count($obj->getOptionLabel), count($obj->getOptionValue));
+    }
+    public function validOptionLabelsValuesProvider()
+    {
+        return [
+            [
+                ['1', '2', '3', '4'],
+                ['1', '2', '3', '4']
+            ],
+        ];
+    }
+    
+    /**
+     *  Make sure exeption IS thrown when optionLabels & optionValues are not same length
+     *  @dataProvider invalidOptionLabelsValuesProvider
+     */
+    public function testOptionLabelsValuesDifferentLength($labels, $values){
+        $this->expectException(Exception::class);
+        $obj = self::make();
+        $obj->addOptionLabel($labels);
+        $obj->addOptionValue($values);
+        json_encode($obj);
+    }
+    public function invalidOptionLabelsValuesProvider()
+    {
+        return [
+            [
+                ['1', '2', '3', '4'],
+                ['1', '2', '4']
+            ],
+            [
+                ['1', '2', '4'],
+                ['1', '2', '3', '4']
+            ],
+            [
+                ['1', '4'],
+                ['1', '2', '3', '4']
+            ],
+        ];
+    }
     
     
     // Make sure get is returning an empty array

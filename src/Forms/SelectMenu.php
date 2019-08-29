@@ -86,6 +86,8 @@ class SelectMenu extends FormElement implements \JsonSerializable {
             throw new Exceptions\RequiredProperty('name', __CLASS__);
         if ($this->label->get() === null)
             throw new Exceptions\RequiredProperty('label', __CLASS__);
+        if (count($this->optionLabels) !== count($this->optionValues))
+            throw new Exception('$optionLabels and $optionValues must be of the same length in '.__CLASS__.' ');
         
         $format = array(
             'elementType' => $this->elementType,
