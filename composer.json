@@ -2,6 +2,11 @@
     "name": "dartanian300/xmodule-php",
     "description": "A PHP implementation of Modo Lab's Xmodule specification",
     "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "Caleb Hardin",
+        "email": "dartanian300@users.noreply.github.com"
+      }],
     "require": {
         "php": ">=7.0.0"
     },
@@ -11,5 +16,13 @@
     },
     "autoload": {
         "classmap": ["src/"]
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/",
+        "make-docs": "./vendor/phpdocumentor/phpdocumentor/bin/phpdoc -d ./src -t ./docs --template=clean"
+    },
+    "scripts-descriptions": {
+        "test": "Runs all unit tests",
+        "make-docs": "Generates documentation. Assumes that PHPDoc is installed in the project's 'vendor' folder"
     }
 }

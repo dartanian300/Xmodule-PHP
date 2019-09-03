@@ -202,9 +202,13 @@ Some fields/elements use a modified `add()` method. See their signatures below:
 - `MultiColumn` elements: `add($columnNum, $element)`.
 
 # More Documentation
-More documentation can be found by running `scripts/generate_documentation.bash` on Unix systems with PHPDoc installed.
+More documentation can be found by navigating to the `docs` folder in a browser after running the following command:
 
-> **Note:** scripts found in the `script` folder were written for Unix-based systems. They might need to be modified to work on Windows systems.
+```sh
+$ composer make-docs
+```
+
+> **Note:** Assumes that PHPDoc is installed in the project's 'vendor' folder and that you are executing on a Unix-based system. Command might need to be modified to work on Windows systems (located in `composer.json`).
 
 # Element Reference
 
