@@ -1,7 +1,7 @@
 <?php
 namespace XModule\DataWrappers;
 
-class Margins extends DataWrapperBase {
+class Margins extends DataWrapperBase implements \JsonSerializable {
 	public function __construct() 
 	{
 		parent::__construct();
@@ -20,6 +20,15 @@ class Margins extends DataWrapperBase {
 	public function minimal()
     {
         $this->data = 'minimal';
+    }
+    
+    public function jsonSerialize()
+    {        
+        $format = array(
+            'value' => $this->get()
+        );
+        
+        return $format;
     }
 }
 
