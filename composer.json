@@ -19,10 +19,12 @@
     },
     "scripts": {
         "test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/",
-        "make-docs": "./vendor/phpdocumentor/phpdocumentor/bin/phpdoc -d ./src -t ./docs --template=clean"
+        "make-docs": "../../phpdocumentor/phpdocumentor/bin/phpdoc -d ./src -t ./docs --template=clean",
+        "make-docs-dev": "./vendor/phpdocumentor/phpdocumentor/bin/phpdoc -d ./src -t ./docs --template=clean"
     },
     "scripts-descriptions": {
         "test": "Runs all unit tests",
-        "make-docs": "Generates documentation. Assumes that PHPDoc is installed in the project's 'vendor' folder"
+        "make-docs": "Generates documentation. Assumes that PHPDoc is installed in the project's 'vendor' folder",
+        "make-docs-dev": "Same as make-docs, but with a different path to the executable since package isn't in /vendor"
     }
 }
