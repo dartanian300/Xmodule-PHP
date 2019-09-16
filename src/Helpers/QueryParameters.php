@@ -3,6 +3,8 @@ namespace XModule\Helpers;
 
 use XModule\DataWrappers as DataWrappers;
 
+//todo Make add() accept arrays
+
 class QueryParameters implements \JsonSerializable {
     /** @var mixed[] An associative array */
 	private $parameters;
@@ -14,12 +16,23 @@ class QueryParameters implements \JsonSerializable {
 	}
     
     /**
+     *  This method supports 2 different signatures:
+     *  add($key, $element)
      *  @param string $key The key to remove from the array
      *  @param string $element The string to be the value
+     *
+     *  add($arr)
+     *  @param string[] $arr Associative array of key/value pairs
      */
-	public function add($key, $element)
+	public function add($key, $element = '')
     {
-        $this->parameters[$key] = new DataWrappers\XString($element);
+        if (is_array($key)){
+            foreach($key as $k=>$v){
+                $this->add($k, $v);
+            }
+        } else {
+            $this->parameters[$key] = new DataWrappers\XString($element);
+        }
     }
     
     /**

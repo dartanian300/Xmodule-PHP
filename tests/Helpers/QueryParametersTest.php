@@ -6,7 +6,12 @@ class QueryParametersTest extends TestCase{
     
     public static function setUpBeforeClass(): void
     {
-        self::$obj = new \XModule\Helpers\QueryParameters();
+        self::$obj = self::make();
+    }
+    
+    public static function make()
+    {
+        return new \XModule\Helpers\QueryParameters();
     }
     
     
@@ -37,6 +42,30 @@ class QueryParametersTest extends TestCase{
             ['arr', array()],
             ['arr2', array('I have a value')],
             ['number', 563]
+        ];
+    }
+    
+    /**
+     *  @dataProvider addArrayProvider
+     *  @depends testGetEmpty
+     */
+    public function testAddArray($arr)
+    {
+        $obj = self::make();
+        $obj->add($arr);
+        foreach($arr as $k=>$v){
+            $this->assertSame($v, $obj->get($k));
+        }
+    }
+    public function addArrayProvider(){
+        return [
+            [['hello' => 'goodbye',
+            'welcome' => 'get out',
+            'up' => 'down',
+            'Is a tree' => 'Is not a tree',
+            'boolean' => true,
+            'falseBoolean' => false,
+            'number' => 563]]
         ];
     }
     
