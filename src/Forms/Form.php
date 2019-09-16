@@ -80,8 +80,10 @@ class Form extends Element implements \JsonSerializable {
             'items' => $this->items,
             'disableScrim' => $this->disableScrim,
             'loadingTitle' => $this->loadingTitle,
-            'events' => $this->events
         );
+        
+        if (!empty($this->events->eventName->get()))
+            $format['events'] = $this->events;
         
         return $format;
     }

@@ -39,7 +39,7 @@ class Link implements \JsonSerializable {
         $this->module = new Helpers\Module();
         $this->xmodule = new Helpers\XModule();
         $this->authority = new Helpers\Authority();
-        $this->shortcut = new DataWrappers\Shortcut();
+        $this->shortcut = new Helpers\Shortcut();
         $this->nativeApp = new Helpers\NativeApp();
         $this->nativePlugin = new DataWrappers\XString();
         $this->accessoryIcon = new DataWrappers\AccessoryIcon();
@@ -53,14 +53,14 @@ class Link implements \JsonSerializable {
     public function jsonSerialize()
     {        
         $format = array(
-            'relativePath' => $this->relativePath,
-            'external' => $this->external,
-            'module' => $this->module,
-            'xmodule' => $this->xmodule,
-            'authority' => $this->authority,
-            'shortcut' => $this->shortcut,
-            'nativeApp' => $this->nativeApp,
-            'nativePlugin' => $this->nativePlugin,
+//            'relativePath' => $this->relativePath,
+//            'external' => $this->external,
+//            'module' => $this->module,
+//            'xmodule' => $this->xmodule,
+//            'authority' => $this->authority,
+//            'shortcut' => $this->shortcut,
+//            'nativeApp' => $this->nativeApp,
+//            'nativePlugin' => $this->nativePlugin,
             
             'accessoryIcon' => $this->accessoryIcon,
             'browserType' => $this->browserType,
@@ -69,6 +69,30 @@ class Link implements \JsonSerializable {
             'requestMethod' => $this->requestMethod,
             'postData' => $this->postData,
         );
+        
+        if (!empty($this->relativePath->get()))
+            $format['relativePath'] = $this->relativePath;
+        
+        if (!empty($this->external->get()))
+            $format['external'] = $this->external;
+        
+        if (!empty($this->module->id->get()))
+            $format['module'] = $this->module;  //
+        
+        if (!empty($this->xmodule->id->get()))
+            $format['xmodule'] = $this->xmodule;    //
+        
+        if (!empty($this->authority->type->get()))
+            $format['authority'] = $this->authority;    //
+        
+        if (!empty($this->shortcut->type->get()))
+            $format['shortcut'] = $this->shortcut;  
+        
+        if (!empty($this->nativeApp->nativeAppURL->get()))
+            $format['nativeApp'] = $this->nativeApp;    //
+        
+        if (!empty($this->nativePlugin->id->get()))
+            $format['nativePlugin'] = $this->nativePlugin;    //
         
         return $format;
     }

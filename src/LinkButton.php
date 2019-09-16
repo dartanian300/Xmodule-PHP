@@ -37,9 +37,11 @@ class LinkButton extends Element implements \JsonSerializable {
             'link' => $this->link,
             'disabled' => $this->disabled,
             'accessoryIconPosition' => $this->accessoryIconPosition,
-            'actionType' => $this->actionType,
-            'events' => $this->events
+            'actionType' => $this->actionType
         );
+        
+        if (!empty($this->events->eventName->get()))
+            $format['events'] = $this->events;
         
         return $format;
     }
