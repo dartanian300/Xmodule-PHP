@@ -17,7 +17,7 @@ class Link implements \JsonSerializable {
 	public $shortcut;
     /** @var NativeApp */
 	public $nativeApp;
-    /** @var XString */
+    /** @var NativePlugin */
 	public $nativePlugin;
     /** @var AccessoryIcon */
 	public $accessoryIcon;
@@ -41,7 +41,7 @@ class Link implements \JsonSerializable {
         $this->authority = new Helpers\Authority();
         $this->shortcut = new Helpers\Shortcut();
         $this->nativeApp = new Helpers\NativeApp();
-        $this->nativePlugin = new DataWrappers\XString();
+        $this->nativePlugin = new Helpers\NativePlugin();
         $this->accessoryIcon = new DataWrappers\AccessoryIcon();
         $this->browserType = new DataWrappers\BrowserType();
         $this->targetNewWindow = new DataWrappers\Boolean();
