@@ -8,7 +8,7 @@ class Shortcut implements \JsonSerializable {
 	public function __construct() 
 	{
 //		parent::__construct();
-        $this->title = new \XModule\DataWrappers\Shortcut();
+        $this->type = new \XModule\DataWrappers\Shortcut();
 	}
     
 	public function jsonSerialize()
