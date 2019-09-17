@@ -62,12 +62,12 @@ class Link implements \JsonSerializable {
 //            'nativeApp' => $this->nativeApp,
 //            'nativePlugin' => $this->nativePlugin,
             
-            'accessoryIcon' => $this->accessoryIcon,
-            'browserType' => $this->browserType,
-            'targetNewWindow' => $this->targetNewWindow,
-            'backActionTarget' => $this->backActionTarget,
-            'requestMethod' => $this->requestMethod,
-            'postData' => $this->postData,
+//            'accessoryIcon' => $this->accessoryIcon,
+//            'browserType' => $this->browserType,
+//            'targetNewWindow' => $this->targetNewWindow,
+//            'backActionTarget' => $this->backActionTarget,
+//            'requestMethod' => $this->requestMethod,
+//            'postData' => $this->postData,
         );
         
         if (!empty($this->relativePath->get()))
@@ -93,6 +93,26 @@ class Link implements \JsonSerializable {
         
         if (!empty($this->nativePlugin->id->get()))
             $format['nativePlugin'] = $this->nativePlugin;    //
+        
+        
+        
+        if (!empty($this->accessoryIcon->get()))
+            $format['accessoryIcon'] = $this->accessoryIcon;
+        
+        if (!empty($this->browserType->get()))
+            $format['browserType'] = $this->browserType;
+        
+        if (is_bool($this->targetNewWindow->get()))
+            $format['targetNewWindow'] = $this->targetNewWindow;
+        
+        if (!empty($this->backActionTarget->get()))
+            $format['backActionTarget'] = $this->backActionTarget;
+        
+        if (!empty($this->requestMethod->get()))
+            $format['requestMethod'] = $this->requestMethod;
+        
+        if (!empty($this->postData->get()))
+            $format['postData'] = $this->postData;
         
         return $format;
     }
