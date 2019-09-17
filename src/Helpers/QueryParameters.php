@@ -61,9 +61,7 @@ class QueryParameters implements \JsonSerializable {
     
     public function jsonSerialize()
     {        
-        $format = array(
-            'parameters' => $this->parameters,
-        );
+        $format = $this->parameters;
         
         return $format;
     }
