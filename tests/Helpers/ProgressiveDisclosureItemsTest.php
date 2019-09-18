@@ -6,7 +6,12 @@ class ProgressiveDisclosureItemsTest extends TestCase{
     
     public static function setUpBeforeClass(): void
     {
-        self::$obj = new \XModule\Helpers\ProgressiveDisclosureItems();
+        self::$obj = self::make();
+    }
+    
+    public static function make()
+    {
+        return new \XModule\Helpers\ProgressiveDisclosureItems();
     }
     
     // test returning full array (no values)
@@ -35,6 +40,46 @@ class ProgressiveDisclosureItemsTest extends TestCase{
             ['arr', array()],
             ['arr2', array('I have a value')],
             ['number', 563]
+        ];
+    }
+    
+    /**
+     *  @dataProvider addArrayProvider
+     *  @depends testGetEmpty
+     */
+    public function testAddArray($arr)
+    {
+        $obj = self::make();
+        $obj->add($arr);
+        foreach($arr as $k=>$v){
+            $this->assertSame($v, $obj->get($k));
+        }
+    }
+    public function addArrayProvider(){
+        return [
+            [['hello' => 'goodbye',
+            'welcome' => 'get out',
+            'up' => 'down',
+            'Is a tree' => 'Is not a tree',
+            'boolean' => true,
+            'falseBoolean' => false,
+            'number' => 563]]
+        ];
+    }
+    
+    /**
+     *  @dataProvider addWithoutElementProvider
+     *  @depends testAdd
+     */
+    public function testAddWithoutElement($key, $value)
+    {
+        $this->expectException(InvalidArgumentException::class);
+        self::$obj->add($key, $value);
+    }
+    public function addWithoutElementProvider(){
+        return [
+            [0],
+            [4, null],
         ];
     }
     

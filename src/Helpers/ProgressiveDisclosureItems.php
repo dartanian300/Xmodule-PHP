@@ -18,12 +18,26 @@ class ProgressiveDisclosureItems implements \JsonSerializable {
 	}
     
     /**
-     *  @param string $key The key to remove from the array
+     *  This method supports 2 different signatures:
+     *  add($key, $element)
+     *  @param string $key The key to add to the array
      *  @param mixed $element The object for which to add
+     *
+     *  add($arr)
+     *  @param string[] $arr Associative array of key/value pairs
      */
-	public function add($key, $element)
+	public function add($key, $element = null)
     {
-        $this->items[$key] = $element;
+        if (is_array($key)){
+            foreach($key as $k=>$v){
+                $this->add($k, $v);
+            }
+        } else {
+            if ($element === null)
+                throw new \InvalidArgumentException('$element is a required argument.');
+            
+            $this->items[$key] = $element;
+        }
     }
     
     /**
