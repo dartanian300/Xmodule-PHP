@@ -25,7 +25,9 @@ trait ModifiableArray {
             if ($expectedType !== null && is_array($expectedType)){
                 if (!$this->isValidType($item, $expectedType)){
                     $type = gettype($item) == 'object' ? get_class($item) : gettype($item);
-                    throw new InvalidArgumentException('$item should be of type '.implode(', ', $expectedType).'. '.$type.' was provided ');
+                    //todo - make more descriptive of object
+                    //Fatal error: Uncaught InvalidArgumentException: $item should be of type FormButton, LinkButton. NULL was provided in /Users/chardi17/Sites/modo-server/vendor/dartanian300/xmodule-php/src/Traits/ModifiableArray.php:28 Stack trace: #0 /Users/chardi17/Sites/modo-server/vendor/dartanian300/xmodule-php/src/ButtonContainer.php(24): ButtonContainer->addArray('buttons', Array, Array) #1 /Users/chardi17/Sites/modo-server/library/hours/index.php(77): ButtonContainer->add(NULL) #2 /Users/chardi17/Sites/modo-server/library/hours/index.php(40): getButton('sturgis') #3 {main} thrown in /Users/chardi17/Sites/modo-server/vendor/dartanian300/xmodule-php/src/Traits/ModifiableArray.php on line 28
+                    throw new InvalidArgumentException(__CLASS__.'->add() accepts values of type '.implode(', ', $expectedType).'. '.$type.' was provided');
                 }
             }
             
