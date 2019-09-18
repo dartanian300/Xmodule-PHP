@@ -10,7 +10,6 @@ class HTML extends Element implements \JsonSerializable {
     /** @var \Boolean */
 	public $inset;
     
-    // todo: accept html in constructor
 	public function __construct($html = '', $id = '')
 	{
 		parent::__construct('html', $id);

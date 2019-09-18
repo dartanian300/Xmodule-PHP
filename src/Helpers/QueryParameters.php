@@ -3,8 +3,6 @@ namespace XModule\Helpers;
 
 use XModule\DataWrappers as DataWrappers;
 
-//todo Make add() accept arrays
-
 class QueryParameters implements \JsonSerializable {
     /** @var mixed[] An associative array */
 	private $parameters;
