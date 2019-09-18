@@ -28,13 +28,13 @@ class LinkTest extends TestCase{
         $this->assertInstanceOf(\XModule\Helpers\Authority::class, self::$obj->authority);
         
         $this->assertClassHasAttribute('shortcut', Link::class);
-        $this->assertInstanceOf(\XModule\DataWrappers\Shortcut::class, self::$obj->shortcut);
+        $this->assertInstanceOf(\XModule\Helpers\Shortcut::class, self::$obj->shortcut);
         
         $this->assertClassHasAttribute('nativeApp', Link::class);
         $this->assertInstanceOf(\XModule\Helpers\NativeApp::class, self::$obj->nativeApp);
         
         $this->assertClassHasAttribute('nativePlugin', Link::class);
-        $this->assertInstanceOf(\XModule\DataWrappers\XString::class, self::$obj->nativePlugin);
+        $this->assertInstanceOf(\XModule\Helpers\NativePlugin::class, self::$obj->nativePlugin);
                 
         $this->assertClassHasAttribute('accessoryIcon', Link::class);
         $this->assertInstanceOf(\XModule\DataWrappers\AccessoryIcon::class, self::$obj->accessoryIcon);
