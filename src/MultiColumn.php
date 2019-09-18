@@ -42,24 +42,41 @@ class MultiColumn extends Element implements \JsonSerializable {
     }
     
     /**
+     *  This method supports 2 different signatures:
+     *  add($columnNum, $item)
      *  @param int $columnNum The column to add the item to (0-indexed)
      *  @param mixed $item The object to add to that column
      *  @return int Index of array where $item was added
+     *
+     *  add($arr)
+     *  @param string[] $arr Associative array of key/value pairs where the key is the $columnNum and value is the $item
+     *  @return string[] Array of indecies where $items were added
      */
-	public function add($columnNum, $item)
+	public function add($columnNum, $item = null)
     {
-        if ($columnNum > $this->getNumColumns() - 1 || $columnNum < 0)
-            throw new OutOfBoundsException('The parameter $columnNum must be less than or equal to the number of columns for this object');
-        
-        if (!isset($this->columns[$columnNum]) || gettype($this->columns[$columnNum]) != "array")
-            $this->columns[$columnNum] = array();
-        
-        $this->columns[$columnNum][] = $item;
-        
-        // move pointer to end of array to return correct key
-        end($this->columns[$columnNum]);
-//        var_dump($this->columns);
-        return key($this->columns[$columnNum]);
+        if (is_array($columnNum)){
+            $r = array();
+            foreach($columnNum as $colNum=>$item){
+                $r[] = $this->add($colNum, $item);
+            }
+            return $r;
+        } else {
+            if ($columnNum > $this->getNumColumns() - 1 || $columnNum < 0)
+                throw new OutOfBoundsException('The parameter $columnNum must be less than or equal to the number of columns for this object.');
+
+            if ($item === null)
+                throw new InvalidArgumentException('$item is a required argument.');
+            
+            if (!isset($this->columns[$columnNum]) || gettype($this->columns[$columnNum]) != "array")
+                $this->columns[$columnNum] = array();
+
+            $this->columns[$columnNum][] = $item;
+
+            // move pointer to end of array to return correct key
+            end($this->columns[$columnNum]);
+    //        var_dump($this->columns);
+            return key($this->columns[$columnNum]);
+        }
     }
     
     /**
