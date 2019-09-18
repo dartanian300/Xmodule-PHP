@@ -10,11 +10,12 @@ class HTML extends Element implements \JsonSerializable {
     /** @var \Boolean */
 	public $inset;
     
-	public function __construct($id = '')
+    // todo: accept html in constructor
+	public function __construct($html = '', $id = '')
 	{
 		parent::__construct('html', $id);
         
-        $this->html = new DataWrappers\XString();
+        $this->html = new DataWrappers\XString($html);
         $this->focal = new DataWrappers\Boolean();
         $this->inset = new DataWrappers\Boolean();
 	}
