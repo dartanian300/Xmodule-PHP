@@ -29,6 +29,9 @@ class Portlet extends Element implements \JsonSerializable {
         $this->forceAjaxOnLoad = new DataWrappers\Boolean();
         $this->height = new DataWrappers\Size();
         $this->content = array();
+        
+        // defaults
+        $this->forceAjaxOnLoad->false();
 	}
     
     /**

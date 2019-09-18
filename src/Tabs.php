@@ -18,7 +18,11 @@ class Tabs extends Element implements \JsonSerializable {
         
         $this->tabs = array();
         $this->tabType = new DataWrappers\TabType();
+        // todo: set false on default
         $this->forceAjaxOnLoad = new DataWrappers\Boolean();
+        
+        // set defaults
+        $this->forceAjaxOnLoad->false();
 	}
     
     /**
